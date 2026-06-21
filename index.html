@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CORE AI — Powerful Business Systems for Entrepreneurs</title>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -13,42 +13,43 @@
       --gold: #F59E0B;
       --white: #ffffff;
       --light: #F8F9FC;
-      --border: #E5E7F5;
+      --border: #E8EAF2;
       --dark: #111827;
       --gray: #6B7280;
       --green: #10B981;
     }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; color: var(--dark); background: var(--white); overflow-x: hidden; }
+    body { font-family: 'DM Sans', system-ui, sans-serif; color: var(--dark); background: var(--white); overflow-x: hidden; font-weight: 400; }
 
     /* ── NAV ── */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      background: rgba(255,255,255,0.96);
-      backdrop-filter: blur(12px);
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border);
-      padding: 0 48px; height: 68px;
+      padding: 0 56px; height: 64px;
       display: flex; align-items: center; justify-content: space-between;
     }
     .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-    .nav-logo-text { font-size: 18px; font-weight: 900; color: var(--navy); letter-spacing: -0.5px; }
-    .nav-logo-sub { font-size: 11px; color: var(--gray); font-weight: 500; }
-    .nav-links { display: flex; align-items: center; gap: 32px; }
-    .nav-links a { font-size: 14px; font-weight: 600; color: var(--gray); text-decoration: none; transition: color .15s; }
+    .nav-logo img { height: 28px; filter: invert(15%) sepia(60%) saturate(800%) hue-rotate(200deg) brightness(0.5); }
+    .nav-links { display: flex; align-items: center; gap: 36px; }
+    .nav-links a { font-size: 14px; font-weight: 500; color: var(--gray); text-decoration: none; letter-spacing: -0.1px; transition: color .15s; }
     .nav-links a:hover { color: var(--navy); }
     .nav-cta {
-      padding: 10px 22px; border-radius: 8px;
+      padding: 9px 22px; border-radius: 8px;
       background: var(--navy); color: var(--white) !important;
-      font-size: 14px; font-weight: 700; text-decoration: none;
+      font-size: 14px; font-weight: 600; text-decoration: none;
+      letter-spacing: -0.1px;
+      transition: opacity .15s;
     }
-    .nav-cta:hover { background: #2d3e8f !important; }
-    .hamburger { display: none; background: none; border: none; font-size: 22px; cursor: pointer; }
+    .nav-cta:hover { opacity: 0.88; }
+    .hamburger { display: none; background: none; border: none; font-size: 22px; cursor: pointer; color: var(--navy); }
 
     /* ── HERO ── */
     .hero {
       position: relative; min-height: 100vh;
       display: flex; align-items: center;
-      overflow: hidden; padding-top: 68px;
+      overflow: hidden; padding-top: 64px;
     }
     .hero-video {
       position: absolute; inset: 0;
@@ -57,235 +58,248 @@
     }
     .hero-overlay {
       position: absolute; inset: 0;
-      background: linear-gradient(110deg, rgba(255,255,255,0.97) 0%, rgba(255,255,255,0.93) 50%, rgba(255,255,255,0.55) 100%);
+      background: linear-gradient(100deg,
+        rgba(255,255,255,0.97) 0%,
+        rgba(255,255,255,0.88) 40%,
+        rgba(255,255,255,0.3) 100%);
       z-index: 1;
     }
     .hero-content {
       position: relative; z-index: 2;
       max-width: 1100px; margin: 0 auto;
-      padding: 80px 48px;
+      padding: 80px 56px; width: 100%;
     }
     .hero-eyebrow {
       display: inline-flex; align-items: center; gap: 8px;
-      background: #EEF2FF; border: 1px solid #C7D2FE;
-      border-radius: 20px; padding: 6px 14px;
-      font-size: 12px; font-weight: 700; color: var(--navy);
-      letter-spacing: 0.5px; text-transform: uppercase;
-      margin-bottom: 28px;
+      border: 1px solid var(--border);
+      border-radius: 20px; padding: 5px 14px;
+      font-size: 12px; font-weight: 500; color: var(--gray);
+      letter-spacing: 0.3px;
+      margin-bottom: 32px;
     }
+    .hero-eyebrow span { color: var(--navy); font-weight: 600; }
     .hero-h1 {
-      font-size: clamp(40px, 6vw, 76px);
-      font-weight: 900; line-height: 1.05;
-      color: var(--navy); max-width: 680px;
-      margin-bottom: 24px; letter-spacing: -2.5px;
+      font-size: clamp(36px, 5vw, 64px);
+      font-weight: 600;
+      line-height: 1.1;
+      color: var(--navy);
+      max-width: 580px;
+      margin-bottom: 20px;
+      letter-spacing: -1.5px;
     }
-    .hero-h1 em {
-      font-style: normal; color: var(--gold);
+    .hero-h1 strong {
+      font-weight: 700;
+      color: var(--navy);
+    }
+    .hero-tagline {
+      font-size: 15px; font-weight: 500;
+      color: var(--periwinkle);
+      letter-spacing: 0.2px;
+      margin-bottom: 20px;
     }
     .hero-sub {
-      font-size: clamp(16px, 2vw, 19px);
-      color: var(--gray); max-width: 520px;
-      line-height: 1.65; margin-bottom: 40px;
-      font-weight: 500;
+      font-size: 17px; font-weight: 400;
+      color: var(--gray); max-width: 460px;
+      line-height: 1.7; margin-bottom: 40px;
     }
-    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
     .btn-primary {
-      padding: 14px 28px; border-radius: 10px;
+      padding: 13px 26px; border-radius: 8px;
       background: var(--navy); color: var(--white);
-      font-size: 15px; font-weight: 700;
-      text-decoration: none; transition: all .15s;
+      font-size: 14px; font-weight: 600;
+      text-decoration: none; letter-spacing: -0.1px;
+      transition: opacity .15s;
       display: inline-flex; align-items: center; gap: 8px;
+      font-family: inherit;
     }
-    .btn-primary:hover { background: #2d3e8f; transform: translateY(-1px); }
+    .btn-primary:hover { opacity: 0.88; }
     .btn-secondary {
-      padding: 14px 28px; border-radius: 10px;
-      background: var(--white); color: var(--navy);
-      font-size: 15px; font-weight: 700;
-      text-decoration: none; border: 2px solid var(--navy);
-      transition: all .15s;
+      padding: 13px 26px; border-radius: 8px;
+      background: transparent; color: var(--navy);
+      font-size: 14px; font-weight: 600;
+      text-decoration: none; border: 1.5px solid var(--border);
+      letter-spacing: -0.1px;
+      transition: border-color .15s, background .15s;
+      font-family: inherit;
     }
-    .btn-secondary:hover { background: var(--navy); color: var(--white); }
+    .btn-secondary:hover { border-color: var(--navy); background: #f5f7ff; }
     .hero-stats {
       display: flex; gap: 48px; margin-top: 64px; flex-wrap: wrap;
+      border-top: 1px solid var(--border); padding-top: 40px;
     }
     .hero-stat-num {
-      font-size: 36px; font-weight: 900; color: var(--navy);
-      line-height: 1; letter-spacing: -1.5px;
+      font-size: 28px; font-weight: 600; color: var(--navy);
+      line-height: 1; letter-spacing: -1px;
     }
-    .hero-stat-num em { font-style: normal; color: var(--gold); }
-    .hero-stat-label { font-size: 13px; color: var(--gray); margin-top: 6px; font-weight: 500; line-height: 1.4; }
+    .hero-stat-label { font-size: 13px; color: var(--gray); margin-top: 5px; font-weight: 400; line-height: 1.5; }
 
-    /* ── SHARED SECTION ── */
-    section { padding: 96px 48px; }
+    /* ── SHARED ── */
+    section { padding: 96px 56px; }
     .section-inner { max-width: 1100px; margin: 0 auto; }
     .section-eyebrow {
-      font-size: 11px; font-weight: 800; letter-spacing: 2px;
+      font-size: 12px; font-weight: 600; letter-spacing: 1.5px;
       text-transform: uppercase; color: var(--periwinkle); margin-bottom: 14px;
     }
     .section-h2 {
-      font-size: clamp(30px, 4vw, 48px);
-      font-weight: 900; color: var(--navy);
-      line-height: 1.08; letter-spacing: -1.5px; margin-bottom: 16px;
+      font-size: clamp(26px, 3.5vw, 42px);
+      font-weight: 600; color: var(--navy);
+      line-height: 1.15; letter-spacing: -1px; margin-bottom: 14px;
     }
-    .section-h2 em { font-style: normal; color: var(--gold); }
     .section-sub {
-      font-size: 17px; color: var(--gray);
-      max-width: 540px; line-height: 1.65; margin-bottom: 56px; font-weight: 500;
+      font-size: 16px; color: var(--gray);
+      max-width: 500px; line-height: 1.7; margin-bottom: 52px; font-weight: 400;
     }
 
     /* ── STATEMENT ── */
-    .statement-section {
-      background: var(--navy); padding: 88px 48px; text-align: center;
-    }
+    .statement-section { background: var(--navy); padding: 80px 56px; }
+    .statement-inner { max-width: 800px; margin: 0 auto; text-align: center; }
     .statement-text {
-      font-size: clamp(26px, 4vw, 48px);
-      font-weight: 900; color: var(--white);
-      line-height: 1.15; letter-spacing: -1.5px; margin-bottom: 16px;
+      font-size: clamp(22px, 3.5vw, 40px);
+      font-weight: 600; color: var(--white);
+      line-height: 1.3; letter-spacing: -0.8px; margin-bottom: 16px;
     }
-    .statement-text em { font-style: normal; color: var(--gold); }
-    .statement-sub { font-size: 18px; color: #a5b0e8; line-height: 1.6; font-weight: 500; max-width: 560px; margin: 0 auto; }
+    .statement-text em { font-style: normal; color: #a5b0e8; }
+    .statement-sub { font-size: 17px; color: #a5b0e8; line-height: 1.7; font-weight: 400; }
 
-    /* ── CUSTOM APPS ── */
+    /* ── APPS GRID ── */
     .apps-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-      gap: 24px;
+      gap: 20px;
     }
     .app-card {
-      background: var(--white);
-      border: 1.5px solid var(--border);
-      border-radius: 16px; padding: 28px;
-      transition: all .2s; position: relative; overflow: hidden;
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 14px; padding: 28px;
+      transition: border-color .2s, box-shadow .2s;
+      position: relative;
     }
     .app-card:hover {
-      border-color: var(--periwinkle);
-      box-shadow: 0 8px 32px rgba(26,43,107,0.1);
-      transform: translateY(-2px);
+      border-color: #c7d2fe;
+      box-shadow: 0 4px 24px rgba(26,43,107,0.07);
     }
-    .app-card.featured { border-color: var(--navy); background: linear-gradient(135deg, #EEF2FF, #fff); }
+    .app-card.featured { border-color: #c7d2fe; background: #fafbff; }
     .app-card.featured::after {
       content: 'Live Example';
       position: absolute; top: 16px; right: 16px;
-      background: var(--gold); color: #111;
-      font-size: 10px; font-weight: 800;
-      letter-spacing: 0.5px; text-transform: uppercase;
+      background: #EEF2FF; color: var(--navy);
+      font-size: 10px; font-weight: 600;
+      letter-spacing: 0.3px; text-transform: uppercase;
       padding: 3px 10px; border-radius: 20px;
+      border: 1px solid #c7d2fe;
     }
-    .app-icon { font-size: 30px; margin-bottom: 14px; }
-    .app-title { font-size: 18px; font-weight: 800; color: var(--navy); margin-bottom: 8px; letter-spacing: -0.3px; }
-    .app-desc { font-size: 14px; color: var(--gray); line-height: 1.6; margin-bottom: 18px; }
+    .app-icon { font-size: 26px; margin-bottom: 14px; }
+    .app-title { font-size: 16px; font-weight: 600; color: var(--navy); margin-bottom: 8px; letter-spacing: -0.2px; }
+    .app-desc { font-size: 14px; color: var(--gray); line-height: 1.65; margin-bottom: 18px; font-weight: 400; }
     .app-features { list-style: none; }
     .app-features li {
-      font-size: 13px; color: var(--dark); font-weight: 500;
-      padding: 5px 0; display: flex; align-items: flex-start; gap: 8px;
+      font-size: 13px; color: #374151; font-weight: 400;
+      padding: 4px 0; display: flex; align-items: flex-start; gap: 8px; line-height: 1.5;
     }
-    .app-features li::before { content: '✓'; color: var(--green); font-weight: 800; flex-shrink: 0; margin-top: 1px; }
+    .app-features li::before { content: '✓'; color: var(--green); font-weight: 600; flex-shrink: 0; margin-top: 1px; }
 
-    /* ── GHL TOOLS ── */
+    /* ── TOOLS ── */
     .tools-section { background: var(--light); }
     .tools-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
+      gap: 16px;
     }
     .tool-card {
-      background: var(--white);
-      border: 1.5px solid var(--border);
-      border-radius: 14px; padding: 24px;
-      display: flex; gap: 16px; align-items: flex-start;
-      transition: all .15s;
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 12px; padding: 22px;
+      display: flex; gap: 14px; align-items: flex-start;
+      transition: border-color .15s;
     }
-    .tool-card:hover {
-      border-color: var(--periwinkle);
-      box-shadow: 0 4px 20px rgba(26,43,107,0.08);
-    }
+    .tool-card:hover { border-color: #c7d2fe; }
     .tool-icon {
-      width: 46px; height: 46px; flex-shrink: 0;
-      background: #EEF2FF; border-radius: 12px;
+      width: 40px; height: 40px; flex-shrink: 0;
+      background: #EEF2FF; border-radius: 10px;
       display: flex; align-items: center; justify-content: center;
-      font-size: 22px;
+      font-size: 18px;
     }
-    .tool-title { font-size: 15px; font-weight: 800; color: var(--navy); margin-bottom: 5px; letter-spacing: -0.2px; }
-    .tool-desc { font-size: 13px; color: var(--gray); line-height: 1.55; font-weight: 500; }
+    .tool-title { font-size: 14px; font-weight: 600; color: var(--navy); margin-bottom: 5px; letter-spacing: -0.1px; }
+    .tool-desc { font-size: 13px; color: var(--gray); line-height: 1.6; font-weight: 400; }
 
     /* ── HOW IT WORKS ── */
     .steps-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 24px;
+      gap: 20px;
     }
     .step-card {
-      background: var(--white); border: 1.5px solid var(--border);
-      border-radius: 16px; padding: 28px 24px; text-align: center;
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 14px; padding: 28px 24px;
     }
     .step-num {
-      width: 46px; height: 46px; border-radius: 50%;
-      background: var(--navy); color: var(--white);
-      font-size: 18px; font-weight: 900;
+      width: 36px; height: 36px; border-radius: 50%;
+      background: #EEF2FF; color: var(--navy);
+      font-size: 15px; font-weight: 600;
       display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 16px;
+      margin-bottom: 16px;
     }
-    .step-title { font-size: 16px; font-weight: 800; color: var(--navy); margin-bottom: 8px; letter-spacing: -0.2px; }
-    .step-desc { font-size: 14px; color: var(--gray); line-height: 1.6; font-weight: 500; }
+    .step-title { font-size: 15px; font-weight: 600; color: var(--navy); margin-bottom: 8px; letter-spacing: -0.1px; }
+    .step-desc { font-size: 14px; color: var(--gray); line-height: 1.65; font-weight: 400; }
 
     /* ── WHO WE SERVE ── */
     .who-section { background: var(--light); }
     .who-grid { display: flex; flex-wrap: wrap; gap: 10px; }
     .who-tag {
-      padding: 10px 20px; background: var(--white);
-      border: 1.5px solid var(--border); border-radius: 40px;
-      font-size: 14px; font-weight: 600; color: var(--navy);
-      transition: all .15s; cursor: default;
+      padding: 8px 18px; background: var(--white);
+      border: 1px solid var(--border); border-radius: 40px;
+      font-size: 14px; font-weight: 500; color: var(--navy);
+      transition: all .15s;
     }
     .who-tag:hover { background: var(--navy); color: var(--white); border-color: var(--navy); }
 
     /* ── CTA ── */
     .cta-section {
-      background: linear-gradient(135deg, var(--navy), #2d3e8f);
-      text-align: center; padding: 96px 48px;
+      background: var(--navy);
+      text-align: center; padding: 96px 56px;
     }
     .cta-h2 {
-      font-size: clamp(30px, 4vw, 52px);
-      font-weight: 900; color: var(--white);
-      line-height: 1.08; letter-spacing: -1.5px; margin-bottom: 16px;
+      font-size: clamp(26px, 3.5vw, 46px);
+      font-weight: 600; color: var(--white);
+      line-height: 1.15; letter-spacing: -1px; margin-bottom: 14px;
     }
-    .cta-h2 em { font-style: normal; color: var(--gold); }
-    .cta-sub { font-size: 18px; color: #a5b0e8; margin-bottom: 44px; line-height: 1.6; font-weight: 500; }
-    .cta-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 28px; }
+    .cta-sub { font-size: 16px; color: #a5b0e8; margin-bottom: 40px; line-height: 1.7; font-weight: 400; }
+    .cta-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px; }
     .btn-gold {
-      padding: 16px 32px; border-radius: 10px;
-      background: var(--gold); color: #111;
-      font-size: 16px; font-weight: 800;
-      text-decoration: none; transition: all .15s;
+      padding: 13px 28px; border-radius: 8px;
+      background: var(--white); color: var(--navy);
+      font-size: 14px; font-weight: 600;
+      text-decoration: none; transition: opacity .15s;
       display: inline-flex; align-items: center; gap: 8px;
+      font-family: inherit; letter-spacing: -0.1px;
     }
-    .btn-gold:hover { background: #e08c00; transform: translateY(-1px); }
-    .btn-white {
-      padding: 16px 32px; border-radius: 10px;
+    .btn-gold:hover { opacity: 0.9; }
+    .btn-outline-white {
+      padding: 13px 28px; border-radius: 8px;
       background: transparent; color: var(--white);
-      font-size: 16px; font-weight: 700;
-      text-decoration: none; border: 2px solid rgba(255,255,255,0.35);
-      transition: all .15s;
+      font-size: 14px; font-weight: 600;
+      text-decoration: none; border: 1.5px solid rgba(255,255,255,0.3);
+      transition: border-color .15s;
+      font-family: inherit; letter-spacing: -0.1px;
     }
-    .btn-white:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.7); }
-    .cta-contact { font-size: 14px; color: #a5b0e8; font-weight: 500; }
-    .cta-contact a { color: var(--gold); text-decoration: none; font-weight: 700; }
+    .btn-outline-white:hover { border-color: rgba(255,255,255,0.7); }
+    .cta-contact { font-size: 14px; color: #6B7FD4; font-weight: 400; }
+    .cta-contact a { color: #a5b0e8; text-decoration: none; font-weight: 500; }
+    .cta-contact a:hover { color: var(--white); }
 
     /* ── FOOTER ── */
-    footer { background: #111111; padding: 36px 48px; text-align: center; }
-    .footer-logo { height: 38px; margin-bottom: 14px; opacity: 0.9; }
-    .footer-text { font-size: 13px; color: #6B7280; line-height: 1.9; font-weight: 500; }
-    .footer-text strong { color: #a5b0e8; }
+    footer { background: #ffffff; border-top: 1px solid var(--border); padding: 36px 56px; text-align: center; }
+    .footer-logo { height: 34px; margin-bottom: 14px; opacity: 1; filter: invert(15%) sepia(60%) saturate(800%) hue-rotate(200deg) brightness(0.5); }
+    .footer-text { font-size: 13px; color: var(--dark); line-height: 2; font-weight: 400; }
+    .footer-text strong { color: var(--navy); font-weight: 600; }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
       nav { padding: 0 20px; }
-      .nav-links { display: none; flex-direction: column; position: absolute; top: 68px; left: 0; right: 0; background: white; padding: 20px; border-bottom: 1px solid var(--border); gap: 16px; }
+      .nav-links { display: none; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0; background: white; padding: 20px; border-bottom: 1px solid var(--border); gap: 16px; }
       .nav-links.open { display: flex; }
       .hamburger { display: block; }
       section { padding: 64px 20px; }
       .hero-content { padding: 60px 20px; }
-      .hero-stats { gap: 28px; }
+      .hero-stats { gap: 28px; padding-top: 28px; }
       .statement-section, .cta-section { padding: 64px 20px; }
       .cta-actions { flex-direction: column; align-items: center; }
       footer { padding: 28px 20px; }
@@ -297,7 +311,7 @@
 <!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">
-    <img src="https://i.imgur.com/4ZyPfJG.png" alt="CORE AI" style="height:34px;filter:invert(15%) sepia(60%) saturate(800%) hue-rotate(200deg) brightness(0.5);" />
+    <img src="https://i.imgur.com/4ZyPfJG.png" alt="CORE AI" />
   </a>
   <div class="nav-links" id="navLinks">
     <a href="#what-we-build">What We Build</a>
@@ -316,28 +330,29 @@
   </video>
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <div class="hero-eyebrow">AI-Powered · Built for Entrepreneurs</div>
+    <div class="hero-eyebrow">AI-Powered Business Systems · <span>Built for Entrepreneurs</span></div>
     <h1 class="hero-h1">
-      Your business<br>deserves a<br><em>command center.</em>
+      Your business<br>deserves a<br>command center.
     </h1>
+    <p class="hero-tagline">Built for entrepreneurs, by entrepreneurs.</p>
     <p class="hero-sub">
       We build custom AI-powered business systems — member directories, CRMs, pipelines, and automations — tailored to exactly how your organization operates.
     </p>
     <div class="hero-actions">
-      <a href="#contact" class="btn-primary">📅 Book a Free Call</a>
+      <a href="#contact" class="btn-primary">Book a Free Call →</a>
       <a href="#what-we-build" class="btn-secondary">See What We Build</a>
     </div>
     <div class="hero-stats">
       <div>
         <div class="hero-stat-num">Days</div>
-        <div class="hero-stat-label">Not months — to go<br>from idea to live system</div>
+        <div class="hero-stat-label">Not months — from conversation<br>to live system</div>
       </div>
       <div>
-        <div class="hero-stat-num"><em>1</em> system</div>
+        <div class="hero-stat-num">1 system</div>
         <div class="hero-stat-label">Replaces spreadsheets,<br>clipboards & group chats</div>
       </div>
       <div>
-        <div class="hero-stat-num">24/7</div>
+        <div class="hero-stat-num">24 / 7</div>
         <div class="hero-stat-label">Your system works<br>even when you don't</div>
       </div>
     </div>
@@ -346,9 +361,9 @@
 
 <!-- STATEMENT -->
 <div class="statement-section">
-  <div style="max-width:700px;margin:0 auto;text-align:center">
+  <div class="statement-inner">
     <p class="statement-text">
-      Most businesses run on<br><em>memory, sticky notes,</em><br>and group chats.<br>We fix that.
+      Most businesses run on <em>memory, sticky notes,<br>and group chats.</em><br>We fix that.
     </p>
     <p class="statement-sub">We build the systems that give you clarity, control, and confidence — so nothing falls through the cracks.</p>
   </div>
@@ -358,14 +373,14 @@
 <section id="what-we-build">
   <div class="section-inner">
     <div class="section-eyebrow">Custom-Built Systems</div>
-    <h2 class="section-h2">Built for exactly<br><em>how you operate</em></h2>
+    <h2 class="section-h2">Built for exactly<br>how you operate</h2>
     <p class="section-sub">Not off-the-shelf software you have to adapt to. A system designed around your workflow — live in days, accessible from any device.</p>
     <div class="apps-grid">
 
       <div class="app-card featured">
         <div class="app-icon">🏛️</div>
         <div class="app-title">Member & Lead Share Directory</div>
-        <div class="app-desc">A real-time digital command center for chambers, networking groups, and associations — replacing paper clipboards and spreadsheets entirely.</div>
+        <div class="app-desc">A real-time digital system for chambers, networking groups, and associations — replacing paper clipboards and spreadsheets entirely.</div>
         <ul class="app-features">
           <li>Searchable member directory with renewal alerts</li>
           <li>QR code self check-in — no app download needed</li>
@@ -379,7 +394,7 @@
       <div class="app-card">
         <div class="app-icon">📋</div>
         <div class="app-title">Client & Pipeline CRM</div>
-        <div class="app-desc">Track every lead, client, and deal from first contact to close. Know exactly where every relationship stands without digging through emails.</div>
+        <div class="app-desc">Track every lead, client, and deal from first contact to close — without digging through emails or spreadsheets.</div>
         <ul class="app-features">
           <li>Custom pipeline stages for your workflow</li>
           <li>Client contact directory with full history</li>
@@ -392,11 +407,11 @@
       <div class="app-card">
         <div class="app-icon">🎗️</div>
         <div class="app-title">Nonprofit & Donor Management</div>
-        <div class="app-desc">Manage donors, volunteers, programs, and outreach in one place — so your team spends time on mission, not administration.</div>
+        <div class="app-desc">Manage donors, volunteers, programs, and outreach in one place — so your team spends time on mission, not admin.</div>
         <ul class="app-features">
           <li>Donor CRM with giving history and tiers</li>
           <li>Volunteer tracking and scheduling</li>
-          <li>Grant and program pipeline management</li>
+          <li>Grant and program pipeline</li>
           <li>Outreach tracking and follow-up sequences</li>
           <li>Event attendance and check-in</li>
         </ul>
@@ -405,7 +420,7 @@
       <div class="app-card">
         <div class="app-icon">🏘️</div>
         <div class="app-title">HOA & Community Management</div>
-        <div class="app-desc">Resident directories, dues tracking, maintenance pipelines, and board communications — all in one secure, accessible system.</div>
+        <div class="app-desc">Resident directories, dues tracking, maintenance pipelines, and board communications — all in one secure system.</div>
         <ul class="app-features">
           <li>Resident directory and contact hub</li>
           <li>Dues and payment status tracking</li>
@@ -418,7 +433,7 @@
       <div class="app-card">
         <div class="app-icon">📅</div>
         <div class="app-title">Event & Attendance System</div>
-        <div class="app-desc">Manage events across multiple locations — registrations, check-ins, attendance history, and follow-ups all in one dashboard.</div>
+        <div class="app-desc">Manage events across multiple locations — registrations, check-ins, attendance history, and follow-ups in one dashboard.</div>
         <ul class="app-features">
           <li>Event listing and RSVP management</li>
           <li>QR code check-in at any location</li>
@@ -431,9 +446,9 @@
       <div class="app-card">
         <div class="app-icon">🏢</div>
         <div class="app-title">Any Business. Any Workflow.</div>
-        <div class="app-desc">If your team is tracking clients, members, jobs, or leads in a spreadsheet — we build you something better. Any industry, any process.</div>
+        <div class="app-desc">If your team is tracking clients, members, jobs, or leads in a spreadsheet — we build you something better.</div>
         <ul class="app-features">
-          <li>Custom fields and stages for your workflow</li>
+          <li>Custom fields and stages for your process</li>
           <li>Mobile-ready — works on any device</li>
           <li>Searchable, sortable, filterable data</li>
           <li>Export and reporting built in</li>
@@ -445,19 +460,19 @@
   </div>
 </section>
 
-<!-- AUTOMATION / GHL TOOLS -->
+<!-- AUTOMATION -->
 <section id="automation" class="tools-section">
   <div class="section-inner">
     <div class="section-eyebrow">Automation & Communication</div>
-    <h2 class="section-h2">The engine behind<br><em>your system</em></h2>
-    <p class="section-sub">Every system we build can be powered by advanced automation tools — so your business runs on autopilot while you focus on growth.</p>
+    <h2 class="section-h2">The engine behind<br>your system</h2>
+    <p class="section-sub">Every system we build can be extended with powerful automation — so your business runs efficiently while you focus on growth.</p>
     <div class="tools-grid">
 
       <div class="tool-card">
         <div class="tool-icon">📱</div>
         <div>
           <div class="tool-title">SMS & Email Blast Messaging</div>
-          <div class="tool-desc">Reach your entire membership or client list in one tap. Meeting reminders, announcements, and updates — delivered straight to their phone.</div>
+          <div class="tool-desc">Reach your entire membership or client list in one tap. Meeting reminders, announcements, and updates — straight to their phone.</div>
         </div>
       </div>
 
@@ -465,7 +480,7 @@
         <div class="tool-icon">🔄</div>
         <div>
           <div class="tool-title">Automated Renewal Sequences</div>
-          <div class="tool-desc">90, 60, 30, and 3-day renewal reminders that go out automatically — no manual sending, no missed renewals, no revenue lost.</div>
+          <div class="tool-desc">90, 60, 30, and 3-day renewal reminders that go out automatically — no manual sending, no missed renewals.</div>
         </div>
       </div>
 
@@ -473,7 +488,7 @@
         <div class="tool-icon">💳</div>
         <div>
           <div class="tool-title">Online Invoicing & Payments</div>
-          <div class="tool-desc">Members receive a renewal email with a one-click payment link — pre-filled, card payment, instant confirmation. No PDF attachments, no manual follow-up.</div>
+          <div class="tool-desc">Members receive a renewal email with a one-click payment link — pre-filled, card payment, instant confirmation. No PDF attachments.</div>
         </div>
       </div>
 
@@ -481,7 +496,7 @@
         <div class="tool-icon">📞</div>
         <div>
           <div class="tool-title">AI Voice Agent</div>
-          <div class="tool-desc">Never miss a lead again. Our AI answers calls after hours, handles FAQs, and captures contact information — so you wake up to opportunities, not missed calls.</div>
+          <div class="tool-desc">Never miss a lead again. Our AI answers calls after hours, handles FAQs, and captures contact information while you sleep.</div>
         </div>
       </div>
 
@@ -489,7 +504,7 @@
         <div class="tool-icon">💬</div>
         <div>
           <div class="tool-title">Two-Way Client Communication</div>
-          <div class="tool-desc">Manage all client texts and emails from one inbox. No more checking multiple platforms — every conversation in one place, with full history.</div>
+          <div class="tool-desc">Manage all client texts and emails from one inbox — every conversation in one place, with full history and context.</div>
         </div>
       </div>
 
@@ -497,7 +512,7 @@
         <div class="tool-icon">📊</div>
         <div>
           <div class="tool-title">Reporting & Analytics</div>
-          <div class="tool-desc">Know which members are most engaged, which leads are going cold, and where your revenue is coming from — with dashboards built for your business.</div>
+          <div class="tool-desc">Know which members are most engaged, which leads are going cold, and where your revenue is coming from — at a glance.</div>
         </div>
       </div>
 
@@ -509,28 +524,28 @@
 <section id="how-it-works">
   <div class="section-inner">
     <div class="section-eyebrow">How It Works</div>
-    <h2 class="section-h2">From conversation<br>to <em>live system — fast</em></h2>
+    <h2 class="section-h2">From conversation<br>to live system — fast</h2>
     <p class="section-sub">We don't do long implementation timelines. Most systems are live within days of your first call.</p>
     <div class="steps-grid">
       <div class="step-card">
         <div class="step-num">1</div>
         <div class="step-title">Free 30-min call</div>
-        <div class="step-desc">We learn how your organization works, what you need to track, and what problems we're solving.</div>
+        <div class="step-desc">We learn how your organization works, what you need to track, and what problems we're solving together.</div>
       </div>
       <div class="step-card">
         <div class="step-num">2</div>
         <div class="step-title">We build it</div>
-        <div class="step-desc">Your custom system is built and ready for review within days — designed specifically for your workflow.</div>
+        <div class="step-desc">Your custom system is built and ready for review within days — designed specifically for your workflow, not a template.</div>
       </div>
       <div class="step-card">
         <div class="step-num">3</div>
         <div class="step-title">You review & refine</div>
-        <div class="step-desc">We refine until it's exactly right. You decide when it's ready — usually 1 to 2 rounds of feedback.</div>
+        <div class="step-desc">We refine until it's exactly right. You decide when it's ready — usually one to two rounds of feedback.</div>
       </div>
       <div class="step-card">
         <div class="step-num">4</div>
         <div class="step-title">Go live</div>
-        <div class="step-desc">Your system goes live at a secure, shareable link — accessible from any device, anywhere, by your whole team.</div>
+        <div class="step-desc">Your system goes live at a secure, shareable link — accessible from any device, by your whole team, from day one.</div>
       </div>
     </div>
   </div>
@@ -540,7 +555,7 @@
 <section id="who-we-serve" class="who-section">
   <div class="section-inner">
     <div class="section-eyebrow">Who We Serve</div>
-    <h2 class="section-h2">Built for<br><em>community-driven</em> organizations</h2>
+    <h2 class="section-h2">Built for community-driven<br>organizations</h2>
     <p class="section-sub">We specialize in organizations that run on relationships — chambers, associations, nonprofits, faith communities, and local businesses.</p>
     <div class="who-grid">
       <div class="who-tag">🏛️ Chambers of Commerce</div>
@@ -561,15 +576,15 @@
 
 <!-- CTA -->
 <section id="contact" class="cta-section">
-  <div style="max-width:680px;margin:0 auto">
+  <div style="max-width:640px;margin:0 auto">
     <div class="section-eyebrow" style="color:#6B7FD4;text-align:center;margin-bottom:16px">Get Started</div>
-    <h2 class="cta-h2">Ready to replace your<br><em>spreadsheets & clipboards?</em></h2>
-    <p class="cta-sub">Book a free 30-minute call. We'll show you exactly what we'd build — no commitment required.</p>
+    <h2 class="cta-h2">Ready to replace your<br>spreadsheets and clipboards?</h2>
+    <p class="cta-sub">Book a free 30-minute call. We'll show you exactly what we'd build for your organization — no commitment required.</p>
     <div class="cta-actions">
       <a href="mailto:abdul@coreresponsegroup.com?subject=Book a Call — CORE AI" class="btn-gold">📅 Book a Free Call</a>
-      <a href="tel:2024313685" class="btn-white">📞 202-431-3685</a>
+      <a href="tel:2024313685" class="btn-outline-white">📞 202-431-3685</a>
     </div>
-    <p class="cta-contact">Or email directly at <a href="mailto:abdul@coreresponsegroup.com">abdul@coreresponsegroup.com</a></p>
+    <p class="cta-contact">Or email us at <a href="mailto:abdul@coreresponsegroup.com">abdul@coreresponsegroup.com</a></p>
   </div>
 </section>
 
@@ -579,7 +594,7 @@
   <div class="footer-text">
     <strong>CORE AI</strong> | Core Response AI | Powerful Business Solutions | A Tayyab Group, Inc. Company<br>
     coreresponsegroup.com · 202-431-3685 · abdul@coreresponsegroup.com<br>
-    <span style="font-size:12px;color:#4B5563;margin-top:4px;display:block">© 2026 Core Response AI · All rights reserved</span>
+    <span style="font-size:12px;color:#444;margin-top:4px;display:block">© 2026 Core Response AI · All rights reserved</span>
   </div>
 </footer>
 
