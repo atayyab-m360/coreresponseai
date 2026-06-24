@@ -150,6 +150,75 @@
       max-width: 500px; line-height: 1.7; margin-bottom: 52px; font-weight: 400;
     }
 
+    /* ── QUICK WINS ── */
+    .quick-wins-section { background: #F8F9FC; padding: 72px 56px; border-bottom: 1px solid var(--border); }
+    .quick-wins-inner { max-width: 1100px; margin: 0 auto; }
+    .quick-wins-eyebrow {
+      font-size: 11px; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 10px;
+    }
+    .quick-wins-heading {
+      font-size: clamp(22px, 3vw, 34px); font-weight: 600;
+      color: var(--navy); letter-spacing: -0.8px; margin-bottom: 8px;
+    }
+    .quick-wins-sub {
+      font-size: 15px; color: var(--gray); margin-bottom: 40px; line-height: 1.6; font-weight: 400;
+    }
+    .quick-wins-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+    }
+    .qw-card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 16px; padding: 32px;
+      position: relative; overflow: hidden;
+      transition: box-shadow .2s, border-color .2s;
+      display: flex; flex-direction: column;
+    }
+    .qw-card:hover {
+      box-shadow: 0 8px 32px rgba(26,43,107,0.10);
+      border-color: #c7d2fe;
+    }
+    .qw-card.hot { border-color: #F59E0B; }
+    .qw-card.hot:hover { border-color: #d97706; box-shadow: 0 8px 32px rgba(245,158,11,0.15); }
+    .qw-badge {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 10px; font-weight: 700; letter-spacing: 0.8px;
+      text-transform: uppercase; padding: 4px 10px;
+      border-radius: 20px; margin-bottom: 20px;
+      width: fit-content;
+    }
+    .qw-badge.badge-hot { background: #FEF3C7; color: #92400E; border: 1px solid #FDE68A; }
+    .qw-badge.badge-new { background: #EEF2FF; color: var(--navy); border: 1px solid #c7d2fe; }
+    .qw-icon { font-size: 32px; margin-bottom: 14px; }
+    .qw-title { font-size: 20px; font-weight: 700; color: var(--navy); margin-bottom: 10px; letter-spacing: -0.4px; }
+    .qw-desc { font-size: 14px; color: var(--gray); line-height: 1.7; margin-bottom: 20px; flex: 1; }
+    .qw-price {
+      font-size: 24px; font-weight: 700; color: var(--navy);
+      letter-spacing: -0.5px; margin-bottom: 4px;
+    }
+    .qw-price-sub { font-size: 12px; color: var(--gray); margin-bottom: 24px; }
+    .qw-features { list-style: none; margin-bottom: 28px; }
+    .qw-features li {
+      font-size: 13px; color: #374151; padding: 5px 0;
+      display: flex; align-items: flex-start; gap: 8px; line-height: 1.5;
+    }
+    .qw-features li::before { content: '✓'; color: var(--green); font-weight: 700; flex-shrink: 0; }
+    .qw-cta {
+      display: block; text-align: center;
+      padding: 12px 24px; border-radius: 8px;
+      font-size: 14px; font-weight: 600;
+      text-decoration: none; transition: opacity .15s;
+      font-family: inherit; letter-spacing: -0.1px;
+    }
+    .qw-cta.cta-gold { background: var(--gold); color: #fff; }
+    .qw-cta.cta-gold:hover { opacity: 0.88; }
+    .qw-cta.cta-navy { background: var(--navy); color: #fff; }
+    .qw-cta.cta-navy:hover { opacity: 0.88; }
+    @media (max-width: 768px) { .quick-wins-section { padding: 56px 20px; } }
+
     /* ── STATEMENT ── */
     .statement-section { background: var(--navy); padding: 80px 56px; }
     .statement-inner { max-width: 800px; margin: 0 auto; text-align: center; }
@@ -314,6 +383,7 @@
     <img src="https://i.imgur.com/4ZyPfJG.png" alt="CORE AI" style="height:44px;filter:invert(15%) sepia(60%) saturate(800%) hue-rotate(200deg) brightness(0.5);" />
   </a>
   <div class="nav-links" id="navLinks">
+    <a href="#services">Services</a>
     <a href="#what-we-build">What We Build</a>
     <a href="#automation">Automation</a>
     <a href="#how-it-works">How It Works</a>
@@ -355,6 +425,54 @@
         <div class="hero-stat-num">24 / 7</div>
         <div class="hero-stat-label">Your system works<br>even when you don't</div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUICK WINS / FEATURED SERVICES -->
+<section id="services" class="quick-wins-section">
+  <div class="quick-wins-inner">
+    <div class="quick-wins-eyebrow">Start Here</div>
+    <h2 class="quick-wins-heading">Two ways to win fast</h2>
+    <p class="quick-wins-sub">High-impact, low-risk entry points — built for businesses that are ready to grow but don't want a long commitment to get started.</p>
+    <div class="quick-wins-grid">
+
+      <!-- Google Reviews -->
+      <div class="qw-card hot">
+        <div class="qw-badge badge-hot">🔥 Most Popular</div>
+        <div class="qw-icon">⭐</div>
+        <div class="qw-title">Google Reviews Management</div>
+        <div class="qw-desc">Your customers are searching for you — what they find matters. We automate your review requests, monitor your reputation, and help you build the 5-star presence that turns searches into customers.</div>
+        <div class="qw-price">$99<span style="font-size:15px;font-weight:500">/month</span></div>
+        <div class="qw-price-sub">10-day free trial · No commitment to start</div>
+        <ul class="qw-features">
+          <li>Automated review request system</li>
+          <li>Google Business Profile monitoring</li>
+          <li>New review alerts and response support</li>
+          <li>30-minute onboarding call included</li>
+          <li>Cancel anytime after trial</li>
+        </ul>
+        <a href="google-reviews.html" class="qw-cta cta-gold">Start Free 10-Day Trial →</a>
+      </div>
+
+      <!-- Youth Website -->
+      <div class="qw-card">
+        <div class="qw-badge badge-new">🚀 New Program</div>
+        <div class="qw-icon">🎓</div>
+        <div class="qw-title">Youth Founder Website Program</div>
+        <div class="qw-desc">Young entrepreneurs have great ideas — but without a professional online presence, they're invisible. We build a clean, mobile-friendly website that helps them look legit, share their business, and get taken seriously.</div>
+        <div class="qw-price">$1,200<span style="font-size:15px;font-weight:500"> starting</span></div>
+        <div class="qw-price-sub">Flexible payment options available · $49–$99/mo maintenance</div>
+        <ul class="qw-features">
+          <li>One-page mobile-friendly website</li>
+          <li>Business overview + founder bio</li>
+          <li>Contact form and QR code</li>
+          <li>Launch coaching call included</li>
+          <li>Optional parent/guardian involvement</li>
+        </ul>
+        <a href="youth-website.html" class="qw-cta cta-navy">Learn More →</a>
+      </div>
+
     </div>
   </div>
 </section>
