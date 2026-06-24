@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Youth Founder Website Program — CORE AI</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #1A2B6B;
+      --periwinkle: #6B7FD4;
+      --gold: #F59E0B;
+      --white: #ffffff;
+      --light: #F8F9FC;
+      --border: #E8EAF2;
+      --dark: #111827;
+      --gray: #6B7280;
+      --green: #10B981;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', system-ui, sans-serif; color: var(--dark); background: var(--white); overflow-x: hidden; font-weight: 400; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(255,255,255,0.97); backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 56px; height: 64px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo img { height: 40px; filter: invert(15%) sepia(60%) saturate(800%) hue-rotate(200deg) brightness(0.5); }
+    .nav-back {
+      font-size: 14px; font-weight: 500; color: var(--gray);
+      text-decoration: none; display: flex; align-items: center; gap: 6px;
+      transition: color .15s;
+    }
+    .nav-back:hover { color: var(--navy); }
+    .nav-cta {
+      padding: 9px 22px; border-radius: 8px;
+      background: var(--navy); color: var(--white);
+      font-size: 14px; font-weight: 600; text-decoration: none;
+      transition: opacity .15s;
+    }
+    .nav-cta:hover { opacity: 0.88; }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, #2a3f8f 100%);
+      padding: 120px 56px 80px; text-align: center;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(255,255,255,0.12); color: #e0e7ff;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 20px; padding: 5px 14px;
+      font-size: 12px; font-weight: 600; letter-spacing: 0.5px;
+      text-transform: uppercase; margin-bottom: 28px;
+    }
+    .hero-h1 {
+      font-size: clamp(30px, 5vw, 54px);
+      font-weight: 700; color: var(--white);
+      line-height: 1.1; letter-spacing: -1.5px;
+      max-width: 680px; margin: 0 auto 20px;
+    }
+    .hero-h1 span { color: var(--gold); }
+    .hero-sub {
+      font-size: 17px; color: #a5b0e8;
+      max-width: 520px; margin: 0 auto 44px;
+      line-height: 1.7;
+    }
+    .hero-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .hero-btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--gold); color: var(--white);
+      padding: 14px 30px; border-radius: 10px;
+      font-size: 15px; font-weight: 700; text-decoration: none;
+      transition: opacity .15s; font-family: inherit;
+    }
+    .hero-btn-primary:hover { opacity: 0.88; }
+    .hero-btn-secondary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: transparent; color: var(--white);
+      padding: 14px 30px; border-radius: 10px;
+      font-size: 15px; font-weight: 600; text-decoration: none;
+      border: 1.5px solid rgba(255,255,255,0.3);
+      transition: border-color .15s; font-family: inherit;
+    }
+    .hero-btn-secondary:hover { border-color: rgba(255,255,255,0.7); }
+
+    /* TRUST BAR */
+    .trust-bar {
+      background: #F0F2FA; border-bottom: 1px solid var(--border);
+      padding: 20px 56px;
+      display: flex; align-items: center; justify-content: center;
+      gap: 48px; flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 13px; font-weight: 600; color: var(--navy);
+    }
+    .trust-item span { font-size: 16px; }
+
+    /* SECTIONS */
+    section { padding: 80px 56px; }
+    .section-inner { max-width: 1000px; margin: 0 auto; }
+    .section-eyebrow {
+      font-size: 11px; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--periwinkle); margin-bottom: 12px;
+    }
+    .section-h2 {
+      font-size: clamp(24px, 3.5vw, 38px);
+      font-weight: 700; color: var(--navy);
+      line-height: 1.15; letter-spacing: -0.8px; margin-bottom: 14px;
+    }
+    .section-sub {
+      font-size: 16px; color: var(--gray);
+      max-width: 520px; line-height: 1.7; margin-bottom: 48px;
+    }
+
+    /* FOR WHO */
+    .who-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+    }
+    .who-card {
+      background: #EEF2FF; border: 1px solid #c7d2fe;
+      border-radius: 12px; padding: 22px;
+      display: flex; gap: 14px; align-items: flex-start;
+    }
+    .who-icon { font-size: 22px; flex-shrink: 0; }
+    .who-title { font-size: 14px; font-weight: 600; color: var(--navy); margin-bottom: 4px; }
+    .who-desc { font-size: 13px; color: var(--gray); line-height: 1.55; }
+
+    /* WHAT'S INCLUDED */
+    .included-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+    }
+    .inc-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 14px; padding: 24px;
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .inc-card:hover { border-color: #c7d2fe; box-shadow: 0 4px 18px rgba(26,43,107,0.07); }
+    .inc-icon {
+      width: 42px; height: 42px; border-radius: 10px;
+      background: #EEF2FF; display: flex; align-items: center;
+      justify-content: center; font-size: 19px; margin-bottom: 12px;
+    }
+    .inc-title { font-size: 14px; font-weight: 600; color: var(--navy); margin-bottom: 5px; }
+    .inc-desc { font-size: 13px; color: var(--gray); line-height: 1.6; }
+
+    /* QUOTE BLOCK */
+    .quote-section { background: var(--navy); padding: 80px 56px; text-align: center; }
+    .quote-text {
+      font-size: clamp(20px, 3vw, 32px);
+      font-weight: 600; color: var(--white);
+      line-height: 1.4; max-width: 680px;
+      margin: 0 auto 16px; letter-spacing: -0.5px;
+    }
+    .quote-text em { font-style: normal; color: var(--gold); }
+    .quote-sub { font-size: 16px; color: #a5b0e8; }
+
+    /* PRICING */
+    .pricing-section { background: var(--light); }
+    .pricing-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px; max-width: 760px; margin: 0 auto;
+    }
+    .price-card {
+      background: var(--white); border: 1.5px solid var(--border);
+      border-radius: 16px; padding: 32px; text-align: center;
+    }
+    .price-card.featured { border-color: var(--navy); }
+    .price-label { font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--gray); margin-bottom: 14px; }
+    .price-amt {
+      font-size: 40px; font-weight: 700; color: var(--navy);
+      letter-spacing: -1px; line-height: 1; margin-bottom: 6px;
+    }
+    .price-note { font-size: 13px; color: var(--gray); line-height: 1.6; margin-bottom: 24px; }
+    .price-list { list-style: none; text-align: left; margin-bottom: 0; }
+    .price-list li {
+      font-size: 13px; color: #374151;
+      padding: 5px 0; display: flex; gap: 8px; align-items: flex-start;
+    }
+    .price-list li::before { content: '✓'; color: var(--green); font-weight: 700; flex-shrink: 0; }
+
+    /* PAYMENT OPTIONS */
+    .payment-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px; max-width: 620px;
+    }
+    .payment-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 12px; padding: 24px;
+    }
+    .payment-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--periwinkle); margin-bottom: 12px; }
+    .payment-option { font-size: 15px; font-weight: 600; color: var(--navy); margin-bottom: 4px; }
+    .payment-detail { font-size: 13px; color: var(--gray); line-height: 1.5; }
+
+    /* CTA BOTTOM */
+    .cta-section { background: var(--navy); text-align: center; padding: 80px 56px; }
+    .cta-h2 {
+      font-size: clamp(26px, 3.5vw, 42px);
+      font-weight: 700; color: var(--white);
+      line-height: 1.15; letter-spacing: -1px; margin-bottom: 14px;
+    }
+    .cta-sub { font-size: 16px; color: #a5b0e8; margin-bottom: 36px; line-height: 1.7; }
+    .cta-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--gold); color: var(--white);
+      padding: 15px 32px; border-radius: 10px;
+      font-size: 15px; font-weight: 700; text-decoration: none;
+      transition: opacity .15s; font-family: inherit;
+    }
+    .cta-btn:hover { opacity: 0.88; }
+
+    /* FOOTER */
+    footer { background: #111111; padding: 36px 56px; text-align: center; border-top: 1px solid #222; }
+    .footer-logo { height: 48px; margin-bottom: 14px; }
+    .footer-text { font-size: 13px; color: #aaa; line-height: 2; }
+    .footer-text strong { color: #fff; }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      .hero { padding: 100px 20px 64px; }
+      section { padding: 60px 20px; }
+      .trust-bar { padding: 16px 20px; gap: 20px; }
+      .quote-section, .cta-section { padding: 64px 20px; }
+      footer { padding: 28px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="https://i.imgur.com/4ZyPfJG.png" alt="CORE AI" />
+  </a>
+  <a href="index.html" class="nav-back">← Back to Home</a>
+  <a href="mailto:abdul@coreresponsegroup.com?subject=Youth Founder Website Program" class="nav-cta">Get Started</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">🎓 Youth Founder Website Program</div>
+  <h1 class="hero-h1">Your idea is real.<br>Now make it <span>look like it.</span></h1>
+  <p class="hero-sub">We build clean, professional websites for young entrepreneurs and student founders — so your business gets taken seriously from day one.</p>
+  <div class="hero-actions">
+    <a href="mailto:abdul@coreresponsegroup.com?subject=Youth Founder Website Program — Get Started" class="hero-btn-primary">📅 Book a Free Consultation</a>
+    <a href="#whats-included" class="hero-btn-secondary">See What's Included</a>
+  </div>
+</div>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item"><span>📱</span> Mobile-Friendly</div>
+  <div class="trust-item"><span>🎓</span> For Teen & Student Founders</div>
+  <div class="trust-item"><span>📞</span> Launch Coaching Call</div>
+  <div class="trust-item"><span>💳</span> Flexible Payment Options</div>
+  <div class="trust-item"><span>🔗</span> QR Code Included</div>
+</div>
+
+<!-- FOR WHO -->
+<section>
+  <div class="section-inner">
+    <div class="section-eyebrow">Who This Is For</div>
+    <h2 class="section-h2">Built for young entrepreneurs<br>who are ready to be taken seriously.</h2>
+    <p class="section-sub">Whether you're selling products, offering a service, building a brand, or pitching to investors — you need a professional online presence to back it up.</p>
+    <div class="who-grid">
+      <div class="who-card">
+        <div class="who-icon">🎒</div>
+        <div>
+          <div class="who-title">Student Founders</div>
+          <div class="who-desc">You have a business idea and you're serious about it. A website gives you credibility with customers, teachers, and mentors.</div>
+        </div>
+      </div>
+      <div class="who-card">
+        <div class="who-icon">🛍️</div>
+        <div>
+          <div class="who-title">Teen Side-Hustle Owners</div>
+          <div class="who-desc">You're already making money — now give customers a real place to find you, learn what you do, and reach out.</div>
+        </div>
+      </div>
+      <div class="who-card">
+        <div class="who-icon">🏆</div>
+        <div>
+          <div class="who-title">Pitch Competition Participants</div>
+          <div class="who-desc">Judges take your idea more seriously when there's a live website behind it. Add it to your pitch deck and your resume.</div>
+        </div>
+      </div>
+      <div class="who-card">
+        <div class="who-icon">🌱</div>
+        <div>
+          <div class="who-title">First-Time Business Owners</div>
+          <div class="who-desc">You're just getting started. We make the process simple, guided, and professional — so you launch with confidence.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE BLOCK -->
+<div class="quote-section">
+  <p class="quote-text">
+    A great idea without a website is a <em>secret.</em><br>
+    Let's make yours impossible to ignore.
+  </p>
+  <p class="quote-sub">— CORE AI | Core Response AI</p>
+</div>
+
+<!-- WHAT'S INCLUDED -->
+<section id="whats-included">
+  <div class="section-inner">
+    <div class="section-eyebrow">What's Included</div>
+    <h2 class="section-h2">Everything a young founder needs<br>to launch professionally.</h2>
+    <p class="section-sub">We handle the design, the messaging, and the launch — so you can focus on building your business, not your website.</p>
+    <div class="included-grid">
+      <div class="inc-card">
+        <div class="inc-icon">📱</div>
+        <div class="inc-title">One-Page Mobile-Friendly Website</div>
+        <div class="inc-desc">A clean, professional site that looks great on phones, tablets, and laptops — because most of your audience will find you on a phone.</div>
+      </div>
+      <div class="inc-card">
+        <div class="inc-icon">✍️</div>
+        <div class="inc-title">Business Overview + Founder Bio</div>
+        <div class="inc-desc">We help you write clear, confident messaging that explains what you do, who you serve, and why you started — in your voice.</div>
+      </div>
+      <div class="inc-card">
+        <div class="inc-icon">📦</div>
+        <div class="inc-title">Product or Service Section</div>
+        <div class="inc-desc">A dedicated section showing what you offer — with descriptions that make customers want to reach out.</div>
+      </div>
+      <div class="inc-card">
+        <div class="inc-icon">📬</div>
+        <div class="inc-title">Contact Form or Inquiry Link</div>
+        <div class="inc-desc">Customers can reach you directly from your site — no DMs, no lost emails. Inquiries go straight to you.</div>
+      </div>
+      <div class="inc-card">
+        <div class="inc-icon">🔲</div>
+        <div class="inc-title">Custom QR Code</div>
+        <div class="inc-desc">Add your QR code to flyers, business cards, pitch decks, and school projects — one scan and they're on your site.</div>
+      </div>
+      <div class="inc-card">
+        <div class="inc-icon">🎨</div>
+        <div class="inc-title">Basic Brand + Messaging Guidance</div>
+        <div class="inc-desc">We walk you through how to present your business clearly and professionally — skills you'll use long after this website launches.</div>
+      </div>
+      <div class="inc-card">
+        <div class="inc-icon">🔍</div>
+        <div class="inc-title">Basic SEO Setup</div>
+        <div class="inc-desc">Your site is set up so Google can find it — with the right title, description, and keywords to help customers discover you.</div>
+      </div>
+      <div class="inc-card">
+        <div class="inc-icon">📞</div>
+        <div class="inc-title">Launch Coaching Call</div>
+        <div class="inc-desc">Before we go live, we walk through the site together, show you how to share it, and make sure everything is exactly right.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing-section">
+  <div class="section-inner">
+    <div class="section-eyebrow">Pricing</div>
+    <h2 class="section-h2">Simple pricing. Flexible payments.</h2>
+    <p class="section-sub">We designed this program to be accessible — with payment options that work for students, parents, and youth entrepreneur programs.</p>
+    <div class="pricing-cards">
+      <div class="price-card featured">
+        <div class="price-label">Launch Package</div>
+        <div class="price-amt">$1,200</div>
+        <div class="price-note">Full website package — everything above included. One-time investment to launch your professional online presence.</div>
+        <ul class="price-list">
+          <li>One-page mobile-friendly website</li>
+          <li>Business overview + founder bio</li>
+          <li>Contact form + QR code</li>
+          <li>Brand + messaging guidance</li>
+          <li>Basic SEO setup</li>
+          <li>Launch coaching call</li>
+        </ul>
+      </div>
+      <div class="price-card">
+        <div class="price-label">Monthly Maintenance</div>
+        <div class="price-amt">$49–$99</div>
+        <div class="price-note" style="margin-bottom:16px">/month · Optional after launch</div>
+        <ul class="price-list">
+          <li>Small text + photo updates</li>
+          <li>Seasonal updates</li>
+          <li>Contact form checks</li>
+          <li>Testimonial additions</li>
+          <li>Event or market updates</li>
+          <li>QR code support</li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="margin-top:40px">
+      <div class="section-eyebrow">Flexible Payment Options</div>
+      <p style="font-size:15px;color:var(--gray);margin-bottom:24px;line-height:1.6">We offer payment plans so the investment is manageable — especially for student founders and families.</p>
+      <div class="payment-grid">
+        <div class="payment-card">
+          <div class="payment-label">Option 1</div>
+          <div class="payment-option">$300 down</div>
+          <div class="payment-detail">Then $150/month for 6 months</div>
+        </div>
+        <div class="payment-card">
+          <div class="payment-label">Option 2</div>
+          <div class="payment-option">$199/month</div>
+          <div class="payment-detail">For 6 months · No down payment</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<div class="cta-section">
+  <h2 class="cta-h2">Ready to give your business<br>the website it deserves?</h2>
+  <p class="cta-sub">Book a free consultation call. We'll talk through your idea, show you what we'd build, and answer every question — no commitment required.</p>
+  <a href="mailto:abdul@coreresponsegroup.com?subject=Youth Founder Website Program — Free Consultation" class="cta-btn">
+    📅 Book a Free Consultation →
+  </a>
+  <p style="margin-top:16px;font-size:13px;color:#4B5563">Or call us: <a href="tel:2024313685" style="color:#6B7FD4;text-decoration:none">202-431-3685</a></p>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <img src="https://i.imgur.com/LpBodPi.png" alt="CORE AI" class="footer-logo" />
+  <div class="footer-text">
+    <strong>CORE AI</strong> | Core Response AI | Powerful Business Solutions | A Tayyab Group, Inc. Company<br>
+    coreresponsegroup.com · 202-431-3685 · abdul@coreresponsegroup.com<br>
+    <span style="font-size:12px;color:#555;margin-top:4px;display:block">© 2026 Core Response AI · All rights reserved</span>
+  </div>
+</footer>
+
+</body>
+</html>
