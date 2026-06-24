@@ -30,227 +30,143 @@
       display: flex; align-items: center; justify-content: space-between;
     }
     .nav-logo { display: flex; align-items: center; text-decoration: none; }
-    .nav-logo img { height: 40px; filter: invert(15%) sepia(60%) saturate(800%) hue-rotate(200deg) brightness(0.5); }
-    .nav-back {
-      font-size: 14px; font-weight: 500; color: var(--gray);
-      text-decoration: none; display: flex; align-items: center; gap: 6px;
-      transition: color .15s;
-    }
+    .nav-logo img { height: 44px; filter: invert(15%) sepia(60%) saturate(800%) hue-rotate(200deg) brightness(0.5); }
+    .nav-back { font-size: 14px; font-weight: 500; color: var(--gray); text-decoration: none; transition: color .15s; }
     .nav-back:hover { color: var(--navy); }
     .nav-cta {
       padding: 9px 22px; border-radius: 8px;
-      background: var(--gold); color: var(--white);
-      font-size: 14px; font-weight: 600; text-decoration: none;
-      transition: opacity .15s;
+      background: var(--navy); color: var(--white);
+      font-size: 14px; font-weight: 600; text-decoration: none; transition: opacity .15s;
     }
     .nav-cta:hover { opacity: 0.88; }
+    .hamburger { display: none; background: none; border: none; font-size: 22px; cursor: pointer; color: var(--navy); }
 
-    /* HERO */
-    .hero {
-      background: var(--navy);
-      padding: 120px 56px 80px;
-      text-align: center;
+    /* PAGE HERO */
+    .page-hero { padding: 140px 56px 80px; max-width: 1100px; margin: 0 auto; }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      border: 1px solid var(--border); border-radius: 20px; padding: 5px 14px;
+      font-size: 12px; font-weight: 500; color: var(--gray); letter-spacing: 0.3px; margin-bottom: 32px;
     }
-    .hero-badge {
-      display: inline-flex; align-items: center; gap: 6px;
-      background: rgba(245,158,11,0.2); color: #FDE68A;
-      border: 1px solid rgba(245,158,11,0.4);
-      border-radius: 20px; padding: 5px 14px;
-      font-size: 12px; font-weight: 600; letter-spacing: 0.5px;
-      text-transform: uppercase; margin-bottom: 28px;
-    }
+    .hero-eyebrow span { color: var(--navy); font-weight: 600; }
     .hero-h1 {
-      font-size: clamp(32px, 5vw, 58px);
-      font-weight: 700; color: var(--white);
-      line-height: 1.1; letter-spacing: -1.5px;
-      max-width: 700px; margin: 0 auto 20px;
+      font-size: clamp(36px, 5vw, 60px); font-weight: 600;
+      line-height: 1.1; color: var(--navy); max-width: 620px;
+      margin-bottom: 20px; letter-spacing: -1.5px;
     }
-    .hero-h1 span { color: var(--gold); }
-    .hero-sub {
-      font-size: 17px; color: #a5b0e8;
-      max-width: 520px; margin: 0 auto 40px;
-      line-height: 1.7; font-weight: 400;
+    .hero-tagline { font-size: 15px; font-weight: 500; color: var(--periwinkle); margin-bottom: 20px; }
+    .hero-sub { font-size: 17px; color: var(--gray); max-width: 500px; line-height: 1.7; margin-bottom: 40px; }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-primary {
+      padding: 13px 26px; border-radius: 8px; background: var(--navy); color: var(--white);
+      font-size: 14px; font-weight: 600; text-decoration: none; transition: opacity .15s;
+      display: inline-flex; align-items: center; gap: 8px; font-family: inherit;
     }
-    .hero-price {
-      font-size: 52px; font-weight: 700; color: var(--white);
-      letter-spacing: -2px; line-height: 1;
-      margin-bottom: 6px;
+    .btn-primary:hover { opacity: 0.88; }
+    .btn-secondary {
+      padding: 13px 26px; border-radius: 8px; background: transparent; color: var(--navy);
+      font-size: 14px; font-weight: 600; text-decoration: none; border: 1.5px solid var(--border);
+      transition: border-color .15s, background .15s; font-family: inherit;
     }
-    .hero-price sup { font-size: 26px; font-weight: 500; vertical-align: top; margin-top: 10px; }
-    .hero-price span { font-size: 20px; font-weight: 400; color: #a5b0e8; }
-    .hero-trial-note {
-      font-size: 14px; color: #6B7FD4; margin-bottom: 36px;
-      font-weight: 500;
+    .btn-secondary:hover { border-color: var(--navy); background: #f5f7ff; }
+    .hero-stats {
+      display: flex; gap: 48px; margin-top: 64px; flex-wrap: wrap;
+      border-top: 1px solid var(--border); padding-top: 40px;
     }
-    .hero-cta {
-      display: inline-flex; align-items: center; gap: 10px;
-      background: var(--gold); color: var(--white);
-      padding: 16px 36px; border-radius: 10px;
-      font-size: 16px; font-weight: 700; text-decoration: none;
-      transition: opacity .15s; letter-spacing: -0.2px;
-      font-family: inherit;
-    }
-    .hero-cta:hover { opacity: 0.88; }
-    .hero-sub-note { font-size: 13px; color: #4B5563; margin-top: 14px; }
+    .hero-stat-num { font-size: 28px; font-weight: 600; color: var(--navy); line-height: 1; letter-spacing: -1px; }
+    .hero-stat-label { font-size: 13px; color: var(--gray); margin-top: 5px; font-weight: 400; line-height: 1.5; }
 
-    /* TRUST BAR */
-    .trust-bar {
-      background: #F0F2FA; border-bottom: 1px solid var(--border);
-      padding: 20px 56px;
-      display: flex; align-items: center; justify-content: center;
-      gap: 48px; flex-wrap: wrap;
-    }
-    .trust-item {
-      display: flex; align-items: center; gap: 8px;
-      font-size: 13px; font-weight: 600; color: var(--navy);
-    }
-    .trust-item span { font-size: 16px; }
+    /* SHARED */
+    section { padding: 96px 56px; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--periwinkle); margin-bottom: 14px; }
+    .section-h2 { font-size: clamp(26px, 3.5vw, 42px); font-weight: 600; color: var(--navy); line-height: 1.15; letter-spacing: -1px; margin-bottom: 14px; }
+    .section-sub { font-size: 16px; color: var(--gray); max-width: 500px; line-height: 1.7; margin-bottom: 52px; font-weight: 400; }
 
-    /* SECTIONS */
-    section { padding: 80px 56px; }
-    .section-inner { max-width: 1000px; margin: 0 auto; }
-    .section-eyebrow {
-      font-size: 11px; font-weight: 700; letter-spacing: 2px;
-      text-transform: uppercase; color: var(--periwinkle); margin-bottom: 12px;
-    }
-    .section-h2 {
-      font-size: clamp(24px, 3.5vw, 38px);
-      font-weight: 700; color: var(--navy);
-      line-height: 1.15; letter-spacing: -0.8px; margin-bottom: 14px;
-    }
-    .section-sub {
-      font-size: 16px; color: var(--gray);
-      max-width: 520px; line-height: 1.7; margin-bottom: 52px;
-    }
+    /* STATEMENT */
+    .statement-section { background: var(--navy); padding: 80px 56px; }
+    .statement-inner { max-width: 800px; margin: 0 auto; text-align: center; }
+    .statement-text { font-size: clamp(22px, 3.5vw, 40px); font-weight: 600; color: var(--white); line-height: 1.3; letter-spacing: -0.8px; margin-bottom: 16px; }
+    .statement-text em { font-style: normal; color: #a5b0e8; }
+    .statement-sub { font-size: 17px; color: #a5b0e8; line-height: 1.7; font-weight: 400; }
 
-    /* PAIN POINTS */
-    .pain-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 18px; margin-bottom: 0;
-    }
-    .pain-card {
-      background: #FFF8F0; border: 1px solid #FDE68A;
-      border-radius: 12px; padding: 24px;
-    }
-    .pain-icon { font-size: 22px; margin-bottom: 10px; }
-    .pain-title { font-size: 15px; font-weight: 600; color: #92400E; margin-bottom: 6px; }
-    .pain-desc { font-size: 13px; color: #78350F; line-height: 1.6; }
-
-    /* WHAT YOU GET */
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 18px;
-    }
-    .feature-card {
+    /* TOOLS GRID (what's included) */
+    .tools-section { background: var(--light); }
+    .tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+    .tool-card {
       background: var(--white); border: 1px solid var(--border);
-      border-radius: 14px; padding: 26px;
-      transition: border-color .2s, box-shadow .2s;
+      border-radius: 12px; padding: 22px;
+      display: flex; gap: 14px; align-items: flex-start; transition: border-color .15s;
     }
-    .feature-card:hover { border-color: #c7d2fe; box-shadow: 0 4px 20px rgba(26,43,107,0.07); }
-    .feature-icon {
-      width: 44px; height: 44px; border-radius: 12px;
-      background: #EEF2FF; display: flex; align-items: center;
-      justify-content: center; font-size: 20px; margin-bottom: 14px;
+    .tool-card:hover { border-color: #c7d2fe; }
+    .tool-icon {
+      width: 40px; height: 40px; flex-shrink: 0;
+      background: #EEF2FF; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center; font-size: 18px;
     }
-    .feature-title { font-size: 15px; font-weight: 600; color: var(--navy); margin-bottom: 6px; }
-    .feature-desc { font-size: 13px; color: var(--gray); line-height: 1.65; }
+    .tool-title { font-size: 14px; font-weight: 600; color: var(--navy); margin-bottom: 5px; }
+    .tool-desc { font-size: 13px; color: var(--gray); line-height: 1.6; font-weight: 400; }
 
     /* HOW IT WORKS */
-    .how-section { background: var(--light); }
-    .steps { display: flex; flex-direction: column; gap: 0; max-width: 640px; }
-    .step {
-      display: flex; gap: 24px; align-items: flex-start;
-      padding: 28px 0; border-bottom: 1px solid var(--border);
-    }
-    .step:last-child { border-bottom: none; }
+    .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+    .step-card { background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 28px 24px; }
     .step-num {
-      width: 40px; height: 40px; border-radius: 50%;
-      background: var(--gold); color: var(--white);
-      font-size: 16px; font-weight: 700;
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
+      width: 36px; height: 36px; border-radius: 50%;
+      background: #EEF2FF; color: var(--navy);
+      font-size: 15px; font-weight: 600;
+      display: flex; align-items: center; justify-content: center; margin-bottom: 16px;
     }
-    .step-body {}
-    .step-title { font-size: 16px; font-weight: 600; color: var(--navy); margin-bottom: 6px; }
-    .step-desc { font-size: 14px; color: var(--gray); line-height: 1.65; }
-    .step-tag {
-      display: inline-block; margin-top: 8px;
-      background: #FEF3C7; color: #92400E;
-      font-size: 11px; font-weight: 600; letter-spacing: 0.3px;
-      padding: 3px 10px; border-radius: 20px;
-    }
+    .step-title { font-size: 15px; font-weight: 600; color: var(--navy); margin-bottom: 8px; }
+    .step-desc { font-size: 14px; color: var(--gray); line-height: 1.65; font-weight: 400; }
 
     /* PRICING */
+    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
     .pricing-card {
-      background: var(--navy); border-radius: 20px;
-      padding: 48px; max-width: 540px; margin: 0 auto; text-align: center;
-      position: relative; overflow: hidden;
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 14px; padding: 32px;
+      transition: border-color .2s, box-shadow .2s;
+      position: relative;
     }
-    .pricing-card::before {
-      content: '';
-      position: absolute; top: -60px; right: -60px;
-      width: 180px; height: 180px; border-radius: 50%;
-      background: rgba(245,158,11,0.12);
+    .pricing-card:hover { border-color: #c7d2fe; box-shadow: 0 4px 24px rgba(26,43,107,0.07); }
+    .pricing-card.featured { border-color: #c7d2fe; background: #fafbff; }
+    .pricing-card.featured::after {
+      content: 'Most Popular';
+      position: absolute; top: 16px; right: 16px;
+      background: #EEF2FF; color: var(--navy);
+      font-size: 10px; font-weight: 600; letter-spacing: 0.3px; text-transform: uppercase;
+      padding: 3px 10px; border-radius: 20px; border: 1px solid #c7d2fe;
     }
-    .pricing-popular {
-      display: inline-block;
-      background: var(--gold); color: var(--white);
-      font-size: 11px; font-weight: 700; letter-spacing: 0.5px;
-      text-transform: uppercase; padding: 4px 14px; border-radius: 20px;
-      margin-bottom: 24px;
-    }
-    .pricing-title { font-size: 22px; font-weight: 700; color: var(--white); margin-bottom: 10px; }
-    .pricing-price {
-      font-size: 56px; font-weight: 700; color: var(--white);
-      letter-spacing: -2px; line-height: 1; margin-bottom: 6px;
-    }
-    .pricing-price sup { font-size: 28px; vertical-align: top; margin-top: 12px; }
-    .pricing-price span { font-size: 18px; font-weight: 400; color: #a5b0e8; }
-    .pricing-trial { font-size: 14px; color: var(--gold); font-weight: 600; margin-bottom: 28px; }
-    .pricing-list { list-style: none; margin-bottom: 32px; text-align: left; }
-    .pricing-list li {
-      font-size: 14px; color: #d1d5db;
-      padding: 7px 0; display: flex; gap: 10px; align-items: flex-start;
-      border-bottom: 1px solid rgba(255,255,255,0.07);
-    }
-    .pricing-list li:last-child { border-bottom: none; }
-    .pricing-list li::before { content: '✓'; color: var(--gold); font-weight: 700; flex-shrink: 0; }
+    .pricing-tier { font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--periwinkle); margin-bottom: 10px; }
+    .pricing-price { font-size: 40px; font-weight: 600; color: var(--navy); letter-spacing: -1.5px; line-height: 1; margin-bottom: 4px; }
+    .pricing-price span { font-size: 16px; font-weight: 400; color: var(--gray); }
+    .pricing-desc { font-size: 13px; color: var(--gray); line-height: 1.6; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--border); }
+    .pricing-features { list-style: none; margin-bottom: 28px; }
+    .pricing-features li { font-size: 13px; color: #374151; padding: 5px 0; display: flex; gap: 8px; align-items: flex-start; line-height: 1.5; }
+    .pricing-features li::before { content: '✓'; color: var(--green); font-weight: 600; flex-shrink: 0; }
     .pricing-cta {
-      display: block; background: var(--gold); color: var(--white);
-      padding: 15px 32px; border-radius: 10px;
-      font-size: 16px; font-weight: 700; text-decoration: none;
+      display: block; text-align: center; padding: 12px 24px; border-radius: 8px;
+      font-size: 14px; font-weight: 600; text-decoration: none;
+      background: var(--navy); color: var(--white);
       transition: opacity .15s; font-family: inherit;
-      margin-bottom: 14px;
     }
     .pricing-cta:hover { opacity: 0.88; }
-    .pricing-note { font-size: 12px; color: #6B7280; }
+    .trial-note { font-size: 12px; color: var(--gray); text-align: center; margin-top: 10px; }
 
-    /* CTA BOTTOM */
-    .cta-section {
-      background: var(--navy); text-align: center; padding: 80px 56px;
-    }
-    .cta-h2 {
-      font-size: clamp(26px, 3.5vw, 42px);
-      font-weight: 700; color: var(--white);
-      line-height: 1.15; letter-spacing: -1px; margin-bottom: 14px;
-    }
-    .cta-sub { font-size: 16px; color: #a5b0e8; margin-bottom: 36px; line-height: 1.7; }
-    .cta-btn {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: var(--gold); color: var(--white);
-      padding: 15px 32px; border-radius: 10px;
-      font-size: 15px; font-weight: 700; text-decoration: none;
-      transition: opacity .15s; font-family: inherit;
-    }
-    .cta-btn:hover { opacity: 0.88; }
+    /* CTA */
+    .cta-section { background: var(--navy); text-align: center; padding: 96px 56px; }
+    .cta-h2 { font-size: clamp(26px, 3.5vw, 46px); font-weight: 600; color: var(--white); line-height: 1.15; letter-spacing: -1px; margin-bottom: 14px; }
+    .cta-sub { font-size: 16px; color: #a5b0e8; margin-bottom: 40px; line-height: 1.7; font-weight: 400; }
+    .cta-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px; }
+    .btn-gold { padding: 13px 28px; border-radius: 8px; background: var(--white); color: var(--navy); font-size: 14px; font-weight: 600; text-decoration: none; transition: opacity .15s; display: inline-flex; align-items: center; gap: 8px; font-family: inherit; }
+    .btn-gold:hover { opacity: 0.9; }
+    .btn-outline-white { padding: 13px 28px; border-radius: 8px; background: transparent; color: var(--white); font-size: 14px; font-weight: 600; text-decoration: none; border: 1.5px solid rgba(255,255,255,0.3); transition: border-color .15s; font-family: inherit; }
+    .btn-outline-white:hover { border-color: rgba(255,255,255,0.7); }
+    .cta-contact { font-size: 14px; color: #6B7FD4; }
+    .cta-contact a { color: #a5b0e8; text-decoration: none; font-weight: 500; }
+    .cta-contact a:hover { color: var(--white); }
 
     /* FOOTER */
-    footer {
-      background: #111111; padding: 36px 56px;
-      text-align: center; border-top: 1px solid #222;
-    }
+    footer { background: #111111; padding: 36px 56px; text-align: center; }
     .footer-logo { height: 48px; margin-bottom: 14px; }
     .footer-text { font-size: 13px; color: #aaa; line-height: 2; }
     .footer-text strong { color: #fff; }
@@ -258,11 +174,11 @@
     /* RESPONSIVE */
     @media (max-width: 768px) {
       nav { padding: 0 20px; }
-      .hero { padding: 100px 20px 64px; }
-      section { padding: 60px 20px; }
-      .trust-bar { padding: 16px 20px; gap: 20px; }
-      .pricing-card { padding: 32px 24px; }
-      .cta-section { padding: 64px 20px; }
+      .page-hero { padding: 100px 20px 60px; }
+      section { padding: 64px 20px; }
+      .hero-stats { gap: 28px; padding-top: 28px; }
+      .statement-section, .cta-section { padding: 64px 20px; }
+      .cta-actions { flex-direction: column; align-items: center; }
       footer { padding: 28px 20px; }
     }
   </style>
@@ -276,178 +192,203 @@
   </a>
   <a href="index.html" class="nav-back">← Back to Home</a>
   <a href="mailto:abdul@coreresponsegroup.com?subject=Google Reviews Free Trial" class="nav-cta">Start Free Trial</a>
+  <button class="hamburger" onclick="this.previousElementSibling.style.display='block'">☰</button>
 </nav>
 
 <!-- HERO -->
-<div class="hero">
-  <div class="hero-badge">⭐ Google Reviews Management</div>
-  <h1 class="hero-h1">More 5-star reviews.<br><span>More customers.</span><br>On autopilot.</h1>
-  <p class="hero-sub">We automate your review requests, monitor your reputation, and help you build the online presence that turns Google searches into paying customers.</p>
-  <div class="hero-price"><sup>$</sup>99<span>/month</span></div>
-  <div class="hero-trial-note">Start with a free 10-day trial — no credit card charged until day 10</div>
-  <a href="mailto:abdul@coreresponsegroup.com?subject=Google Reviews Free Trial — Start My 10 Days" class="hero-cta">
-    📅 Start My Free 10-Day Trial
-  </a>
-  <p class="hero-sub-note" style="color:#6B7280;margin-top:14px">Includes a free 30-minute onboarding call · Cancel anytime after trial</p>
-</div>
-
-<!-- TRUST BAR -->
-<div class="trust-bar">
-  <div class="trust-item"><span>✅</span> 10-Day Free Trial</div>
-  <div class="trust-item"><span>📞</span> 30-Min Onboarding Call</div>
-  <div class="trust-item"><span>💳</span> No Charge Until Day 10</div>
-  <div class="trust-item"><span>🚫</span> Cancel Anytime</div>
-  <div class="trust-item"><span>⚡</span> Live in 24 Hours</div>
-</div>
-
-<!-- PAIN POINTS -->
-<section>
-  <div class="section-inner">
-    <div class="section-eyebrow">The Problem</div>
-    <h2 class="section-h2">Your reputation is being decided<br>before you even answer the phone.</h2>
-    <p class="section-sub">When someone searches for your business, your Google reviews are the first thing they see — and most businesses are losing customers before the first conversation.</p>
-    <div class="pain-grid">
-      <div class="pain-card">
-        <div class="pain-icon">🔇</div>
-        <div class="pain-title">Happy customers don't leave reviews</div>
-        <div class="pain-desc">Satisfied clients move on. They mean to leave a review but forget. Only the frustrated ones remember — and they find the time.</div>
-      </div>
-      <div class="pain-card">
-        <div class="pain-icon">👤</div>
-        <div class="pain-title">No one is monitoring your profile</div>
-        <div class="pain-desc">New reviews go unseen. Negative reviews sit unanswered for weeks. Your Google Business Profile is a ghost town.</div>
-      </div>
-      <div class="pain-card">
-        <div class="pain-icon">📉</div>
-        <div class="pain-title">Low star count kills your credibility</div>
-        <div class="pain-desc">Customers compare. A competitor with 50 reviews and 4.8 stars wins the click every time — even if you're the better business.</div>
-      </div>
+<div class="page-hero">
+  <div class="hero-eyebrow">Google Reviews Management · <span>Start Here</span></div>
+  <h1 class="hero-h1">More 5-star reviews.<br>More customers.</h1>
+  <p class="hero-tagline">Reputation management, done for you.</p>
+  <p class="hero-sub">We automate your review requests, monitor your Google presence, and help you build the reputation that turns searches into paying customers — without lifting a finger.</p>
+  <div class="hero-actions">
+    <a href="mailto:abdul@coreresponsegroup.com?subject=Google Reviews Free Trial" class="btn-primary">Start Free 10-Day Trial →</a>
+    <a href="#pricing" class="btn-secondary">See Pricing</a>
+  </div>
+  <div class="hero-stats">
+    <div>
+      <div class="hero-stat-num">10 Days</div>
+      <div class="hero-stat-label">Free trial — no charge<br>until day 10</div>
+    </div>
+    <div>
+      <div class="hero-stat-num">30 Min</div>
+      <div class="hero-stat-label">Onboarding call — live<br>before we hang up</div>
+    </div>
+    <div>
+      <div class="hero-stat-num">$99</div>
+      <div class="hero-stat-label">Starting price per month<br>cancel anytime</div>
     </div>
   </div>
-</section>
+</div>
 
-<!-- WHAT YOU GET -->
-<section style="background: var(--light);">
+<!-- STATEMENT -->
+<div class="statement-section">
+  <div class="statement-inner">
+    <p class="statement-text">
+      Your customers are searching for you.<br>
+      What they find <em>matters more than your best sales pitch.</em>
+    </p>
+    <p class="statement-sub">Most businesses lose customers before the first conversation — because their Google reviews are thin, outdated, or unanswered. We fix that.</p>
+  </div>
+</div>
+
+<!-- WHAT'S INCLUDED -->
+<section class="tools-section">
   <div class="section-inner">
     <div class="section-eyebrow">What's Included</div>
     <h2 class="section-h2">Everything you need to build<br>a 5-star reputation — done for you.</h2>
-    <p class="section-sub">We handle the setup, the automation, and the monitoring. You focus on running your business.</p>
-    <div class="features-grid">
-      <div class="feature-card">
-        <div class="feature-icon">📨</div>
-        <div class="feature-title">Automated Review Requests</div>
-        <div class="feature-desc">After a customer interaction, your system automatically sends a personalized text or email asking for a Google review — at the right moment, in the right tone.</div>
+    <p class="section-sub">We handle the setup, automation, and monitoring. You focus on running your business.</p>
+    <div class="tools-grid">
+      <div class="tool-card">
+        <div class="tool-icon">📨</div>
+        <div>
+          <div class="tool-title">Automated Review Requests</div>
+          <div class="tool-desc">After each customer interaction, a personalized text or email goes out automatically — asking for a Google review at exactly the right moment.</div>
+        </div>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon">🔔</div>
-        <div class="feature-title">New Review Alerts</div>
-        <div class="feature-desc">Get notified the moment a new review is posted — good or bad — so you can respond quickly and professionally every time.</div>
+      <div class="tool-card">
+        <div class="tool-icon">🔔</div>
+        <div>
+          <div class="tool-title">New Review Alerts</div>
+          <div class="tool-desc">Get notified the moment a new review is posted — good or bad — so you can respond quickly and professionally every time.</div>
+        </div>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon">🛡️</div>
-        <div class="feature-title">Reputation Monitoring</div>
-        <div class="feature-desc">We keep an eye on your Google Business Profile so nothing slips through the cracks. Your online presence is always being watched.</div>
+      <div class="tool-card">
+        <div class="tool-icon">🛡️</div>
+        <div>
+          <div class="tool-title">Reputation Monitoring</div>
+          <div class="tool-desc">We keep a constant eye on your Google Business Profile. Nothing slips through the cracks — your online presence is always being watched.</div>
+        </div>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon">💬</div>
-        <div class="feature-title">Response Guidance</div>
-        <div class="feature-desc">We help you craft professional responses to reviews — especially the negative ones — so your replies build trust instead of losing it.</div>
+      <div class="tool-card">
+        <div class="tool-icon">💬</div>
+        <div>
+          <div class="tool-title">Response Guidance</div>
+          <div class="tool-desc">We help you craft professional responses — especially to negative reviews — so your replies build trust instead of creating more problems.</div>
+        </div>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon">📊</div>
-        <div class="feature-title">Monthly Review Summary</div>
-        <div class="feature-desc">See how your reputation is growing — new reviews, average rating trends, and what customers are saying — in a simple monthly report.</div>
+      <div class="tool-card">
+        <div class="tool-icon">📊</div>
+        <div>
+          <div class="tool-title">Monthly Review Summary</div>
+          <div class="tool-desc">A simple monthly report showing new reviews, rating trends, and what customers are saying — so you always know where you stand.</div>
+        </div>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon">📞</div>
-        <div class="feature-title">30-Minute Onboarding Call</div>
-        <div class="feature-desc">We set everything up together on a single 30-minute call. By the time we hang up, your review system is live and running.</div>
+      <div class="tool-card">
+        <div class="tool-icon">📞</div>
+        <div>
+          <div class="tool-title">30-Minute Onboarding Call</div>
+          <div class="tool-desc">We set up everything live on a single 30-minute call. By the time we hang up, your review system is running and your trial has started.</div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- HOW IT WORKS -->
-<section class="how-section">
+<section>
   <div class="section-inner">
     <div class="section-eyebrow">How It Works</div>
-    <h2 class="section-h2">From call to live system<br>in under 30 minutes.</h2>
-    <p class="section-sub">We built this process to be as frictionless as possible — because the best system is one you actually use.</p>
-    <div class="steps">
-      <div class="step">
+    <h2 class="section-h2">Live before the call ends.</h2>
+    <p class="section-sub">We built this to be as frictionless as possible — because the best system is one that's already running.</p>
+    <div class="steps-grid">
+      <div class="step-card">
         <div class="step-num">1</div>
-        <div class="step-body">
-          <div class="step-title">Book your free 30-minute call</div>
-          <div class="step-desc">We learn about your business, your customers, and how you currently collect feedback. No prep needed — just show up.</div>
-          <div class="step-tag">Takes 2 minutes to schedule</div>
-        </div>
+        <div class="step-title">Book your free 30-min call</div>
+        <div class="step-desc">We learn about your business and how you currently interact with customers. No prep needed — just show up.</div>
       </div>
-      <div class="step">
+      <div class="step-card">
         <div class="step-num">2</div>
-        <div class="step-body">
-          <div class="step-title">We set up your system live on the call</div>
-          <div class="step-desc">While we're talking, we connect your Google Business Profile, build your review request sequence, and test it before we hang up.</div>
-          <div class="step-tag">Done before the call ends</div>
-        </div>
+        <div class="step-title">We set it up live on the call</div>
+        <div class="step-desc">While we're talking, we connect your Google Business Profile, build your review sequence, and test it before we hang up.</div>
       </div>
-      <div class="step">
+      <div class="step-card">
         <div class="step-num">3</div>
-        <div class="step-body">
-          <div class="step-title">Your 10-day free trial begins</div>
-          <div class="step-desc">Your review system is live. Watch the requests go out and see new reviews come in. You'll see results before your trial ends.</div>
-          <div class="step-tag">No charge for 10 days</div>
-        </div>
+        <div class="step-title">Your 10-day free trial begins</div>
+        <div class="step-desc">Watch review requests go out and new reviews come in. You'll see results before your trial even ends.</div>
       </div>
-      <div class="step">
+      <div class="step-card">
         <div class="step-num">4</div>
-        <div class="step-body">
-          <div class="step-title">At the end of your trial, you decide</div>
-          <div class="step-desc">If you love it — which most clients do — your card on file kicks in at $99/month and we keep the momentum going. If not, cancel with no questions asked.</div>
-          <div class="step-tag">No pressure. No contracts.</div>
-        </div>
+        <div class="step-title">You decide at day 10</div>
+        <div class="step-desc">If you love it — your card on file kicks in and we keep the momentum going. If not, cancel with no questions asked.</div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- PRICING -->
-<section>
+<section id="pricing" style="background: var(--light);">
   <div class="section-inner">
-    <div class="section-eyebrow" style="text-align:center">Pricing</div>
-    <h2 class="section-h2" style="text-align:center;max-width:none">Simple, flat pricing.</h2>
-    <p class="section-sub" style="margin:0 auto 48px;text-align:center">No setup fees. No hidden charges. One flat monthly rate after your free trial.</p>
-    <div class="pricing-card">
-      <div class="pricing-popular">🔥 Most Popular</div>
-      <div class="pricing-title">Google Reviews Management</div>
-      <div class="pricing-price"><sup>$</sup>99<span>/mo</span></div>
-      <div class="pricing-trial">10-day free trial included — start today</div>
-      <ul class="pricing-list">
-        <li>Automated review request system (text + email)</li>
-        <li>Google Business Profile monitoring</li>
-        <li>Instant new review alerts</li>
-        <li>Response guidance for every review</li>
-        <li>Monthly reputation summary report</li>
-        <li>30-minute onboarding call included</li>
-        <li>Dedicated support from your CORE AI team</li>
-        <li>Cancel anytime — no contracts, no penalties</li>
-      </ul>
-      <a href="mailto:abdul@coreresponsegroup.com?subject=Google Reviews Free Trial — Start My 10 Days" class="pricing-cta">
-        Start My Free 10-Day Trial
-      </a>
-      <div class="pricing-note">Card collected at onboarding · First charge after 10-day trial · Cancel anytime</div>
+    <div class="section-eyebrow">Pricing</div>
+    <h2 class="section-h2">Simple pricing based on<br>your customer volume.</h2>
+    <p class="section-sub">All plans include the same features — the difference is the volume of review requests we send each month. All plans start with a free 10-day trial.</p>
+    <div class="pricing-grid">
+
+      <div class="pricing-card">
+        <div class="pricing-tier">Starter</div>
+        <div class="pricing-price">$99<span>/month</span></div>
+        <div class="pricing-desc">Best for small businesses with a steady but limited number of customer interactions each month.</div>
+        <ul class="pricing-features">
+          <li>Up to 50 review requests/month</li>
+          <li>Automated text + email sequences</li>
+          <li>Google Business Profile monitoring</li>
+          <li>New review alerts</li>
+          <li>Monthly summary report</li>
+          <li>30-min onboarding call</li>
+        </ul>
+        <a href="mailto:abdul@coreresponsegroup.com?subject=Google Reviews Free Trial — Starter $99" class="pricing-cta">Start Free Trial</a>
+        <div class="trial-note">10-day free trial · No charge until day 10</div>
+      </div>
+
+      <div class="pricing-card featured">
+        <div class="pricing-tier">Growth</div>
+        <div class="pricing-price">$199<span>/month</span></div>
+        <div class="pricing-desc">Best for growing businesses with a higher volume of customers and an active need to build their review count fast.</div>
+        <ul class="pricing-features">
+          <li>Up to 150 review requests/month</li>
+          <li>Automated text + email sequences</li>
+          <li>Google Business Profile monitoring</li>
+          <li>New review alerts + response guidance</li>
+          <li>Monthly summary report</li>
+          <li>30-min onboarding call</li>
+        </ul>
+        <a href="mailto:abdul@coreresponsegroup.com?subject=Google Reviews Free Trial — Growth $199" class="pricing-cta">Start Free Trial</a>
+        <div class="trial-note">10-day free trial · No charge until day 10</div>
+      </div>
+
+      <div class="pricing-card">
+        <div class="pricing-tier">Pro</div>
+        <div class="pricing-price">$279<span>/month</span></div>
+        <div class="pricing-desc">Best for established businesses with high customer volume who need a full reputation management system running at scale.</div>
+        <ul class="pricing-features">
+          <li>Unlimited review requests/month</li>
+          <li>Automated text + email sequences</li>
+          <li>Google Business Profile monitoring</li>
+          <li>New review alerts + response guidance</li>
+          <li>Monthly summary report</li>
+          <li>Priority support + strategy call</li>
+        </ul>
+        <a href="mailto:abdul@coreresponsegroup.com?subject=Google Reviews Free Trial — Pro $279" class="pricing-cta">Start Free Trial</a>
+        <div class="trial-note">10-day free trial · No charge until day 10</div>
+      </div>
+
     </div>
   </div>
 </section>
 
-<!-- BOTTOM CTA -->
-<div class="cta-section">
-  <h2 class="cta-h2">Ready to start getting<br>more 5-star reviews?</h2>
-  <p class="cta-sub">Book a free 30-minute call. We'll set everything up live — and start your free 10-day trial before we hang up.</p>
-  <a href="mailto:abdul@coreresponsegroup.com?subject=Google Reviews Free Trial — Start My 10 Days" class="cta-btn">
-    📅 Start My Free 10-Day Trial →
-  </a>
-  <p style="margin-top:16px;font-size:13px;color:#4B5563">Or call us: <a href="tel:2024313685" style="color:#6B7FD4;text-decoration:none">202-431-3685</a></p>
-</div>
+<!-- CTA -->
+<section id="contact" class="cta-section">
+  <div style="max-width:640px;margin:0 auto">
+    <div class="section-eyebrow" style="color:#6B7FD4;text-align:center;margin-bottom:16px">Get Started</div>
+    <h2 class="cta-h2">Ready to start getting<br>more 5-star reviews?</h2>
+    <p class="cta-sub">Book a free 30-minute call. We'll set everything up live — and start your free 10-day trial before we hang up.</p>
+    <div class="cta-actions">
+      <a href="mailto:abdul@coreresponsegroup.com?subject=Google Reviews Free Trial" class="btn-gold">📅 Start Free Trial</a>
+      <a href="tel:2024313685" class="btn-outline-white">📞 202-431-3685</a>
+    </div>
+    <p class="cta-contact">Or email us at <a href="mailto:abdul@coreresponsegroup.com">abdul@coreresponsegroup.com</a></p>
+  </div>
+</section>
 
 <!-- FOOTER -->
 <footer>
