@@ -89,10 +89,7 @@
     .pricing-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--periwinkle); margin-bottom: 10px; }
     .pricing-heading { font-size: clamp(24px, 3vw, 38px); font-weight: 600; color: var(--navy); letter-spacing: -0.8px; margin-bottom: 8px; }
     .pricing-sub { font-size: 15px; color: var(--gray); margin-bottom: 44px; line-height: 1.6; font-weight: 400; max-width: 560px; }
-    .pricing-tabs { display: flex; gap: 8px; margin-bottom: 36px; flex-wrap: wrap; }
-    .ptab { padding: 8px 20px; border-radius: 8px; cursor: pointer; font-size: 13px; font-weight: 600; border: 1.5px solid var(--border); background: var(--white); color: var(--gray); transition: all .15s; font-family: inherit; }
-    .ptab.active { background: var(--navy); color: var(--white); border-color: var(--navy); }
-    .ptab:hover:not(.active) { border-color: var(--navy); color: var(--navy); }
+    
     .pricing-grid { display: none; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px; }
     .pricing-grid.active { display: grid; }
     .price-card { background: var(--white); border: 1.5px solid var(--border); border-radius: 16px; padding: 30px 26px; display: flex; flex-direction: column; position: relative; transition: box-shadow .2s, border-color .2s; }
@@ -327,24 +324,99 @@
         </ul>
         <a href="youth-website.html" class="qw-cta cta-navy">Learn More &rarr;</a>
       </div>
+
+      <div class="qw-card">
+        <div class="qw-badge badge-new" style="background:#ECFDF5;color:#065F46;border:1px solid #6ee7b7;">&#127897;&#65039; AI-Powered</div>
+        <div class="qw-icon">&#128222;</div>
+        <div class="qw-title">AI Voice Receptionist</div>
+        <div class="qw-desc">Never miss a lead again. Our AI answers every call 24/7, captures caller info, qualifies the lead, and sends you an instant summary &mdash; so no opportunity falls through the cracks.</div>
+        <div class="qw-price">Starting at $199<span style="font-size:15px;font-weight:500">/mo</span></div>
+        <div class="qw-price-sub">$399 one-time setup &middot; Includes training and support</div>
+        <ul class="qw-features">
+          <li>24/7 call answering &mdash; never goes to voicemail</li>
+          <li>Lead capture and qualification</li>
+          <li>Instant summary texted to you</li>
+          <li>Custom call script for your business</li>
+          <li>After-hours and overflow coverage</li>
+        </ul>
+        <a href="https://api.leadconnectorhq.com/widget/bookings/core-ai-discovery" target="_blank" class="qw-cta cta-navy">Get Started &rarr;</a>
+      </div>
+
     </div>
   </div>
 </section>
 
-<!-- PRICING -->
+<!-- PRICING: GOOGLE REVIEWS -->
 <section id="pricing" class="pricing-section">
   <div class="pricing-inner">
-    <div class="pricing-eyebrow">Transparent Pricing</div>
-    <h2 class="pricing-heading">Simple pricing.<br>No surprises.</h2>
-    <p class="pricing-sub">Every package includes setup, onboarding, and ongoing support. Choose what fits where your business is today.</p>
-    <div class="pricing-tabs">
-      <button class="ptab active" onclick="showPricing(event,'emerging')">Emerging Business</button>
-      <button class="ptab" onclick="showPricing(event,'reviews')">Google Reviews</button>
-      <button class="ptab" onclick="showPricing(event,'addons')">Additional Services</button>
+    <div class="pricing-eyebrow">Google Review Packages</div>
+    <h2 class="pricing-heading">Turn happy customers<br>into your best marketing.</h2>
+    <p class="pricing-sub">Most businesses don't have a review problem &mdash; they have an asking problem. We fix that.</p>
+    <div class="pricing-grid active" style="display:grid;">
+      <div class="price-card">
+        <div class="price-tier">Starter</div>
+        <div class="price-name">Review Starter</div>
+        <div class="price-desc">Get the system in place and start collecting reviews immediately.</div>
+        <div class="price-setup">&nbsp;</div>
+        <div class="price-monthly">$99<span>/mo</span></div>
+        <div class="price-note">No setup fee &middot; Cancel anytime</div>
+        <hr class="price-divider">
+        <ul class="price-features">
+          <li>Automated review request texts</li>
+          <li>Direct Google review link</li>
+          <li>QR code for walk-in businesses</li>
+          <li>Monthly review tracking report</li>
+          <li>Review response templates</li>
+        </ul>
+        <a href="https://api.leadconnectorhq.com/widget/bookings/core-ai-discovery" target="_blank" class="price-cta cta-outline">Start Free Trial</a>
+      </div>
+      <div class="price-card featured-price">
+        <div class="price-tier">Growth</div>
+        <div class="price-name">Review Growth</div>
+        <div class="price-desc">Build a steady stream of reviews with branded materials and monthly monitoring.</div>
+        <div class="price-setup">$699 setup</div>
+        <div class="price-monthly">$199<span>/mo</span></div>
+        <div class="price-note">Includes full branded kit</div>
+        <hr class="price-divider">
+        <ul class="price-features">
+          <li>Everything in Starter</li>
+          <li>Branded review signage and inserts</li>
+          <li>Review landing page</li>
+          <li>Staff review request script</li>
+          <li>4 review-based social posts/mo</li>
+          <li>Monthly monitoring and reporting</li>
+        </ul>
+        <a href="https://api.leadconnectorhq.com/widget/bookings/core-ai-discovery" target="_blank" class="price-cta">Get Started</a>
+      </div>
+      <div class="price-card">
+        <div class="price-tier">Pro</div>
+        <div class="price-name">Reputation Pro</div>
+        <div class="price-desc">Full reputation management &mdash; reviews, responses, and marketing all handled for you.</div>
+        <div class="price-setup">$999 setup</div>
+        <div class="price-monthly">$279<span>/mo</span></div>
+        <div class="price-note">Full-service reputation management</div>
+        <hr class="price-divider">
+        <ul class="price-features">
+          <li>Everything in Growth</li>
+          <li>Review response support</li>
+          <li>Website review display section</li>
+          <li>Private feedback form</li>
+          <li>Quarterly design refresh</li>
+          <li>Monthly optimization call</li>
+        </ul>
+        <a href="https://api.leadconnectorhq.com/widget/bookings/core-ai-discovery" target="_blank" class="price-cta cta-outline">Get Started</a>
+      </div>
     </div>
+  </div>
+</section>
 
-    <!-- Emerging Business -->
-    <div class="pricing-grid active" id="pricing-emerging">
+<!-- PRICING: EMERGING BUSINESS -->
+<section class="pricing-section" style="background:#F8F9FC;">
+  <div class="pricing-inner">
+    <div class="pricing-eyebrow">Emerging Business Packages</div>
+    <h2 class="pricing-heading">From launch to fully<br>automated &mdash; we grow with you.</h2>
+    <p class="pricing-sub">Whether you're just getting started or ready to scale, there's a package built for where you are today.</p>
+    <div class="pricing-grid active" style="display:grid;">
       <div class="price-card">
         <div class="price-tier">Tier 1</div>
         <div class="price-name">Launch</div>
@@ -414,83 +486,16 @@
         <a href="https://api.leadconnectorhq.com/widget/bookings/core-ai-discovery" target="_blank" class="price-cta cta-outline">Get Started</a>
       </div>
     </div>
+  </div>
+</section>
 
-    <!-- Google Reviews -->
-    <div class="pricing-grid" id="pricing-reviews">
-      <div class="price-card">
-        <div class="price-tier">Starter</div>
-        <div class="price-name">Review Starter</div>
-        <div class="price-desc">Get the system in place and start collecting reviews immediately.</div>
-        <div class="price-setup">&nbsp;</div>
-        <div class="price-monthly">$99<span>/mo</span></div>
-        <div class="price-note">No setup fee &middot; Cancel anytime</div>
-        <hr class="price-divider">
-        <ul class="price-features">
-          <li>Automated review request texts</li>
-          <li>Direct Google review link</li>
-          <li>QR code for walk-in businesses</li>
-          <li>Monthly review tracking report</li>
-          <li>Review response templates</li>
-        </ul>
-        <a href="https://api.leadconnectorhq.com/widget/bookings/core-ai-discovery" target="_blank" class="price-cta cta-outline">Start Free Trial</a>
-      </div>
-      <div class="price-card featured-price">
-        <div class="price-tier">Growth</div>
-        <div class="price-name">Review Growth</div>
-        <div class="price-desc">Build a steady stream of reviews with branded materials and monthly monitoring.</div>
-        <div class="price-setup">$699 setup</div>
-        <div class="price-monthly">$199<span>/mo</span></div>
-        <div class="price-note">Includes full branded kit</div>
-        <hr class="price-divider">
-        <ul class="price-features">
-          <li>Everything in Starter</li>
-          <li>Branded review signage and inserts</li>
-          <li>Review landing page</li>
-          <li>Staff review request script</li>
-          <li>4 review-based social posts/mo</li>
-          <li>Monthly monitoring and reporting</li>
-        </ul>
-        <a href="https://api.leadconnectorhq.com/widget/bookings/core-ai-discovery" target="_blank" class="price-cta">Get Started</a>
-      </div>
-      <div class="price-card">
-        <div class="price-tier">Pro</div>
-        <div class="price-name">Reputation Pro</div>
-        <div class="price-desc">Full reputation management -- reviews, responses, and marketing all handled for you.</div>
-        <div class="price-setup">$999 setup</div>
-        <div class="price-monthly">$279<span>/mo</span></div>
-        <div class="price-note">Full-service reputation management</div>
-        <hr class="price-divider">
-        <ul class="price-features">
-          <li>Everything in Growth</li>
-          <li>Review response support</li>
-          <li>Website review display section</li>
-          <li>Private feedback form</li>
-          <li>Quarterly design refresh</li>
-          <li>Monthly optimization call</li>
-        </ul>
-        <a href="https://api.leadconnectorhq.com/widget/bookings/core-ai-discovery" target="_blank" class="price-cta cta-outline">Get Started</a>
-      </div>
-    </div>
-
-    <!-- Additional Services -->
-    <div class="pricing-grid" id="pricing-addons">
-      <div class="price-card">
-        <div class="price-tier">Community</div>
-        <div class="price-name">Member Management</div>
-        <div class="price-desc">Digital member directory, attendance, and lead share system for chambers and networking groups.</div>
-        <div class="price-setup">$699 setup</div>
-        <div class="price-monthly">$150<span>/mo</span></div>
-        <div class="price-note">$2,499 year one &middot; $1,800/yr after</div>
-        <hr class="price-divider">
-        <ul class="price-features">
-          <li>Searchable member directory</li>
-          <li>QR code self check-in</li>
-          <li>Renewal alerts and tracking</li>
-          <li>Admin, member, and visitor access</li>
-          <li>Export and reporting tools</li>
-        </ul>
-        <a href="https://api.leadconnectorhq.com/widget/bookings/core-ai-discovery" target="_blank" class="price-cta cta-outline">Learn More</a>
-      </div>
+<!-- PRICING: SPECIALIZED SOLUTIONS -->
+<section class="pricing-section">
+  <div class="pricing-inner">
+    <div class="pricing-eyebrow">Specialized Solutions</div>
+    <h2 class="pricing-heading">Purpose-built for<br>your specific need.</h2>
+    <p class="pricing-sub">Standalone systems for businesses that need one powerful solution &mdash; not a full package.</p>
+    <div class="pricing-grid active" style="display:grid;">
       <div class="price-card featured-price">
         <div class="price-tier">AI</div>
         <div class="price-name">AI Voice Receptionist</div>
@@ -509,12 +514,29 @@
         <a href="https://api.leadconnectorhq.com/widget/bookings/core-ai-discovery" target="_blank" class="price-cta">Get Started</a>
       </div>
       <div class="price-card">
+        <div class="price-tier">Community</div>
+        <div class="price-name">Member Management</div>
+        <div class="price-desc">Digital member directory, attendance, and lead share system for chambers and networking groups.</div>
+        <div class="price-setup">$699 setup</div>
+        <div class="price-monthly">$150<span>/mo</span></div>
+        <div class="price-note">$2,499 year one &middot; $1,800/yr after</div>
+        <hr class="price-divider">
+        <ul class="price-features">
+          <li>Searchable member directory</li>
+          <li>QR code self check-in</li>
+          <li>Renewal alerts and tracking</li>
+          <li>Admin, member, and visitor access</li>
+          <li>Export and reporting tools</li>
+        </ul>
+        <a href="https://api.leadconnectorhq.com/widget/bookings/core-ai-discovery" target="_blank" class="price-cta cta-outline">Learn More</a>
+      </div>
+      <div class="price-card">
         <div class="price-tier">Youth</div>
         <div class="price-name">Youth Founder Website</div>
-        <div class="price-desc">A professional website for young entrepreneurs ages 13-24, built to help them get taken seriously.</div>
+        <div class="price-desc">A professional website for young entrepreneurs ages 13&ndash;24, built to help them get taken seriously.</div>
         <div class="price-setup">$999 total &mdash; 3 payments of $333</div>
         <div class="price-monthly">$49<span>/mo</span></div>
-        <div class="price-note">Ages 13-24 &middot; $49/mo maintenance after launch</div>
+        <div class="price-note">Ages 13&ndash;24 &middot; $49/mo maintenance after launch</div>
         <hr class="price-divider">
         <ul class="price-features">
           <li>Mobile-friendly one-page site</li>
@@ -526,12 +548,12 @@
         <a href="https://api.leadconnectorhq.com/widget/bookings/core-ai-discovery" target="_blank" class="price-cta cta-outline">Learn More</a>
       </div>
     </div>
-
     <div class="pricing-note">
-      <strong>Not sure which package is right for you?</strong> Book a free 30-minute discovery call and we'll tell you exactly what your business needs -- no pressure, no commitment. Every package includes onboarding, support, and a system built for how you actually operate.
+      <strong>Not sure which package is right for you?</strong> Book a free 30-minute discovery call and we'll tell you exactly what your business needs &mdash; no pressure, no commitment. Every package includes onboarding, support, and a system built for how you actually operate.
     </div>
   </div>
 </section>
+
 
 <section id="what-we-build">
   <div class="section-inner">
@@ -702,12 +724,7 @@
 
 <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6a3be9a997c4e6b1789e8c85" data-source="WEB_USER"></script>
 <script>
-function showPricing(e, tab) {
-  document.querySelectorAll('.pricing-grid').forEach(function(g){ g.classList.remove('active'); });
-  document.querySelectorAll('.ptab').forEach(function(t){ t.classList.remove('active'); });
-  document.getElementById('pricing-' + tab).classList.add('active');
-  e.target.classList.add('active');
-}
+
 </script>
 </body>
 </html>
