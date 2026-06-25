@@ -18,10 +18,8 @@
       --gray: #6B7280;
       --green: #10B981;
     }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'DM Sans', system-ui, sans-serif; color: var(--dark); background: var(--white); overflow-x: hidden; font-weight: 400; }
-
-    /* NAV */
+    html { scroll-behavior: smooth; width: 100%; overflow-x: hidden; overflow-y: auto; }
+    body { font-family: 'DM Sans', system-ui, sans-serif; color: var(--dark); background: var(--white); overflow-x: hidden; overflow-y: auto; font-weight: 400; width: 100%; }
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       background: rgba(255,255,255,0.97); backdrop-filter: blur(16px);
@@ -30,91 +28,48 @@
       display: flex; align-items: center; justify-content: space-between;
     }
     .nav-logo { display: flex; align-items: center; text-decoration: none; }
-    .nav-logo img { height: 44px;  }
+    .nav-logo img { height: 44px; }
     .nav-back { font-size: 14px; font-weight: 500; color: var(--gray); text-decoration: none; transition: color .15s; }
     .nav-back:hover { color: var(--navy); }
-    .nav-cta {
-      padding: 9px 22px; border-radius: 8px;
-      background: var(--navy); color: var(--white);
-      font-size: 14px; font-weight: 600; text-decoration: none; transition: opacity .15s;
-    }
+    .nav-cta { padding: 9px 22px; border-radius: 8px; background: var(--navy); color: var(--white); font-size: 14px; font-weight: 600; text-decoration: none; transition: opacity .15s; }
     .nav-cta:hover { opacity: 0.88; }
-
-    /* PAGE HERO */
     .page-hero { padding: 140px 56px 80px; max-width: 1100px; margin: 0 auto; }
-    .hero-eyebrow {
-      display: inline-flex; align-items: center; gap: 8px;
-      border: 1px solid var(--border); border-radius: 20px; padding: 5px 14px;
-      font-size: 12px; font-weight: 500; color: var(--gray); letter-spacing: 0.3px; margin-bottom: 32px;
-    }
+    .hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--border); border-radius: 20px; padding: 5px 14px; font-size: 12px; font-weight: 500; color: var(--gray); letter-spacing: 0.3px; margin-bottom: 32px; }
     .hero-eyebrow span { color: var(--navy); font-weight: 600; }
-    .hero-h1 {
-      font-size: clamp(36px, 5vw, 60px); font-weight: 600;
-      line-height: 1.1; color: var(--navy); max-width: 620px;
-      margin-bottom: 20px; letter-spacing: -1.5px;
-    }
+    .hero-h1 { font-size: clamp(36px, 5vw, 60px); font-weight: 600; line-height: 1.1; color: var(--navy); max-width: 620px; margin-bottom: 20px; letter-spacing: -1.5px; }
     .hero-tagline { font-size: 15px; font-weight: 500; color: var(--periwinkle); margin-bottom: 20px; }
     .hero-sub { font-size: 17px; color: var(--gray); max-width: 500px; line-height: 1.7; margin-bottom: 40px; }
     .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
-    .btn-primary {
-      padding: 13px 26px; border-radius: 8px; background: var(--navy); color: var(--white);
-      font-size: 14px; font-weight: 600; text-decoration: none; transition: opacity .15s;
-      display: inline-flex; align-items: center; gap: 8px; font-family: inherit;
-    }
+    .btn-primary { padding: 13px 26px; border-radius: 8px; background: var(--navy); color: var(--white); font-size: 14px; font-weight: 600; text-decoration: none; transition: opacity .15s; display: inline-flex; align-items: center; gap: 8px; font-family: inherit; }
     .btn-primary:hover { opacity: 0.88; }
-    .btn-secondary {
-      padding: 13px 26px; border-radius: 8px; background: transparent; color: var(--navy);
-      font-size: 14px; font-weight: 600; text-decoration: none; border: 1.5px solid var(--border);
-      transition: border-color .15s, background .15s; font-family: inherit;
-    }
+    .btn-secondary { padding: 13px 26px; border-radius: 8px; background: transparent; color: var(--navy); font-size: 14px; font-weight: 600; text-decoration: none; border: 1.5px solid var(--border); transition: border-color .15s, background .15s; font-family: inherit; }
     .btn-secondary:hover { border-color: var(--navy); background: #f5f7ff; }
-    .hero-stats {
-      display: flex; gap: 48px; margin-top: 64px; flex-wrap: wrap;
-      border-top: 1px solid var(--border); padding-top: 40px;
-    }
+    .hero-stats { display: flex; gap: 48px; margin-top: 64px; flex-wrap: wrap; border-top: 1px solid var(--border); padding-top: 40px; }
     .hero-stat-num { font-size: 28px; font-weight: 600; color: var(--navy); line-height: 1; letter-spacing: -1px; }
     .hero-stat-label { font-size: 13px; color: var(--gray); margin-top: 5px; font-weight: 400; line-height: 1.5; }
-
-    /* SHARED */
     section { padding: 96px 56px; }
     .section-inner { max-width: 1100px; margin: 0 auto; }
     .section-eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--periwinkle); margin-bottom: 14px; }
     .section-h2 { font-size: clamp(26px, 3.5vw, 42px); font-weight: 600; color: var(--navy); line-height: 1.15; letter-spacing: -1px; margin-bottom: 14px; }
     .section-sub { font-size: 16px; color: var(--gray); max-width: 500px; line-height: 1.7; margin-bottom: 52px; font-weight: 400; }
-
-    /* STATEMENT */
     .statement-section { background: var(--navy); padding: 80px 56px; }
     .statement-inner { max-width: 800px; margin: 0 auto; text-align: center; }
     .statement-text { font-size: clamp(22px, 3.5vw, 40px); font-weight: 600; color: var(--white); line-height: 1.3; letter-spacing: -0.8px; margin-bottom: 16px; }
     .statement-text em { font-style: normal; color: #a5b0e8; }
     .statement-sub { font-size: 17px; color: #a5b0e8; line-height: 1.7; font-weight: 400; }
-
-    /* APPS GRID (what's included) */
     .apps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 20px; }
-    .app-card {
-      background: var(--white); border: 1px solid var(--border);
-      border-radius: 14px; padding: 28px;
-      transition: border-color .2s, box-shadow .2s;
-    }
+    .app-card { background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 28px; transition: border-color .2s, box-shadow .2s; }
     .app-card:hover { border-color: #c7d2fe; box-shadow: 0 4px 24px rgba(26,43,107,0.07); }
     .app-icon { font-size: 26px; margin-bottom: 14px; }
     .app-title { font-size: 16px; font-weight: 600; color: var(--navy); margin-bottom: 8px; letter-spacing: -0.2px; }
     .app-desc { font-size: 14px; color: var(--gray); line-height: 1.65; font-weight: 400; }
-
-    /* TOOLS (who it's for) */
     .tools-section { background: var(--light); }
     .tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
-    .tool-card {
-      background: var(--white); border: 1px solid var(--border);
-      border-radius: 12px; padding: 22px;
-      display: flex; gap: 14px; align-items: flex-start; transition: border-color .15s;
-    }
+    .tool-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 22px; display: flex; gap: 14px; align-items: flex-start; transition: border-color .15s; }
     .tool-card:hover { border-color: #c7d2fe; }
     .tool-icon { width: 40px; height: 40px; flex-shrink: 0; background: #EEF2FF; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; }
     .tool-title { font-size: 14px; font-weight: 600; color: var(--navy); margin-bottom: 5px; }
     .tool-desc { font-size: 13px; color: var(--gray); line-height: 1.6; font-weight: 400; }
-
-    /* HOW IT WORKS */
     .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
     .step-card { background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 28px 24px; }
     .step-num { width: 36px; height: 36px; border-radius: 50%; background: #EEF2FF; color: var(--navy); font-size: 15px; font-weight: 600; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
@@ -123,33 +78,19 @@
 
     /* PRICING */
     .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 720px; }
-    .pricing-card {
-      background: var(--white); border: 1px solid var(--border);
-      border-radius: 14px; padding: 32px;
-      transition: border-color .2s, box-shadow .2s; position: relative;
-    }
+    .pricing-card { background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 32px; transition: border-color .2s, box-shadow .2s; position: relative; }
     .pricing-card:hover { border-color: #c7d2fe; box-shadow: 0 4px 24px rgba(26,43,107,0.07); }
     .pricing-card.featured { border-color: #c7d2fe; background: #fafbff; }
-    .pricing-card.featured::after {
-      content: 'Full Package';
-      position: absolute; top: 16px; right: 16px;
-      background: #EEF2FF; color: var(--navy);
-      font-size: 10px; font-weight: 600; letter-spacing: 0.3px; text-transform: uppercase;
-      padding: 3px 10px; border-radius: 20px; border: 1px solid #c7d2fe;
-    }
+    .pricing-card.featured::after { content: 'Full Package'; position: absolute; top: 16px; right: 16px; background: #EEF2FF; color: var(--navy); font-size: 10px; font-weight: 600; letter-spacing: 0.3px; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; border: 1px solid #c7d2fe; }
     .pricing-tier { font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--periwinkle); margin-bottom: 10px; }
     .pricing-price { font-size: 40px; font-weight: 600; color: var(--navy); letter-spacing: -1.5px; line-height: 1; margin-bottom: 4px; }
     .pricing-price span { font-size: 16px; font-weight: 400; color: var(--gray); }
+    .pricing-price-sub { font-size: 13px; color: var(--periwinkle); font-weight: 600; margin-bottom: 4px; }
     .pricing-desc { font-size: 13px; color: var(--gray); line-height: 1.6; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--border); }
     .pricing-features { list-style: none; margin-bottom: 28px; }
     .pricing-features li { font-size: 13px; color: #374151; padding: 5px 0; display: flex; gap: 8px; align-items: flex-start; line-height: 1.5; }
     .pricing-features li::before { content: '✓'; color: var(--green); font-weight: 600; flex-shrink: 0; }
-    .pricing-cta {
-      display: block; text-align: center; padding: 12px 24px; border-radius: 8px;
-      font-size: 14px; font-weight: 600; text-decoration: none;
-      background: var(--navy); color: var(--white);
-      transition: opacity .15s; font-family: inherit;
-    }
+    .pricing-cta { display: block; text-align: center; padding: 12px 24px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; background: var(--navy); color: var(--white); transition: opacity .15s; font-family: inherit; }
     .pricing-cta:hover { opacity: 0.88; }
 
     /* PAYMENT OPTIONS */
@@ -159,7 +100,6 @@
     .payment-option { font-size: 15px; font-weight: 600; color: var(--navy); margin-bottom: 4px; }
     .payment-detail { font-size: 13px; color: var(--gray); line-height: 1.5; }
 
-    /* CTA */
     .cta-section { background: var(--navy); text-align: center; padding: 96px 56px; }
     .cta-h2 { font-size: clamp(26px, 3.5vw, 46px); font-weight: 600; color: var(--white); line-height: 1.15; letter-spacing: -1px; margin-bottom: 14px; }
     .cta-sub { font-size: 16px; color: #a5b0e8; margin-bottom: 40px; line-height: 1.7; font-weight: 400; }
@@ -170,145 +110,128 @@
     .btn-outline-white:hover { border-color: rgba(255,255,255,0.7); }
     .cta-contact { font-size: 14px; color: #6B7FD4; }
     .cta-contact a { color: #a5b0e8; text-decoration: none; font-weight: 500; }
-
-    /* FOOTER */
     footer { background: #111111; padding: 36px 56px; text-align: center; }
     .footer-logo { height: 48px; margin-bottom: 14px; }
     .footer-text { font-size: 13px; color: #aaa; line-height: 2; }
     .footer-text strong { color: #fff; }
-
-    /* RESPONSIVE */
     @media (max-width: 768px) {
+      html, body { overflow-y: auto; height: auto; }
       nav { padding: 0 20px; }
       .page-hero { padding: 100px 20px 60px; }
-      section { padding: 64px 20px; }
+      section { padding: 64px 20px; height: auto; }
       .hero-stats { gap: 28px; padding-top: 28px; }
       .statement-section, .cta-section { padding: 64px 20px; }
       .cta-actions { flex-direction: column; align-items: center; }
       footer { padding: 28px 20px; }
+      .pricing-grid { grid-template-columns: 1fr; max-width: 100%; }
+      .payment-grid { grid-template-columns: 1fr; max-width: 100%; }
+      .apps-grid { grid-template-columns: 1fr; }
+      .tools-grid { grid-template-columns: 1fr; }
+      .steps-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <a href="index.html" class="nav-logo">
     <img src="https://i.imgur.com/G40kixu.png" alt="CORE AI" />
   </a>
-  <a href="index.html" class="nav-back">← Back to Home</a>
+  <a href="index.html" class="nav-back">&larr; Back to Home</a>
   <a href="mailto:abdul@coreresponsegroup.com?subject=Youth Founder Website Program" class="nav-cta">Get Started</a>
 </nav>
 
-<!-- HERO -->
 <div class="page-hero">
-  <div class="hero-eyebrow">Youth Founder Website Program · <span>New Program</span></div>
+  <div class="hero-eyebrow">Youth Founder Website Program &middot; <span>New Program</span></div>
   <h1 class="hero-h1">Your idea is real.<br>Now make it look like it.</h1>
   <p class="hero-tagline">Professional websites for young entrepreneurs and student founders.</p>
-  <p class="hero-sub">We build clean, mobile-friendly websites that give young business owners a professional online presence — so their idea gets taken seriously from day one.</p>
+  <p class="hero-sub">We build clean, mobile-friendly websites that give young business owners a professional online presence &mdash; so their idea gets taken seriously from day one.</p>
   <div class="hero-actions">
-    <a href="mailto:abdul@coreresponsegroup.com?subject=Youth Founder Website Program" class="btn-primary">Book a Free Consultation →</a>
+    <a href="mailto:abdul@coreresponsegroup.com?subject=Youth Founder Website Program" class="btn-primary">Book a Free Consultation &rarr;</a>
     <a href="#whats-included" class="btn-secondary">See What's Included</a>
   </div>
   <div class="hero-stats">
     <div>
-      <div class="hero-stat-num">$1,200</div>
-      <div class="hero-stat-label">Starting package —<br>flexible payment options</div>
+      <div class="hero-stat-num">$999</div>
+      <div class="hero-stat-label">Total &mdash; 3 payments of $333<br>flexible payment options</div>
     </div>
     <div>
       <div class="hero-stat-num">1 Page</div>
-      <div class="hero-stat-label">Clean, mobile-friendly —<br>everything they need to launch</div>
+      <div class="hero-stat-label">Clean, mobile-friendly &mdash;<br>everything they need to launch</div>
     </div>
     <div>
       <div class="hero-stat-num">QR Code</div>
-      <div class="hero-stat-label">Included — for flyers,<br>pitch decks, and business cards</div>
+      <div class="hero-stat-label">Included &mdash; for flyers,<br>pitch decks, and business cards</div>
     </div>
   </div>
 </div>
 
-<!-- STATEMENT -->
 <div class="statement-section">
   <div class="statement-inner">
-    <p class="statement-text">
-      A great idea without a website<br>is <em>just a secret.</em>
-    </p>
-    <p class="statement-sub">We help young entrepreneurs stop keeping their business to themselves — and start showing up like the real business owners they already are.</p>
+    <p class="statement-text">A great idea without a website<br>is <em>just a secret.</em></p>
+    <p class="statement-sub">We help young entrepreneurs stop keeping their business to themselves &mdash; and start showing up like the real business owners they already are.</p>
   </div>
 </div>
 
-<!-- WHO IT'S FOR -->
 <section class="tools-section">
   <div class="section-inner">
     <div class="section-eyebrow">Who This Is For</div>
     <h2 class="section-h2">Built for young entrepreneurs<br>ready to be taken seriously.</h2>
-    <p class="section-sub">Whether you're selling products, offering a service, or pitching to investors — a professional website changes everything.</p>
+    <p class="section-sub">Whether you're selling products, offering a service, or pitching to investors &mdash; a professional website changes everything.</p>
     <div class="tools-grid">
       <div class="tool-card">
-        <div class="tool-icon">🎒</div>
-        <div>
-          <div class="tool-title">Student Founders</div>
-          <div class="tool-desc">You have a business idea and you're serious about it. A website gives you credibility with customers, teachers, and mentors.</div>
-        </div>
+        <div class="tool-icon">&#127890;</div>
+        <div><div class="tool-title">Student Founders</div><div class="tool-desc">You have a business idea and you're serious about it. A website gives you credibility with customers, teachers, and mentors.</div></div>
       </div>
       <div class="tool-card">
-        <div class="tool-icon">🛍️</div>
-        <div>
-          <div class="tool-title">Teen Side-Hustle Owners</div>
-          <div class="tool-desc">You're already making money — now give customers a real place to find you, learn what you do, and reach out.</div>
-        </div>
+        <div class="tool-icon">&#128717;&#65039;</div>
+        <div><div class="tool-title">Teen Side-Hustle Owners</div><div class="tool-desc">You're already making money &mdash; now give customers a real place to find you, learn what you do, and reach out.</div></div>
       </div>
       <div class="tool-card">
-        <div class="tool-icon">🏆</div>
-        <div>
-          <div class="tool-title">Pitch Competition Participants</div>
-          <div class="tool-desc">Judges take your idea more seriously when there's a live website behind it. Add it to your pitch deck and your resume.</div>
-        </div>
+        <div class="tool-icon">&#127942;</div>
+        <div><div class="tool-title">Pitch Competition Participants</div><div class="tool-desc">Judges take your idea more seriously when there's a live website behind it. Add it to your pitch deck and your resume.</div></div>
       </div>
       <div class="tool-card">
-        <div class="tool-icon">🌱</div>
-        <div>
-          <div class="tool-title">First-Time Business Owners</div>
-          <div class="tool-desc">Just getting started. We make the process simple, guided, and professional — so you launch with confidence.</div>
-        </div>
+        <div class="tool-icon">&#127807;</div>
+        <div><div class="tool-title">First-Time Business Owners</div><div class="tool-desc">Just getting started. We make the process simple, guided, and professional &mdash; so you launch with confidence.</div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- WHAT'S INCLUDED -->
 <section id="whats-included">
   <div class="section-inner">
     <div class="section-eyebrow">What's Included</div>
     <h2 class="section-h2">Everything a young founder needs<br>to launch professionally.</h2>
-    <p class="section-sub">We handle the design, the messaging, and the launch — you focus on building your business.</p>
+    <p class="section-sub">We handle the design, the messaging, and the launch &mdash; you focus on building your business.</p>
     <div class="apps-grid">
       <div class="app-card">
-        <div class="app-icon">📱</div>
+        <div class="app-icon">&#128241;</div>
         <div class="app-title">One-Page Mobile-Friendly Website</div>
-        <div class="app-desc">A clean, professional site that looks great on any device — because most of your audience will find you on a phone.</div>
+        <div class="app-desc">A clean, professional site that looks great on any device &mdash; because most of your audience will find you on a phone.</div>
       </div>
       <div class="app-card">
-        <div class="app-icon">✍️</div>
+        <div class="app-icon">&#9997;&#65039;</div>
         <div class="app-title">Business Overview + Founder Bio</div>
-        <div class="app-desc">We help you write clear, confident messaging that explains what you do, who you serve, and why you started — in your voice.</div>
+        <div class="app-desc">We help you write clear, confident messaging that explains what you do, who you serve, and why you started &mdash; in your voice.</div>
       </div>
       <div class="app-card">
-        <div class="app-icon">📦</div>
+        <div class="app-icon">&#128230;</div>
         <div class="app-title">Product or Service Section</div>
-        <div class="app-desc">A dedicated section showing what you offer — with descriptions that make customers want to reach out and buy.</div>
+        <div class="app-desc">A dedicated section showing what you offer &mdash; with descriptions that make customers want to reach out and buy.</div>
       </div>
       <div class="app-card">
-        <div class="app-icon">📬</div>
+        <div class="app-icon">&#128044;</div>
         <div class="app-title">Contact Form or Inquiry Link</div>
-        <div class="app-desc">Customers can reach you directly from your site — no lost DMs, no unanswered emails. Inquiries go straight to you.</div>
+        <div class="app-desc">Customers can reach you directly from your site &mdash; no lost DMs, no unanswered emails. Inquiries go straight to you.</div>
       </div>
       <div class="app-card">
-        <div class="app-icon">🔲</div>
+        <div class="app-icon">&#9638;&#65039;</div>
         <div class="app-title">Custom QR Code</div>
-        <div class="app-desc">Add it to flyers, business cards, pitch decks, and school projects — one scan and they're on your site.</div>
+        <div class="app-desc">Add it to flyers, business cards, pitch decks, and school projects &mdash; one scan and they're on your site.</div>
       </div>
       <div class="app-card">
-        <div class="app-icon">📞</div>
+        <div class="app-icon">&#128222;</div>
         <div class="app-title">Launch Coaching Call</div>
         <div class="app-desc">Before we go live, we walk through the site together, show you how to share it, and make sure everything is exactly right.</div>
       </div>
@@ -316,48 +239,31 @@
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
 <section style="background: var(--light);">
   <div class="section-inner">
     <div class="section-eyebrow">How It Works</div>
-    <h2 class="section-h2">From first call to live website —<br>simple and guided.</h2>
+    <h2 class="section-h2">From first call to live website &mdash;<br>simple and guided.</h2>
     <p class="section-sub">We walk you through every step so there's nothing to figure out on your own.</p>
     <div class="steps-grid">
-      <div class="step-card">
-        <div class="step-num">1</div>
-        <div class="step-title">Free consultation call</div>
-        <div class="step-desc">We learn about your business idea, your audience, and what you want people to do when they land on your site.</div>
-      </div>
-      <div class="step-card">
-        <div class="step-num">2</div>
-        <div class="step-title">We build your site</div>
-        <div class="step-desc">We design and write your one-page website — ready for your review within days, built around your business.</div>
-      </div>
-      <div class="step-card">
-        <div class="step-num">3</div>
-        <div class="step-title">You review and refine</div>
-        <div class="step-desc">We make it exactly right. You decide when it's ready — usually one or two rounds of feedback is all it takes.</div>
-      </div>
-      <div class="step-card">
-        <div class="step-num">4</div>
-        <div class="step-title">Launch coaching call</div>
-        <div class="step-desc">We go live together — we show you how to share it, use the QR code, and present your business professionally from day one.</div>
-      </div>
+      <div class="step-card"><div class="step-num">1</div><div class="step-title">Free consultation call</div><div class="step-desc">We learn about your business idea, your audience, and what you want people to do when they land on your site.</div></div>
+      <div class="step-card"><div class="step-num">2</div><div class="step-title">We build your site</div><div class="step-desc">We design and write your one-page website &mdash; ready for your review within days, built around your business.</div></div>
+      <div class="step-card"><div class="step-num">3</div><div class="step-title">You review and refine</div><div class="step-desc">We make it exactly right. You decide when it's ready &mdash; usually one or two rounds of feedback is all it takes.</div></div>
+      <div class="step-card"><div class="step-num">4</div><div class="step-title">Launch coaching call</div><div class="step-desc">We go live together &mdash; we show you how to share it, use the QR code, and present your business professionally from day one.</div></div>
     </div>
   </div>
 </section>
 
-<!-- PRICING -->
 <section id="pricing">
   <div class="section-inner">
     <div class="section-eyebrow">Pricing</div>
     <h2 class="section-h2">Simple pricing. Flexible payments.</h2>
-    <p class="section-sub">Designed to be accessible for students, parents, and youth entrepreneur programs — with payment options that work for everyone.</p>
+    <p class="section-sub">Designed to be accessible for students, parents, and youth entrepreneur programs &mdash; with payment options that work for everyone.</p>
     <div class="pricing-grid">
       <div class="pricing-card featured">
         <div class="pricing-tier">Launch Package</div>
-        <div class="pricing-price">$1,200<span> starting</span></div>
-        <div class="pricing-desc">Full website package — everything included. One investment to give your business a professional online presence.</div>
+        <div class="pricing-price">$999<span> total</span></div>
+        <div class="pricing-price-sub">3 payments of $333 &mdash; no interest</div>
+        <div class="pricing-desc">Full website package &mdash; everything included. One investment to give your business a professional online presence.</div>
         <ul class="pricing-features">
           <li>One-page mobile-friendly website</li>
           <li>Business overview + founder bio</li>
@@ -372,8 +278,9 @@
       </div>
       <div class="pricing-card">
         <div class="pricing-tier">Monthly Maintenance</div>
-        <div class="pricing-price">$49–$99<span>/month</span></div>
-        <div class="pricing-desc">Optional after launch. For young entrepreneurs who need ongoing support as their business grows and changes.</div>
+        <div class="pricing-price">$49<span>/month</span></div>
+        <div class="pricing-price-sub">Optional after launch</div>
+        <div class="pricing-desc">For young entrepreneurs who need ongoing support as their business grows and changes.</div>
         <ul class="pricing-features">
           <li>Small text and photo updates</li>
           <li>Seasonal and event updates</li>
@@ -389,39 +296,37 @@
     <div class="payment-grid">
       <div class="payment-card">
         <div class="payment-label">Payment Option 1</div>
-        <div class="payment-option">$300 down</div>
-        <div class="payment-detail">Then $150/month for 6 months</div>
+        <div class="payment-option">3 payments of $333</div>
+        <div class="payment-detail">Split into 3 equal monthly payments &mdash; no interest, no fees</div>
       </div>
       <div class="payment-card">
         <div class="payment-label">Payment Option 2</div>
-        <div class="payment-option">$199/month</div>
-        <div class="payment-detail">For 6 months — no down payment required</div>
+        <div class="payment-option">$999 in full</div>
+        <div class="payment-detail">Pay once and save &mdash; no payment plan needed</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
 <section id="contact" class="cta-section">
   <div style="max-width:640px;margin:0 auto">
     <div class="section-eyebrow" style="color:#6B7FD4;text-align:center;margin-bottom:16px">Get Started</div>
     <h2 class="cta-h2">Ready to give your business<br>the website it deserves?</h2>
-    <p class="cta-sub">Book a free consultation. We'll talk through your idea, show you what we'd build, and answer every question — no commitment required.</p>
+    <p class="cta-sub">Book a free consultation. We'll talk through your idea, show you what we'd build, and answer every question &mdash; no commitment required.</p>
     <div class="cta-actions">
-      <a href="mailto:abdul@coreresponsegroup.com?subject=Youth Founder Website Program" class="btn-gold">📅 Book a Free Consultation</a>
-      <a href="tel:2024313685" class="btn-outline-white">📞 202-431-3685</a>
+      <a href="mailto:abdul@coreresponsegroup.com?subject=Youth Founder Website Program" class="btn-gold">&#128197; Book a Free Consultation</a>
+      <a href="tel:5714153551" class="btn-outline-white">&#128222; 571-415-3551</a>
     </div>
     <p class="cta-contact">Or email us at <a href="mailto:abdul@coreresponsegroup.com">abdul@coreresponsegroup.com</a></p>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <img src="https://i.imgur.com/G40kixu.png" alt="CORE AI" class="footer-logo" />
   <div class="footer-text">
     <strong>CORE AI</strong> | Core Response AI | Powerful Business Solutions | A Tayyab Group, Inc. Company<br>
-    coreresponsegroup.com · 202-431-3685 · abdul@coreresponsegroup.com<br>
-    <span style="font-size:12px;color:#555;margin-top:4px;display:block">© 2026 Core Response AI · All rights reserved</span>
+    coreresponsegroup.com &middot; 571-415-3551 &middot; abdul@coreresponsegroup.com<br>
+    <span style="font-size:12px;color:#555;margin-top:4px;display:block">&copy; 2026 Core Response AI &middot; All rights reserved</span>
   </div>
 </footer>
 
