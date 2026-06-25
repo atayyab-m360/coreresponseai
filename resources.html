@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resource Center — CORE AI</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #1A2B6B;
+      --periwinkle: #6B7FD4;
+      --gold: #F59E0B;
+      --white: #ffffff;
+      --light: #F8F9FC;
+      --border: #E8EAF2;
+      --dark: #111827;
+      --gray: #6B7280;
+      --green: #10B981;
+      --ink: #0D1221;
+    }
+    html { scroll-behavior: smooth; width: 100%; overflow-x: hidden; overflow-y: auto; }
+    body { font-family: 'DM Sans', system-ui, sans-serif; color: var(--dark); background: var(--white); overflow-x: hidden; font-weight: 400; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(255,255,255,0.97); backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 56px; height: 64px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { display: flex; align-items: center; text-decoration: none; }
+    .nav-logo img { height: 44px; }
+    .nav-back { font-size: 14px; font-weight: 500; color: var(--gray); text-decoration: none; transition: color .15s; }
+    .nav-back:hover { color: var(--navy); }
+    .nav-cta { padding: 9px 22px; border-radius: 8px; background: var(--navy); color: var(--white); font-size: 14px; font-weight: 600; text-decoration: none; transition: opacity .15s; }
+    .nav-cta:hover { opacity: 0.88; }
+
+    /* HERO */
+    .page-hero {
+      padding: 140px 56px 80px;
+      max-width: 1100px; margin: 0 auto;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      border: 1px solid var(--border); border-radius: 20px;
+      padding: 5px 14px; font-size: 12px; font-weight: 500;
+      color: var(--gray); letter-spacing: 0.3px; margin-bottom: 28px;
+    }
+    .hero-eyebrow span { color: var(--navy); font-weight: 600; }
+    .hero-h1 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: clamp(36px, 5vw, 64px);
+      font-weight: 400; font-style: italic;
+      line-height: 1.1; color: var(--navy);
+      max-width: 700px; margin-bottom: 20px;
+      letter-spacing: -1px;
+    }
+    .hero-h1 em { font-style: normal; color: var(--periwinkle); }
+    .hero-sub {
+      font-size: 17px; color: var(--gray);
+      max-width: 560px; line-height: 1.7; margin-bottom: 40px;
+    }
+    .hero-journey {
+      display: flex; gap: 0; flex-wrap: wrap;
+      margin-top: 48px; padding-top: 40px;
+      border-top: 1px solid var(--border);
+    }
+    .journey-step {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 12px; font-weight: 500; color: var(--gray);
+    }
+    .journey-num {
+      width: 24px; height: 24px; border-radius: 50%;
+      background: #EEF2FF; color: var(--navy);
+      font-size: 11px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .journey-num.active { background: var(--navy); color: white; }
+    .journey-arrow {
+      color: var(--border); font-size: 16px; margin: 0 8px;
+    }
+    .journey-label { line-height: 1.3; }
+    .journey-label strong { display: block; color: var(--navy); font-weight: 600; font-size: 12px; }
+
+    /* SECTION SHARED */
+    .rc-section { padding: 80px 56px; }
+    .rc-section-inner { max-width: 1100px; margin: 0 auto; }
+    .rc-eyebrow {
+      font-size: 11px; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--periwinkle); margin-bottom: 10px;
+    }
+    .rc-h2 {
+      font-size: clamp(24px, 3vw, 36px); font-weight: 600;
+      color: var(--navy); letter-spacing: -0.8px;
+      margin-bottom: 8px; line-height: 1.2;
+    }
+    .rc-sub {
+      font-size: 15px; color: var(--gray); line-height: 1.6;
+      margin-bottom: 48px; max-width: 520px;
+    }
+
+    /* FEATURED RESOURCES */
+    .featured-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+    .featured-card {
+      border: 1.5px solid var(--border); border-radius: 16px;
+      padding: 36px; background: var(--white);
+      display: flex; flex-direction: column;
+      transition: box-shadow .2s, border-color .2s;
+      position: relative; overflow: hidden;
+    }
+    .featured-card:hover { box-shadow: 0 8px 40px rgba(26,43,107,0.10); border-color: #c7d2fe; }
+    .featured-card.highlight {
+      background: linear-gradient(135deg, #fafbff 0%, #f0f3ff 100%);
+      border-color: #c7d2fe;
+    }
+    .featured-card.highlight::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--navy), var(--periwinkle));
+    }
+    .fc-icon {
+      width: 48px; height: 48px; border-radius: 12px;
+      background: #EEF2FF; display: flex; align-items: center;
+      justify-content: center; font-size: 22px;
+      margin-bottom: 20px; flex-shrink: 0;
+    }
+    .fc-icon.gold-bg { background: #FEF3C7; }
+    .fc-icon.green-bg { background: #ECFDF5; }
+    .fc-status {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 10px; font-weight: 700; letter-spacing: 1px;
+      text-transform: uppercase; padding: 4px 10px;
+      border-radius: 20px; margin-bottom: 16px; width: fit-content;
+    }
+    .fc-status.dev { background: #FEF3C7; color: #92400E; border: 1px solid #FDE68A; }
+    .fc-status.avail { background: #ECFDF5; color: #065F46; border: 1px solid #6ee7b7; }
+    .fc-title {
+      font-size: 20px; font-weight: 700; color: var(--navy);
+      letter-spacing: -0.4px; margin-bottom: 10px; line-height: 1.3;
+    }
+    .fc-desc {
+      font-size: 14px; color: var(--gray); line-height: 1.7;
+      margin-bottom: 28px; flex: 1;
+    }
+    .fc-step {
+      font-size: 11px; font-weight: 600; color: var(--periwinkle);
+      letter-spacing: 1px; text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .fc-btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      gap: 8px; padding: 12px 24px; border-radius: 8px;
+      font-size: 14px; font-weight: 600; text-decoration: none;
+      font-family: inherit; cursor: pointer; border: none;
+      transition: opacity .15s; width: 100%; text-align: center;
+    }
+    .fc-btn.navy { background: var(--navy); color: var(--white); }
+    .fc-btn.navy:hover { opacity: 0.88; }
+    .fc-btn.outline { background: transparent; color: var(--navy); border: 1.5px solid var(--border); }
+    .fc-btn.outline:hover { border-color: var(--navy); background: #f5f7ff; }
+
+    /* NOTIFY FORM INLINE */
+    .notify-form { display: flex; gap: 8px; margin-top: 16px; }
+    .notify-input {
+      flex: 1; padding: 10px 14px; border-radius: 8px;
+      border: 1.5px solid var(--border); font-size: 13px;
+      font-family: inherit; color: var(--dark);
+      outline: none; transition: border-color .15s;
+    }
+    .notify-input:focus { border-color: var(--periwinkle); }
+    .notify-submit {
+      padding: 10px 18px; border-radius: 8px;
+      background: var(--navy); color: var(--white);
+      font-size: 13px; font-weight: 600; border: none;
+      cursor: pointer; font-family: inherit; white-space: nowrap;
+      transition: opacity .15s;
+    }
+    .notify-submit:hover { opacity: 0.88; }
+    .notify-success {
+      display: none; font-size: 13px; color: var(--green);
+      font-weight: 500; padding: 10px 0;
+    }
+
+    /* RESOURCE LIBRARY */
+    .library-section { background: var(--light); padding: 80px 56px; }
+    .library-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 16px;
+    }
+    .lib-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 12px; padding: 24px;
+      transition: border-color .2s, box-shadow .15s;
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    .lib-card:hover { border-color: #c7d2fe; box-shadow: 0 4px 20px rgba(26,43,107,0.07); }
+    .lib-card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+    .lib-icon {
+      width: 36px; height: 36px; border-radius: 8px;
+      background: #EEF2FF; display: flex; align-items: center;
+      justify-content: center; font-size: 16px; flex-shrink: 0;
+    }
+    .lib-badge {
+      font-size: 9px; font-weight: 700; letter-spacing: 0.8px;
+      text-transform: uppercase; padding: 3px 8px;
+      border-radius: 20px; background: #F3F4F6;
+      color: var(--gray); border: 1px solid var(--border);
+      white-space: nowrap; height: fit-content;
+    }
+    .lib-title { font-size: 14px; font-weight: 600; color: var(--navy); line-height: 1.4; }
+    .lib-desc { font-size: 12px; color: var(--gray); line-height: 1.6; flex: 1; }
+    .lib-notify {
+      display: flex; gap: 6px; margin-top: 4px;
+    }
+    .lib-email {
+      flex: 1; padding: 7px 10px; border-radius: 6px;
+      border: 1px solid var(--border); font-size: 12px;
+      font-family: inherit; color: var(--dark); outline: none;
+      transition: border-color .15s;
+    }
+    .lib-email:focus { border-color: var(--periwinkle); }
+    .lib-btn {
+      padding: 7px 12px; border-radius: 6px;
+      background: var(--navy); color: var(--white);
+      font-size: 11px; font-weight: 600; border: none;
+      cursor: pointer; font-family: inherit; white-space: nowrap;
+      transition: opacity .15s;
+    }
+    .lib-btn:hover { opacity: 0.88; }
+    .lib-ok { display: none; font-size: 11px; color: var(--green); font-weight: 500; }
+
+    /* JOURNEY BANNER */
+    .journey-banner {
+      background: var(--navy); padding: 72px 56px; text-align: center;
+    }
+    .journey-banner-inner { max-width: 900px; margin: 0 auto; }
+    .jb-eyebrow {
+      font-size: 11px; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: #6B7FD4; margin-bottom: 16px;
+    }
+    .jb-h2 {
+      font-size: clamp(24px, 3vw, 38px); font-weight: 600;
+      color: var(--white); letter-spacing: -0.8px;
+      margin-bottom: 16px; line-height: 1.2;
+    }
+    .jb-sub { font-size: 16px; color: #a5b0e8; margin-bottom: 40px; line-height: 1.7; }
+    .jb-steps {
+      display: flex; gap: 0; justify-content: center;
+      flex-wrap: wrap; margin-bottom: 40px;
+    }
+    .jb-step {
+      display: flex; flex-direction: column; align-items: center;
+      gap: 8px; padding: 0 12px;
+    }
+    .jb-num {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      border: 1.5px solid rgba(255,255,255,0.2);
+      color: white; font-size: 13px; font-weight: 600;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .jb-label {
+      font-size: 11px; font-weight: 500; color: #a5b0e8;
+      text-align: center; max-width: 90px; line-height: 1.4;
+    }
+    .jb-arrow { color: rgba(255,255,255,0.2); font-size: 18px; padding-top: 10px; }
+    .jb-cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 32px; border-radius: 8px;
+      background: var(--white); color: var(--navy);
+      font-size: 15px; font-weight: 600; text-decoration: none;
+      font-family: inherit; transition: opacity .15s;
+    }
+    .jb-cta:hover { opacity: 0.9; }
+
+    /* FOOTER */
+    footer { background: #111111; padding: 36px 56px; text-align: center; }
+    .footer-logo { height: 48px; margin-bottom: 14px; }
+    .footer-text { font-size: 13px; color: #aaa; line-height: 2; }
+    .footer-text strong { color: #fff; }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      .page-hero { padding: 100px 20px 60px; }
+      .rc-section, .library-section, .journey-banner { padding: 60px 20px; }
+      .hero-journey { gap: 8px; }
+      .journey-arrow { display: none; }
+      .jb-steps { gap: 16px; }
+      .jb-arrow { display: none; }
+      .notify-form { flex-direction: column; }
+      footer { padding: 28px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="https://i.imgur.com/G40kixu.png" alt="CORE AI" />
+  </a>
+  <a href="index.html" class="nav-back">&larr; Back to Home</a>
+  <a href="https://api.leadconnectorhq.com/widget/bookings/core-ai-discovery" target="_blank" class="nav-cta">Book a Call</a>
+</nav>
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="hero-eyebrow">Resource Center &middot; <span>CORE AI</span></div>
+  <h1 class="hero-h1">Tools and guides to help your business <em>run better.</em></h1>
+  <p class="hero-sub">We're building practical resources for small business owners — assessments, playbooks, templates, and guides that create real clarity before we ever have a conversation.</p>
+
+  <!-- Journey Map -->
+  <div class="hero-journey">
+    <div class="journey-step">
+      <div class="journey-num active">1</div>
+      <div class="journey-label"><strong>Visit</strong>Explore resources</div>
+    </div>
+    <div class="journey-arrow">&rarr;</div>
+    <div class="journey-step">
+      <div class="journey-num">2</div>
+      <div class="journey-label"><strong>Assess</strong>Business Health Check</div>
+    </div>
+    <div class="journey-arrow">&rarr;</div>
+    <div class="journey-step">
+      <div class="journey-num">3</div>
+      <div class="journey-label"><strong>Report</strong>Get your results</div>
+    </div>
+    <div class="journey-arrow">&rarr;</div>
+    <div class="journey-step">
+      <div class="journey-num">4</div>
+      <div class="journey-label"><strong>Playbook</strong>Download the guide</div>
+    </div>
+    <div class="journey-arrow">&rarr;</div>
+    <div class="journey-step">
+      <div class="journey-num">5</div>
+      <div class="journey-label"><strong>Review</strong>Strategy session</div>
+    </div>
+    <div class="journey-arrow">&rarr;</div>
+    <div class="journey-step">
+      <div class="journey-num">6</div>
+      <div class="journey-label"><strong>Partner</strong>Become a client</div>
+    </div>
+  </div>
+</div>
+
+<!-- FEATURED RESOURCES -->
+<section class="rc-section">
+  <div class="rc-section-inner">
+    <div class="rc-eyebrow">Featured Resources</div>
+    <h2 class="rc-h2">Start here.</h2>
+    <p class="rc-sub">Three tools designed to work together — giving you clarity on where your business is, and a clear path to where it should be.</p>
+
+    <div class="featured-grid">
+
+      <!-- Business Health Assessment -->
+      <div class="featured-card highlight">
+        <div class="fc-icon">&#129000;</div>
+        <div class="fc-status dev">&#9679; Currently in Development</div>
+        <div class="fc-step">Step 2 of Your Journey</div>
+        <div class="fc-title">Business Health Assessment</div>
+        <div class="fc-desc">Evaluate the health of your business across six key business vitals and discover opportunities to save time, improve operations, and strengthen your customer experience. Takes about 10 minutes.</div>
+        <p style="font-size:12px;color:var(--gray);margin-bottom:12px;">We're building practical resources for small business owners. Join our list and we'll let you know when this launches.</p>
+        <div class="notify-form" id="form-assessment">
+          <input type="email" class="notify-input" placeholder="your@email.com" />
+          <button class="notify-submit" onclick="submitNotify(this,'form-assessment')">Notify Me</button>
+        </div>
+        <div class="notify-success" id="ok-assessment">&#10003; You're on the list. We'll reach out when it's ready.</div>
+      </div>
+
+      <!-- Core Response Playbook -->
+      <div class="featured-card highlight">
+        <div class="fc-icon gold-bg">&#128218;</div>
+        <div class="fc-status dev">&#9679; Currently in Development</div>
+        <div class="fc-step">Step 4 of Your Journey</div>
+        <div class="fc-title">Core Response Playbook</div>
+        <div class="fc-desc">A practical guide showing business owners how better systems, automation, and AI can help reclaim time, streamline operations, and support sustainable growth. No jargon — just what works.</div>
+        <p style="font-size:12px;color:var(--gray);margin-bottom:12px;">Join our mailing list and we'll let you know as new tools become available.</p>
+        <div class="notify-form" id="form-playbook">
+          <input type="email" class="notify-input" placeholder="your@email.com" />
+          <button class="notify-submit" onclick="submitNotify(this,'form-playbook')">Notify Me</button>
+        </div>
+        <div class="notify-success" id="ok-playbook">&#10003; You're on the list. We'll reach out when it's ready.</div>
+      </div>
+
+      <!-- Business Health Review -->
+      <div class="featured-card">
+        <div class="fc-icon green-bg">&#128203;</div>
+        <div class="fc-status avail">&#10003; Available Now</div>
+        <div class="fc-step">Step 5 of Your Journey</div>
+        <div class="fc-title">Business Health Review</div>
+        <div class="fc-desc">A personalized strategy session designed to identify operational bottlenecks and provide a practical roadmap for improvement. Walk away with clarity on your next three moves.</div>
+        <p style="font-size:12px;color:var(--gray);margin-bottom:20px;">30 minutes. No obligation. Real recommendations for your specific business.</p>
+        <a href="https://api.leadconnectorhq.com/widget/bookings/core-ai-discovery" target="_blank" class="fc-btn navy">&#128197; Schedule Your Review</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- RESOURCE LIBRARY -->
+<section class="library-section">
+  <div class="rc-section-inner">
+    <div class="rc-eyebrow">Resource Library</div>
+    <h2 class="rc-h2">Guides, templates, and tools.</h2>
+    <p class="rc-sub">Everything below is currently in development. Sign up next to any resource and we'll notify you the moment it's available.</p>
+
+    <div class="library-grid">
+
+      <div class="lib-card">
+        <div class="lib-card-top">
+          <div class="lib-icon">&#11088;</div>
+          <div class="lib-badge">In Development</div>
+        </div>
+        <div class="lib-title">Google Reviews Playbook</div>
+        <div class="lib-desc">A step-by-step guide to building a consistent review system that generates trust without asking twice.</div>
+        <div class="lib-notify" id="lib-reviews">
+          <input type="email" class="lib-email" placeholder="your@email.com" />
+          <button class="lib-btn" onclick="libNotify(this,'lib-reviews')">Notify Me</button>
+        </div>
+        <div class="lib-ok" id="ok-lib-reviews">&#10003; You're on the list.</div>
+      </div>
+
+      <div class="lib-card">
+        <div class="lib-card-top">
+          <div class="lib-icon">&#9989;</div>
+          <div class="lib-badge">In Development</div>
+        </div>
+        <div class="lib-title">Lead Follow-Up Checklist</div>
+        <div class="lib-desc">Never let a warm lead go cold again. A proven checklist for following up at the right time, the right way.</div>
+        <div class="lib-notify" id="lib-followup">
+          <input type="email" class="lib-email" placeholder="your@email.com" />
+          <button class="lib-btn" onclick="libNotify(this,'lib-followup')">Notify Me</button>
+        </div>
+        <div class="lib-ok" id="ok-lib-followup">&#10003; You're on the list.</div>
+      </div>
+
+      <div class="lib-card">
+        <div class="lib-card-top">
+          <div class="lib-icon">&#128187;</div>
+          <div class="lib-badge">In Development</div>
+        </div>
+        <div class="lib-title">Website Optimization Checklist</div>
+        <div class="lib-desc">Is your website working for you or just existing? This checklist shows you exactly what to fix first.</div>
+        <div class="lib-notify" id="lib-website">
+          <input type="email" class="lib-email" placeholder="your@email.com" />
+          <button class="lib-btn" onclick="libNotify(this,'lib-website')">Notify Me</button>
+        </div>
+        <div class="lib-ok" id="ok-lib-website">&#10003; You're on the list.</div>
+      </div>
+
+      <div class="lib-card">
+        <div class="lib-card-top">
+          <div class="lib-icon">&#127897;&#65039;</div>
+          <div class="lib-badge">In Development</div>
+        </div>
+        <div class="lib-title">AI Receptionist Guide</div>
+        <div class="lib-desc">How to set up an AI voice agent that captures leads, handles FAQs, and never lets a call go unanswered.</div>
+        <div class="lib-notify" id="lib-ai">
+          <input type="email" class="lib-email" placeholder="your@email.com" />
+          <button class="lib-btn" onclick="libNotify(this,'lib-ai')">Notify Me</button>
+        </div>
+        <div class="lib-ok" id="ok-lib-ai">&#10003; You're on the list.</div>
+      </div>
+
+      <div class="lib-card">
+        <div class="lib-card-top">
+          <div class="lib-icon">&#128202;</div>
+          <div class="lib-badge">In Development</div>
+        </div>
+        <div class="lib-title">CRM Guide for Small Business</div>
+        <div class="lib-desc">How to track every lead, client, and deal without living in a spreadsheet or forgetting anyone.</div>
+        <div class="lib-notify" id="lib-crm">
+          <input type="email" class="lib-email" placeholder="your@email.com" />
+          <button class="lib-btn" onclick="libNotify(this,'lib-crm')">Notify Me</button>
+        </div>
+        <div class="lib-ok" id="ok-lib-crm">&#10003; You're on the list.</div>
+      </div>
+
+      <div class="lib-card">
+        <div class="lib-card-top">
+          <div class="lib-icon">&#9881;&#65039;</div>
+          <div class="lib-badge">In Development</div>
+        </div>
+        <div class="lib-title">Business Systems Checklist</div>
+        <div class="lib-desc">The essential systems every small business needs to operate without chaos — and how to build them.</div>
+        <div class="lib-notify" id="lib-systems">
+          <input type="email" class="lib-email" placeholder="your@email.com" />
+          <button class="lib-btn" onclick="libNotify(this,'lib-systems')">Notify Me</button>
+        </div>
+        <div class="lib-ok" id="ok-lib-systems">&#10003; You're on the list.</div>
+      </div>
+
+      <div class="lib-card">
+        <div class="lib-card-top">
+          <div class="lib-icon">&#128196;</div>
+          <div class="lib-badge">In Development</div>
+        </div>
+        <div class="lib-title">SOP Templates</div>
+        <div class="lib-desc">Standard operating procedures for the most common small business workflows — ready to customize and use.</div>
+        <div class="lib-notify" id="lib-sop">
+          <input type="email" class="lib-email" placeholder="your@email.com" />
+          <button class="lib-btn" onclick="libNotify(this,'lib-sop')">Notify Me</button>
+        </div>
+        <div class="lib-ok" id="ok-lib-sop">&#10003; You're on the list.</div>
+      </div>
+
+      <div class="lib-card">
+        <div class="lib-card-top">
+          <div class="lib-icon">&#9889;</div>
+          <div class="lib-badge">In Development</div>
+        </div>
+        <div class="lib-title">Automation Templates</div>
+        <div class="lib-desc">Pre-built automation workflows for follow-ups, onboarding, renewals, and review requests — plug in and go.</div>
+        <div class="lib-notify" id="lib-auto">
+          <input type="email" class="lib-email" placeholder="your@email.com" />
+          <button class="lib-btn" onclick="libNotify(this,'lib-auto')">Notify Me</button>
+        </div>
+        <div class="lib-ok" id="ok-lib-auto">&#10003; You're on the list.</div>
+      </div>
+
+      <div class="lib-card">
+        <div class="lib-card-top">
+          <div class="lib-icon">&#128296;</div>
+          <div class="lib-badge">In Development</div>
+        </div>
+        <div class="lib-title">AI for Contractors</div>
+        <div class="lib-desc">How contractors and home service businesses can use AI to answer calls, follow up on quotes, and win more jobs.</div>
+        <div class="lib-notify" id="lib-contractors">
+          <input type="email" class="lib-email" placeholder="your@email.com" />
+          <button class="lib-btn" onclick="libNotify(this,'lib-contractors')">Notify Me</button>
+        </div>
+        <div class="lib-ok" id="ok-lib-contractors">&#10003; You're on the list.</div>
+      </div>
+
+      <div class="lib-card">
+        <div class="lib-card-top">
+          <div class="lib-icon">&#129657;</div>
+          <div class="lib-badge">In Development</div>
+        </div>
+        <div class="lib-title">AI for Healthcare Practices</div>
+        <div class="lib-desc">How medical, dental, and wellness practices can use AI to reduce no-shows, capture leads, and improve patient experience.</div>
+        <div class="lib-notify" id="lib-health">
+          <input type="email" class="lib-email" placeholder="your@email.com" />
+          <button class="lib-btn" onclick="libNotify(this,'lib-health')">Notify Me</button>
+        </div>
+        <div class="lib-ok" id="ok-lib-health">&#10003; You're on the list.</div>
+      </div>
+
+      <div class="lib-card">
+        <div class="lib-card-top">
+          <div class="lib-icon">&#127768;&#65039;</div>
+          <div class="lib-badge">In Development</div>
+        </div>
+        <div class="lib-title">AI for Nonprofits</div>
+        <div class="lib-desc">How nonprofits can use AI and automation to manage donors, volunteers, and outreach without burning out their team.</div>
+        <div class="lib-notify" id="lib-nonprofit">
+          <input type="email" class="lib-email" placeholder="your@email.com" />
+          <button class="lib-btn" onclick="libNotify(this,'lib-nonprofit')">Notify Me</button>
+        </div>
+        <div class="lib-ok" id="ok-lib-nonprofit">&#10003; You're on the list.</div>
+      </div>
+
+      <div class="lib-card">
+        <div class="lib-card-top">
+          <div class="lib-icon">&#9878;&#65039;</div>
+          <div class="lib-badge">In Development</div>
+        </div>
+        <div class="lib-title">AI for Professional Services</div>
+        <div class="lib-desc">How consultants, attorneys, accountants, and advisors can use AI to win clients and serve them better.</div>
+        <div class="lib-notify" id="lib-pro">
+          <input type="email" class="lib-email" placeholder="your@email.com" />
+          <button class="lib-btn" onclick="libNotify(this,'lib-pro')">Notify Me</button>
+        </div>
+        <div class="lib-ok" id="ok-lib-pro">&#10003; You're on the list.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- JOURNEY BANNER -->
+<div class="journey-banner">
+  <div class="journey-banner-inner">
+    <div class="jb-eyebrow">Your Path Forward</div>
+    <h2 class="jb-h2">Ready to skip straight to the conversation?</h2>
+    <p class="jb-sub">You don't have to wait for the resources to launch. Book a Business Health Review today and we'll work through your specific situation together &mdash; live.</p>
+    <div class="jb-steps">
+      <div class="jb-step"><div class="jb-num">1</div><div class="jb-label">Explore Resources</div></div>
+      <div class="jb-arrow">&rarr;</div>
+      <div class="jb-step"><div class="jb-num">2</div><div class="jb-label">Take Assessment</div></div>
+      <div class="jb-arrow">&rarr;</div>
+      <div class="jb-step"><div class="jb-num">3</div><div class="jb-label">Get Your Report</div></div>
+      <div class="jb-arrow">&rarr;</div>
+      <div class="jb-step"><div class="jb-num">4</div><div class="jb-label">Download Playbook</div></div>
+      <div class="jb-arrow">&rarr;</div>
+      <div class="jb-step"><div class="jb-num">5</div><div class="jb-label">Book a Review</div></div>
+      <div class="jb-arrow">&rarr;</div>
+      <div class="jb-step"><div class="jb-num">6</div><div class="jb-label">Become a Client</div></div>
+    </div>
+    <a href="https://api.leadconnectorhq.com/widget/bookings/core-ai-discovery" target="_blank" class="jb-cta">&#128197; Schedule a Business Health Review</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <img src="https://i.imgur.com/G40kixu.png" alt="CORE AI" class="footer-logo" />
+  <div class="footer-text">
+    <strong>CORE AI</strong> | Core Response AI | Powerful Business Solutions | A Tayyab Group, Inc. Company<br>
+    coreresponsegroup.com &middot; 571-415-3551 &middot; info@coreresponsegroup.com<br>
+    <span style="font-size:12px;color:#555;margin-top:4px;display:block">&copy; 2026 Core Response AI &middot; All rights reserved</span>
+  </div>
+</footer>
+
+<script>
+function submitNotify(btn, formId) {
+  var form = document.getElementById(formId);
+  var email = form.querySelector('input').value;
+  if (!email || !email.includes('@')) {
+    form.querySelector('input').focus();
+    return;
+  }
+  form.style.display = 'none';
+  document.getElementById('ok-' + formId).style.display = 'block';
+}
+
+function libNotify(btn, libId) {
+  var form = document.getElementById(libId);
+  var email = form.querySelector('input').value;
+  if (!email || !email.includes('@')) {
+    form.querySelector('input').focus();
+    return;
+  }
+  form.style.display = 'none';
+  document.getElementById('ok-' + libId).style.display = 'block';
+}
+</script>
+
+</body>
+</html>
