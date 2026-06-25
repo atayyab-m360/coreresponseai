@@ -18,8 +18,8 @@
       --gray: #6B7280;
       --green: #10B981;
     }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'DM Sans', system-ui, sans-serif; color: var(--dark); background: var(--white); overflow-x: hidden; font-weight: 400; }
+    html { scroll-behavior: smooth; width: 100%; min-height: 100%; overflow-x: hidden; overflow-y: auto; }
+    body { font-family: 'DM Sans', system-ui, sans-serif; color: var(--dark); background: var(--white); overflow-x: hidden; overflow-y: auto; font-weight: 400; width: 100%; }
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       background: rgba(255,255,255,0.97); backdrop-filter: blur(16px);
@@ -34,7 +34,7 @@
     .nav-cta { padding: 9px 22px; border-radius: 8px; background: var(--navy); color: var(--white) !important; font-size: 14px; font-weight: 600; text-decoration: none; letter-spacing: -0.1px; transition: opacity .15s; }
     .nav-cta:hover { opacity: 0.88; }
     .hamburger { display: none; background: none; border: none; font-size: 22px; cursor: pointer; color: var(--navy); }
-    .hero { position: relative; min-height: 100vh; display: flex; align-items: center; overflow: hidden; padding-top: 64px; }
+    .hero { position: relative; min-height: 100vh; height: auto; display: flex; align-items: center; padding-top: 64px; }
     .hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
     .hero-overlay { position: absolute; inset: 0; background: linear-gradient(100deg, rgba(255,255,255,0.97) 0%, rgba(255,255,255,0.88) 40%, rgba(255,255,255,0.3) 100%); z-index: 1; }
     .hero-content { position: relative; z-index: 2; max-width: 1100px; margin: 0 auto; padding: 80px 56px; width: 100%; }
@@ -62,7 +62,7 @@
     .quick-wins-heading { font-size: clamp(22px, 3vw, 34px); font-weight: 600; color: var(--navy); letter-spacing: -0.8px; margin-bottom: 8px; }
     .quick-wins-sub { font-size: 15px; color: var(--gray); margin-bottom: 40px; line-height: 1.6; font-weight: 400; }
     .quick-wins-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
-    .qw-card { background: var(--white); border: 1.5px solid var(--border); border-radius: 16px; padding: 32px; position: relative; overflow: hidden; transition: box-shadow .2s, border-color .2s; display: flex; flex-direction: column; }
+    .qw-card { background: var(--white); border: 1.5px solid var(--border); border-radius: 16px; padding: 32px; position: relative; transition: box-shadow .2s, border-color .2s; display: flex; flex-direction: column; }
     .qw-card:hover { box-shadow: 0 8px 32px rgba(26,43,107,0.10); border-color: #c7d2fe; }
     .qw-card.hot { border-color: #F59E0B; }
     .qw-card.hot:hover { border-color: #d97706; box-shadow: 0 8px 32px rgba(245,158,11,0.15); }
@@ -184,21 +184,27 @@
     .footer-text { font-size: 13px; color: var(--dark); line-height: 2; font-weight: 400; }
     .footer-text strong { color: var(--navy); font-weight: 600; }
     @media (max-width: 768px) {
+      html, body { overflow-y: auto; height: auto; }
       nav { padding: 0 20px; }
       .nav-links { display: none; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0; background: white; padding: 20px; border-bottom: 1px solid var(--border); gap: 16px; }
       .nav-links.open { display: flex; }
       .hamburger { display: block; }
-      section { padding: 64px 20px; }
+      section { padding: 64px 20px; height: auto; min-height: auto; }
+      .hero { min-height: 100svh; height: auto; }
       .hero-content { padding: 60px 20px; }
       .hero-stats { gap: 28px; padding-top: 28px; }
-      .statement-section, .cta-section { padding: 64px 20px; }
+      .statement-section, .cta-section { padding: 64px 20px; height: auto; }
       .cta-actions { flex-direction: column; align-items: center; }
       footer { padding: 28px 20px; }
-      .quick-wins-section { padding: 56px 20px; }
-      .pricing-section { padding: 64px 20px; }
+      .quick-wins-section { padding: 56px 20px; height: auto; }
+      .pricing-section { padding: 64px 20px; height: auto; }
       .pricing-grid { grid-template-columns: 1fr; }
       .before-after { grid-template-columns: 1fr; }
       .ba-divider { display: none; }
+      .quick-wins-grid { grid-template-columns: 1fr; }
+      .apps-grid { grid-template-columns: 1fr; }
+      .tools-grid { grid-template-columns: 1fr; }
+      .steps-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -471,9 +477,9 @@
         <div class="price-tier">Youth</div>
         <div class="price-name">Youth Founder Website</div>
         <div class="price-desc">A professional website for young entrepreneurs ages 13-24, built to help them get taken seriously.</div>
-        <div class="price-setup">$999 setup</div>
+        <div class="price-setup">$999 total &mdash; 3 payments of $333</div>
         <div class="price-monthly">$49<span>/mo</span></div>
-        <div class="price-note">Ages 13-24 &middot; Flexible payment options</div>
+        <div class="price-note">Ages 13-24 &middot; $49/mo maintenance after launch</div>
         <hr class="price-divider">
         <ul class="price-features">
           <li>Mobile-friendly one-page site</li>
