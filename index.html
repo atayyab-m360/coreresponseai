@@ -17,417 +17,202 @@
       --dark: #111827;
       --gray: #6B7280;
       --green: #10B981;
+      --red: #EF4444;
     }
     html { scroll-behavior: smooth; }
     body { font-family: 'DM Sans', system-ui, sans-serif; color: var(--dark); background: var(--white); overflow-x: hidden; font-weight: 400; }
 
-    /* ── NAV ── */
+    /* NAV */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      background: rgba(255,255,255,0.97);
-      backdrop-filter: blur(16px);
+      background: rgba(255,255,255,0.97); backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border);
       padding: 0 56px; height: 64px;
       display: flex; align-items: center; justify-content: space-between;
     }
     .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-    .nav-logo img { height: 28px;  }
-    .nav-links { display: flex; align-items: center; gap: 36px; }
-    .nav-links a { font-size: 14px; font-weight: 500; color: var(--gray); text-decoration: none; letter-spacing: -0.1px; transition: color .15s; }
+    .nav-logo img { height: 44px; filter: invert(15%) sepia(60%) saturate(800%) hue-rotate(200deg) brightness(0.5); }
+    .nav-links { display: flex; align-items: center; gap: 28px; }
+    .nav-links a { font-size: 14px; font-weight: 500; color: var(--gray); text-decoration: none; transition: color .15s; }
     .nav-links a:hover { color: var(--navy); }
-    .nav-cta {
-      padding: 9px 22px; border-radius: 8px;
-      background: var(--navy); color: var(--white) !important;
-      font-size: 14px; font-weight: 600; text-decoration: none;
-      letter-spacing: -0.1px;
-      transition: opacity .15s;
-    }
+    .nav-cta { padding: 9px 22px; border-radius: 8px; background: var(--navy); color: var(--white) !important; font-size: 14px; font-weight: 600; text-decoration: none; transition: opacity .15s; }
     .nav-cta:hover { opacity: 0.88; }
     .hamburger { display: none; background: none; border: none; font-size: 22px; cursor: pointer; color: var(--navy); }
 
-    /* ── HERO ── */
-    .hero {
-      position: relative; min-height: 100vh;
-      display: flex; align-items: center;
-      overflow: hidden; padding-top: 64px;
-    }
-    .hero-video {
-      position: absolute; inset: 0;
-      width: 100%; height: 100%;
-      object-fit: cover; z-index: 0;
-    }
-    .hero-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(100deg,
-        rgba(255,255,255,0.97) 0%,
-        rgba(255,255,255,0.88) 40%,
-        rgba(255,255,255,0.3) 100%);
-      z-index: 1;
-    }
-    .hero-content {
-      position: relative; z-index: 2;
-      max-width: 1100px; margin: 0 auto;
-      padding: 80px 56px; width: 100%;
-    }
-    .hero-eyebrow {
-      display: inline-flex; align-items: center; gap: 8px;
-      border: 1px solid var(--border);
-      border-radius: 20px; padding: 5px 14px;
-      font-size: 12px; font-weight: 500; color: var(--gray);
-      letter-spacing: 0.3px;
-      margin-bottom: 32px;
-    }
+    /* HERO */
+    .hero { position: relative; min-height: 100vh; display: flex; align-items: center; overflow: hidden; padding-top: 64px; }
+    .hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(100deg, rgba(255,255,255,0.97) 0%, rgba(255,255,255,0.88) 40%, rgba(255,255,255,0.3) 100%); z-index: 1; }
+    .hero-content { position: relative; z-index: 2; max-width: 1100px; margin: 0 auto; padding: 80px 56px; width: 100%; }
+    .hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--border); border-radius: 20px; padding: 5px 14px; font-size: 12px; font-weight: 500; color: var(--gray); letter-spacing: 0.3px; margin-bottom: 32px; }
     .hero-eyebrow span { color: var(--navy); font-weight: 600; }
-    .hero-h1 {
-      font-size: clamp(36px, 5vw, 64px);
-      font-weight: 600;
-      line-height: 1.1;
-      color: var(--navy);
-      max-width: 580px;
-      margin-bottom: 20px;
-      letter-spacing: -1.5px;
-    }
-    .hero-h1 strong {
-      font-weight: 700;
-      color: var(--navy);
-    }
-    .hero-tagline {
-      font-size: 15px; font-weight: 500;
-      color: var(--periwinkle);
-      letter-spacing: 0.2px;
-      margin-bottom: 20px;
-    }
-    .hero-sub {
-      font-size: 17px; font-weight: 400;
-      color: var(--gray); max-width: 460px;
-      line-height: 1.7; margin-bottom: 40px;
-    }
-    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
-    .btn-primary {
-      padding: 13px 26px; border-radius: 8px;
-      background: var(--navy); color: var(--white);
-      font-size: 14px; font-weight: 600;
-      text-decoration: none; letter-spacing: -0.1px;
-      transition: opacity .15s;
-      display: inline-flex; align-items: center; gap: 8px;
-      font-family: inherit;
-    }
+    .hero-h1 { font-size: clamp(36px, 5vw, 64px); font-weight: 600; line-height: 1.1; color: var(--navy); max-width: 580px; margin-bottom: 20px; letter-spacing: -1.5px; }
+    .hero-tagline { font-size: 15px; font-weight: 500; color: var(--periwinkle); letter-spacing: 0.2px; margin-bottom: 20px; }
+    .hero-sub { font-size: 17px; font-weight: 400; color: var(--gray); max-width: 460px; line-height: 1.7; margin-bottom: 40px; }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 16px; }
+    .btn-primary { padding: 13px 26px; border-radius: 8px; background: var(--navy); color: var(--white); font-size: 14px; font-weight: 600; text-decoration: none; transition: opacity .15s; display: inline-flex; align-items: center; gap: 8px; font-family: inherit; }
     .btn-primary:hover { opacity: 0.88; }
-    .btn-secondary {
-      padding: 13px 26px; border-radius: 8px;
-      background: transparent; color: var(--navy);
-      font-size: 14px; font-weight: 600;
-      text-decoration: none; border: 1.5px solid var(--border);
-      letter-spacing: -0.1px;
-      transition: border-color .15s, background .15s;
-      font-family: inherit;
-    }
+    .btn-secondary { padding: 13px 26px; border-radius: 8px; background: transparent; color: var(--navy); font-size: 14px; font-weight: 600; text-decoration: none; border: 1.5px solid var(--border); transition: border-color .15s, background .15s; font-family: inherit; }
     .btn-secondary:hover { border-color: var(--navy); background: #f5f7ff; }
-    .hero-stats {
-      display: flex; gap: 48px; margin-top: 64px; flex-wrap: wrap;
-      border-top: 1px solid var(--border); padding-top: 40px;
-    }
-    .hero-stat-num {
-      font-size: 28px; font-weight: 600; color: var(--navy);
-      line-height: 1; letter-spacing: -1px;
-    }
+    .ai-receptionist-btn { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 500; color: var(--navy); text-decoration: none; padding: 8px 16px; border: 1px solid var(--border); border-radius: 20px; transition: all .15s; }
+    .ai-receptionist-btn:hover { border-color: var(--navy); background: #f5f7ff; }
+    .hero-stats { display: flex; gap: 48px; margin-top: 64px; flex-wrap: wrap; border-top: 1px solid var(--border); padding-top: 40px; }
+    .hero-stat-num { font-size: 28px; font-weight: 600; color: var(--navy); line-height: 1; letter-spacing: -1px; }
     .hero-stat-label { font-size: 13px; color: var(--gray); margin-top: 5px; font-weight: 400; line-height: 1.5; }
 
-    /* ── SHARED ── */
+    /* SHARED */
     section { padding: 96px 56px; }
     .section-inner { max-width: 1100px; margin: 0 auto; }
-    .section-eyebrow {
-      font-size: 12px; font-weight: 600; letter-spacing: 1.5px;
-      text-transform: uppercase; color: var(--periwinkle); margin-bottom: 14px;
-    }
-    .section-h2 {
-      font-size: clamp(26px, 3.5vw, 42px);
-      font-weight: 600; color: var(--navy);
-      line-height: 1.15; letter-spacing: -1px; margin-bottom: 14px;
-    }
-    .section-sub {
-      font-size: 16px; color: var(--gray);
-      max-width: 500px; line-height: 1.7; margin-bottom: 52px; font-weight: 400;
-    }
+    .section-eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--periwinkle); margin-bottom: 14px; }
+    .section-h2 { font-size: clamp(26px, 3.5vw, 42px); font-weight: 600; color: var(--navy); line-height: 1.15; letter-spacing: -1px; margin-bottom: 14px; }
+    .section-sub { font-size: 16px; color: var(--gray); max-width: 500px; line-height: 1.7; margin-bottom: 52px; font-weight: 400; }
 
-    /* ── QUICK WINS ── */
-    .quick-wins-section { background: #F8F9FC; padding: 72px 56px; border-bottom: 1px solid var(--border); }
-    .quick-wins-inner { max-width: 1100px; margin: 0 auto; }
-    .quick-wins-eyebrow {
-      font-size: 11px; font-weight: 700; letter-spacing: 2px;
-      text-transform: uppercase; color: var(--gold); margin-bottom: 10px;
-    }
-    .quick-wins-heading {
-      font-size: clamp(22px, 3vw, 34px); font-weight: 600;
-      color: var(--navy); letter-spacing: -0.8px; margin-bottom: 8px;
-    }
-    .quick-wins-sub {
-      font-size: 15px; color: var(--gray); margin-bottom: 40px; line-height: 1.6; font-weight: 400;
-    }
-    .quick-wins-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 20px;
-    }
-    .qw-card {
-      background: var(--white);
-      border: 1.5px solid var(--border);
-      border-radius: 16px; padding: 32px;
-      position: relative; overflow: hidden;
-      transition: box-shadow .2s, border-color .2s;
-      display: flex; flex-direction: column;
-    }
-    .qw-card:hover {
-      box-shadow: 0 8px 32px rgba(26,43,107,0.10);
-      border-color: #c7d2fe;
-    }
-    .qw-card.hot { border-color: #F59E0B; }
-    .qw-card.hot:hover { border-color: #d97706; box-shadow: 0 8px 32px rgba(245,158,11,0.15); }
-    .qw-badge {
-      display: inline-flex; align-items: center; gap: 5px;
-      font-size: 10px; font-weight: 700; letter-spacing: 0.8px;
-      text-transform: uppercase; padding: 4px 10px;
-      border-radius: 20px; margin-bottom: 20px;
-      width: fit-content;
-    }
-    .qw-badge.badge-hot { background: #FEF3C7; color: #92400E; border: 1px solid #FDE68A; }
-    .qw-badge.badge-new { background: #EEF2FF; color: var(--navy); border: 1px solid #c7d2fe; }
-    .qw-icon { font-size: 32px; margin-bottom: 14px; }
-    .qw-title { font-size: 20px; font-weight: 700; color: var(--navy); margin-bottom: 10px; letter-spacing: -0.4px; }
-    .qw-desc { font-size: 14px; color: var(--gray); line-height: 1.7; margin-bottom: 20px; flex: 1; }
-    .qw-price {
-      font-size: 24px; font-weight: 700; color: var(--navy);
-      letter-spacing: -0.5px; margin-bottom: 4px;
-    }
-    .qw-price-sub { font-size: 12px; color: var(--gray); margin-bottom: 24px; }
-    .qw-features { list-style: none; margin-bottom: 28px; }
-    .qw-features li {
-      font-size: 13px; color: #374151; padding: 5px 0;
-      display: flex; align-items: flex-start; gap: 8px; line-height: 1.5;
-    }
-    .qw-features li::before { content: '✓'; color: var(--green); font-weight: 700; flex-shrink: 0; }
-    .qw-cta {
-      display: block; text-align: center;
-      padding: 12px 24px; border-radius: 8px;
-      font-size: 14px; font-weight: 600;
-      text-decoration: none; transition: opacity .15s;
-      font-family: inherit; letter-spacing: -0.1px;
-    }
-    .qw-cta.cta-gold { background: var(--gold); color: #fff; }
-    .qw-cta.cta-gold:hover { opacity: 0.88; }
-    .qw-cta.cta-navy { background: var(--navy); color: #fff; }
-    .qw-cta.cta-navy:hover { opacity: 0.88; }
-    @media (max-width: 768px) { .quick-wins-section { padding: 56px 20px; } }
-
-    /* ── STATEMENT ── */
+    /* STATEMENT */
     .statement-section { background: var(--navy); padding: 80px 56px; }
-    .statement-inner { max-width: 860px; margin: 0 auto; text-align: center; }
-    .statement-text {
-      font-size: clamp(20px, 3vw, 34px);
-      font-weight: 600; color: var(--white);
-      line-height: 1.3; letter-spacing: -0.8px; margin-bottom: 14px;
-    }
+    .statement-inner { max-width: 800px; margin: 0 auto; text-align: center; }
+    .statement-text { font-size: clamp(22px, 3.5vw, 40px); font-weight: 600; color: var(--white); line-height: 1.3; letter-spacing: -0.8px; margin-bottom: 16px; }
     .statement-text em { font-style: normal; color: #a5b0e8; }
-    .statement-sub { font-size: 16px; color: #a5b0e8; line-height: 1.7; font-weight: 400; margin-bottom: 48px; }
-    .before-after {
-      display: grid; grid-template-columns: 1fr auto 1fr;
-      gap: 24px; align-items: start; text-align: left; margin-bottom: 40px;
-    }
-    .ba-label {
-      font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
-      text-transform: uppercase; margin-bottom: 16px; padding: 5px 12px;
-      border-radius: 20px; display: inline-block;
-    }
-    .ba-label.before { background: rgba(255,255,255,0.08); color: #a5b0e8; }
-    .ba-label.after { background: rgba(16,185,129,0.15); color: #6ee7b7; }
-    .ba-list { list-style: none; }
-    .ba-list li {
-      font-size: 14px; color: #a5b0e8; padding: 8px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-      display: flex; align-items: flex-start; gap: 10px; line-height: 1.5;
-    }
-    .ba-list li::before { content: '✗'; color: #EF4444; font-weight: 700; flex-shrink: 0; }
-    .after-list li { color: #d1fae5; }
-    .after-list li::before { content: '✓'; color: var(--green); }
-    .ba-divider {
-      font-size: 24px; color: rgba(255,255,255,0.2);
-      padding-top: 40px; text-align: center;
-    }
-    .statement-closer {
-      font-size: 18px; font-weight: 600; color: var(--white);
-      letter-spacing: -0.3px; padding-top: 8px;
-    }
-    @media (max-width: 768px) {
-      .statement-section { padding: 56px 20px; }
-      .before-after { grid-template-columns: 1fr; }
-      .ba-divider { display: none; }
-    }
+    .statement-sub { font-size: 17px; color: #a5b0e8; line-height: 1.7; font-weight: 400; }
 
-    /* ── AI RECEPTIONIST BUTTON ── */
-    .apps-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-      gap: 20px;
-    }
-    .app-card {
-      background: var(--white); border: 1px solid var(--border);
-      border-radius: 14px; padding: 28px;
-      transition: border-color .2s, box-shadow .2s;
-      position: relative;
-    }
-    .app-card:hover {
-      border-color: #c7d2fe;
-      box-shadow: 0 4px 24px rgba(26,43,107,0.07);
-    }
+    /* START HERE */
+    .start-here-section { background: var(--light); }
+    .start-here-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+    .start-card { background: var(--white); border: 1.5px solid var(--border); border-radius: 16px; padding: 28px; position: relative; transition: border-color .2s, box-shadow .2s; }
+    .start-card:hover { border-color: #c7d2fe; box-shadow: 0 4px 24px rgba(26,43,107,0.07); }
+    .start-card.featured { border-color: var(--navy); }
+    .start-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; padding: 4px 10px; border-radius: 20px; margin-bottom: 16px; }
+    .start-badge.popular { background: #FFF7ED; color: #C2410C; }
+    .start-badge.new { background: #EEF2FF; color: var(--navy); }
+    .start-icon { font-size: 28px; margin-bottom: 12px; }
+    .start-title { font-size: 17px; font-weight: 700; color: var(--navy); margin-bottom: 8px; letter-spacing: -0.3px; }
+    .start-desc { font-size: 14px; color: var(--gray); line-height: 1.65; margin-bottom: 6px; }
+    .start-price { font-size: 22px; font-weight: 700; color: var(--navy); margin-bottom: 4px; letter-spacing: -0.5px; }
+    .start-price-sub { font-size: 12px; color: var(--gray); margin-bottom: 16px; }
+    .start-features { list-style: none; margin-bottom: 20px; }
+    .start-features li { font-size: 13px; color: #374151; padding: 5px 0; display: flex; align-items: flex-start; gap: 8px; border-bottom: 1px solid var(--border); line-height: 1.5; }
+    .start-features li:last-child { border-bottom: none; }
+    .start-features li::before { content: '✓'; color: var(--green); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+    .start-cta { display: block; text-align: center; padding: 11px 20px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; transition: all .15s; font-family: inherit; border: none; cursor: pointer; }
+    .start-cta-filled { background: var(--navy); color: var(--white); }
+    .start-cta-filled:hover { opacity: 0.88; }
+    .start-cta-outline { border: 1.5px solid var(--navy); color: var(--navy); background: transparent; }
+    .start-cta-outline:hover { background: var(--navy); color: var(--white); }
+
+    /* BEFORE AFTER */
+    .before-after-section { background: var(--white); padding: 64px 56px; }
+    .ba-inner { max-width: 900px; margin: 0 auto; }
+    .ba-headline { font-size: clamp(18px, 2.5vw, 28px); font-weight: 600; color: var(--navy); text-align: center; margin-bottom: 8px; letter-spacing: -0.5px; }
+    .ba-sub { font-size: 15px; color: var(--gray); text-align: center; margin-bottom: 40px; }
+    .ba-grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: 24px; align-items: center; }
+    .ba-col { background: var(--light); border: 1.5px solid var(--border); border-radius: 14px; padding: 24px; }
+    .ba-col.after { border-color: var(--green); background: #F0FDF4; }
+    .ba-col-title { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; }
+    .ba-col.before .ba-col-title { color: var(--red); }
+    .ba-col.after .ba-col-title { color: var(--green); }
+    .ba-items { list-style: none; }
+    .ba-items li { font-size: 13px; color: #374151; padding: 6px 0; display: flex; align-items: flex-start; gap: 8px; border-bottom: 1px solid var(--border); line-height: 1.5; }
+    .ba-items li:last-child { border-bottom: none; }
+    .ba-before-dot::before { content: '✗'; color: var(--red); font-weight: 700; flex-shrink: 0; }
+    .ba-after-dot::before { content: '✓'; color: var(--green); font-weight: 700; flex-shrink: 0; }
+    .ba-arrow { font-size: 28px; color: var(--navy); font-weight: 700; text-align: center; }
+    .ba-footer { text-align: center; font-size: 14px; font-weight: 600; color: var(--navy); margin-top: 24px; }
+
+    /* PRICING SECTIONS */
+    .pricing-section { background: var(--light); }
+    .pricing-grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+    .pricing-grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+    .pricing-grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+    .price-card { background: var(--white); border: 1.5px solid var(--border); border-radius: 16px; padding: 28px; position: relative; display: flex; flex-direction: column; transition: border-color .2s, box-shadow .2s; }
+    .price-card:hover { border-color: #c7d2fe; box-shadow: 0 6px 24px rgba(26,43,107,0.08); }
+    .price-card.popular { border-color: var(--navy); background: #fafbff; }
+    .price-card.command { border-color: var(--gold); background: #FFFBEB; }
+    .popular-pill { position: absolute; top: -13px; left: 50%; transform: translateX(-50%); background: var(--navy); color: var(--white); font-size: 11px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; padding: 4px 16px; border-radius: 20px; white-space: nowrap; }
+    .command-pill { position: absolute; top: -13px; left: 50%; transform: translateX(-50%); background: var(--gold); color: var(--dark); font-size: 11px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; padding: 4px 16px; border-radius: 20px; white-space: nowrap; }
+    .price-tier { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--periwinkle); margin-bottom: 6px; }
+    .price-name { font-size: 20px; font-weight: 700; color: var(--navy); letter-spacing: -0.3px; margin-bottom: 6px; }
+    .price-desc { font-size: 13px; color: var(--gray); line-height: 1.6; margin-bottom: 18px; }
+    .price-amount-row { display: flex; align-items: baseline; gap: 4px; margin-bottom: 4px; }
+    .price-amount { font-size: 38px; font-weight: 700; color: var(--navy); letter-spacing: -2px; line-height: 1; }
+    .price-mo { font-size: 14px; color: var(--gray); font-weight: 500; }
+    .price-setup { font-size: 12px; color: var(--gray); margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px solid var(--border); }
+    .price-setup strong { color: var(--dark); }
+    .price-features { list-style: none; flex: 1; margin-bottom: 22px; }
+    .price-features li { font-size: 13px; color: #374151; padding: 6px 0; display: flex; align-items: flex-start; gap: 8px; border-bottom: 1px solid var(--border); line-height: 1.5; }
+    .price-features li:last-child { border-bottom: none; }
+    .price-features li::before { content: '✓'; color: var(--green); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+    .price-cta { display: block; text-align: center; padding: 11px 20px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; transition: all .15s; font-family: inherit; border: none; cursor: pointer; }
+    .price-cta-outline { border: 1.5px solid var(--navy); color: var(--navy); background: transparent; }
+    .price-cta-outline:hover { background: var(--navy); color: var(--white); }
+    .price-cta-filled { background: var(--navy); color: var(--white); }
+    .price-cta-filled:hover { opacity: 0.88; }
+    .price-cta-gold { background: var(--gold); color: var(--dark); }
+    .price-cta-gold:hover { opacity: 0.88; }
+    .price-no-setup { font-size: 12px; color: var(--green); font-weight: 600; margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px solid var(--border); }
+    .trust-pills { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 36px; }
+    .trust-pill { padding: 7px 14px; background: var(--white); border: 1px solid var(--border); border-radius: 40px; font-size: 12px; font-weight: 600; color: var(--navy); }
+    .pricing-note { text-align: center; font-size: 13px; color: var(--gray); margin-top: 28px; line-height: 1.7; }
+    .pricing-note a { color: var(--navy); font-weight: 600; text-decoration: none; }
+    .pricing-note a:hover { text-decoration: underline; }
+    .section-divider { border: none; border-top: 1.5px solid var(--border); margin: 48px 0; }
+
+    /* APPS GRID */
+    .apps-section { background: var(--white); }
+    .apps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 20px; }
+    .app-card { background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 28px; transition: border-color .2s, box-shadow .2s; position: relative; }
+    .app-card:hover { border-color: #c7d2fe; box-shadow: 0 4px 24px rgba(26,43,107,0.07); }
     .app-card.featured { border-color: #c7d2fe; background: #fafbff; }
-    .app-card.featured::after {
-      content: 'Live Example';
-      position: absolute; top: 16px; right: 16px;
-      background: #EEF2FF; color: var(--navy);
-      font-size: 10px; font-weight: 600;
-      letter-spacing: 0.3px; text-transform: uppercase;
-      padding: 3px 10px; border-radius: 20px;
-      border: 1px solid #c7d2fe;
-    }
+    .app-card.featured::after { content: 'Live Example'; position: absolute; top: 16px; right: 16px; background: #EEF2FF; color: var(--navy); font-size: 10px; font-weight: 600; letter-spacing: 0.3px; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; border: 1px solid #c7d2fe; }
     .app-icon { font-size: 26px; margin-bottom: 14px; }
     .app-title { font-size: 16px; font-weight: 600; color: var(--navy); margin-bottom: 8px; letter-spacing: -0.2px; }
     .app-desc { font-size: 14px; color: var(--gray); line-height: 1.65; margin-bottom: 18px; font-weight: 400; }
     .app-features { list-style: none; }
-    .app-features li {
-      font-size: 13px; color: #374151; font-weight: 400;
-      padding: 4px 0; display: flex; align-items: flex-start; gap: 8px; line-height: 1.5;
-    }
+    .app-features li { font-size: 13px; color: #374151; padding: 4px 0; display: flex; align-items: flex-start; gap: 8px; line-height: 1.5; }
     .app-features li::before { content: '✓'; color: var(--green); font-weight: 600; flex-shrink: 0; margin-top: 1px; }
 
-    /* ── TOOLS ── */
+    /* TOOLS */
     .tools-section { background: var(--light); }
-    .tools-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 16px;
-    }
-    .tool-card {
-      background: var(--white); border: 1px solid var(--border);
-      border-radius: 12px; padding: 22px;
-      display: flex; gap: 14px; align-items: flex-start;
-      transition: border-color .15s;
-    }
+    .tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+    .tool-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 22px; display: flex; gap: 14px; align-items: flex-start; transition: border-color .15s; }
     .tool-card:hover { border-color: #c7d2fe; }
-    .tool-icon {
-      width: 40px; height: 40px; flex-shrink: 0;
-      background: #EEF2FF; border-radius: 10px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 18px;
-    }
-    .tool-title { font-size: 14px; font-weight: 600; color: var(--navy); margin-bottom: 5px; letter-spacing: -0.1px; }
-    .tool-desc { font-size: 13px; color: var(--gray); line-height: 1.6; font-weight: 400; }
+    .tool-icon { width: 40px; height: 40px; flex-shrink: 0; background: #EEF2FF; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; }
+    .tool-title { font-size: 14px; font-weight: 600; color: var(--navy); margin-bottom: 5px; }
+    .tool-desc { font-size: 13px; color: var(--gray); line-height: 1.6; }
 
-    /* ── HOW IT WORKS ── */
-    .steps-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-    }
-    .step-card {
-      background: var(--white); border: 1px solid var(--border);
-      border-radius: 14px; padding: 28px 24px;
-    }
-    .step-num {
-      width: 36px; height: 36px; border-radius: 50%;
-      background: #EEF2FF; color: var(--navy);
-      font-size: 15px; font-weight: 600;
-      display: flex; align-items: center; justify-content: center;
-      margin-bottom: 16px;
-    }
-    .step-title { font-size: 15px; font-weight: 600; color: var(--navy); margin-bottom: 8px; letter-spacing: -0.1px; }
-    .step-desc { font-size: 14px; color: var(--gray); line-height: 1.65; font-weight: 400; }
+    /* HOW IT WORKS */
+    .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+    .step-card { background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 28px 24px; }
+    .step-num { width: 36px; height: 36px; border-radius: 50%; background: #EEF2FF; color: var(--navy); font-size: 15px; font-weight: 600; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+    .step-title { font-size: 15px; font-weight: 600; color: var(--navy); margin-bottom: 8px; }
+    .step-desc { font-size: 14px; color: var(--gray); line-height: 1.65; }
 
-    /* ── WHO WE SERVE ── */
+    /* WHO WE SERVE */
     .who-section { background: var(--light); }
     .who-grid { display: flex; flex-wrap: wrap; gap: 10px; }
-    .who-tag {
-      padding: 8px 18px; background: var(--white);
-      border: 1px solid var(--border); border-radius: 40px;
-      font-size: 14px; font-weight: 500; color: var(--navy);
-      transition: all .15s;
-    }
+    .who-tag { padding: 8px 18px; background: var(--white); border: 1px solid var(--border); border-radius: 40px; font-size: 14px; font-weight: 500; color: var(--navy); transition: all .15s; cursor: default; }
     .who-tag:hover { background: var(--navy); color: var(--white); border-color: var(--navy); }
 
-    /* ── CTA ── */
-    .cta-section {
-      background: var(--navy);
-      text-align: center; padding: 96px 56px;
-    }
-    .cta-h2 {
-      font-size: clamp(26px, 3.5vw, 46px);
-      font-weight: 600; color: var(--white);
-      line-height: 1.15; letter-spacing: -1px; margin-bottom: 14px;
-    }
-    .cta-sub { font-size: 16px; color: #a5b0e8; margin-bottom: 40px; line-height: 1.7; font-weight: 400; }
+    /* CTA */
+    .cta-section { background: var(--navy); text-align: center; padding: 96px 56px; }
+    .cta-h2 { font-size: clamp(26px, 3.5vw, 46px); font-weight: 600; color: var(--white); line-height: 1.15; letter-spacing: -1px; margin-bottom: 14px; }
+    .cta-sub { font-size: 16px; color: #a5b0e8; margin-bottom: 40px; line-height: 1.7; }
     .cta-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px; }
-    .btn-gold {
-      padding: 13px 28px; border-radius: 8px;
-      background: var(--white); color: var(--navy);
-      font-size: 14px; font-weight: 600;
-      text-decoration: none; transition: opacity .15s;
-      display: inline-flex; align-items: center; gap: 8px;
-      font-family: inherit; letter-spacing: -0.1px;
-    }
+    .btn-gold { padding: 13px 28px; border-radius: 8px; background: var(--white); color: var(--navy); font-size: 14px; font-weight: 600; text-decoration: none; transition: opacity .15s; display: inline-flex; align-items: center; gap: 8px; font-family: inherit; }
     .btn-gold:hover { opacity: 0.9; }
-    .btn-outline-white {
-      padding: 13px 28px; border-radius: 8px;
-      background: transparent; color: var(--white);
-      font-size: 14px; font-weight: 600;
-      text-decoration: none; border: 1.5px solid rgba(255,255,255,0.3);
-      transition: border-color .15s;
-      font-family: inherit; letter-spacing: -0.1px;
-    }
+    .btn-outline-white { padding: 13px 28px; border-radius: 8px; background: transparent; color: var(--white); font-size: 14px; font-weight: 600; text-decoration: none; border: 1.5px solid rgba(255,255,255,0.3); transition: border-color .15s; font-family: inherit; }
     .btn-outline-white:hover { border-color: rgba(255,255,255,0.7); }
-    .cta-contact { font-size: 14px; color: #6B7FD4; font-weight: 400; }
+    .cta-contact { font-size: 14px; color: #6B7FD4; }
     .cta-contact a { color: #a5b0e8; text-decoration: none; font-weight: 500; }
     .cta-contact a:hover { color: var(--white); }
-    .ai-receptionist-wrap {
-      margin-top: 32px; padding-top: 32px;
-      border-top: 1px solid rgba(255,255,255,0.1);
-      display: flex; flex-direction: column; align-items: center; gap: 10px;
-    }
-    .ai-label { font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: #6B7FD4; }
-    .btn-ai {
-      display: inline-flex; align-items: center; gap: 12px;
-      padding: 14px 28px; border-radius: 10px;
-      background: rgba(255,255,255,0.06);
-      border: 1.5px solid rgba(255,255,255,0.18);
-      color: var(--white); font-size: 15px; font-weight: 600;
-      text-decoration: none; font-family: inherit;
-      transition: background .2s, border-color .2s;
-    }
-    .btn-ai:hover { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.35); }
-    .mic-icon {
-      width: 34px; height: 34px; border-radius: 50%;
-      background: var(--green);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 15px; flex-shrink: 0; position: relative;
-    }
-    .mic-icon::before, .mic-icon::after {
-      content: ''; position: absolute; inset: 0; border-radius: 50%;
-      background: var(--green); opacity: 0.4;
-      animation: pulse-ring 2s ease-out infinite;
-    }
-    .mic-icon::after { animation-delay: 0.7s; }
-    @keyframes pulse-ring {
-      0% { transform: scale(1); opacity: 0.4; }
-      100% { transform: scale(2.4); opacity: 0; }
-    }
-    .btn-ai-text { line-height: 1.2; }
-    .btn-ai-text span { display: block; font-size: 11px; font-weight: 400; color: #a5b0e8; margin-top: 2px; }
 
-    /* ── FOOTER ── */
-    footer { background: #ffffff; border-top: 1px solid var(--border); padding: 36px 56px; text-align: center; }
-    .footer-logo { height: 56px; margin-bottom: 14px; opacity: 1;  }
-    .footer-text { font-size: 13px; color: var(--dark); line-height: 2; font-weight: 400; }
-    .footer-text strong { color: var(--navy); font-weight: 600; }
+    /* FOOTER */
+    footer { background: #111111; padding: 36px 56px; text-align: center; }
+    .footer-logo { height: 48px; margin-bottom: 14px; display: block; margin-left: auto; margin-right: auto; }
+    .footer-text { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 2; }
+    .footer-text strong { color: rgba(255,255,255,0.8); }
+    .footer-text a { color: rgba(255,255,255,0.4); text-decoration: none; }
+    .footer-text a:hover { color: rgba(255,255,255,0.7); }
 
-    /* ── RESPONSIVE ── */
+    /* RESPONSIVE */
     @media (max-width: 768px) {
       nav { padding: 0 20px; }
       .nav-links { display: none; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0; background: white; padding: 20px; border-bottom: 1px solid var(--border); gap: 16px; }
@@ -436,9 +221,12 @@
       section { padding: 64px 20px; }
       .hero-content { padding: 60px 20px; }
       .hero-stats { gap: 28px; padding-top: 28px; }
-      .statement-section, .cta-section { padding: 64px 20px; }
+      .statement-section, .cta-section, .before-after-section { padding: 64px 20px; }
+      .ba-grid { grid-template-columns: 1fr; }
+      .ba-arrow { display: none; }
       .cta-actions { flex-direction: column; align-items: center; }
       footer { padding: 28px 20px; }
+      .pricing-grid-4, .pricing-grid-3, .pricing-grid-2 { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -447,12 +235,12 @@
 <!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">
-    <img src="https://i.imgur.com/G40kixu.png" alt="CORE AI" style="height:44px;" />
+    <img src="https://i.imgur.com/LpBodPi.png" alt="CORE AI" />
   </a>
   <div class="nav-links" id="navLinks">
-    <a href="#services">Services</a>
     <a href="#what-we-build">What We Build</a>
     <a href="#automation">Automation</a>
+    <a href="#pricing">Pricing</a>
     <a href="#how-it-works">How It Works</a>
     <a href="#who-we-serve">Who We Serve</a>
     <a href="#contact" class="nav-cta">Book a Call</a>
@@ -468,87 +256,18 @@
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <div class="hero-eyebrow">AI-Powered Business Systems · <span>Built for Entrepreneurs</span></div>
-    <h1 class="hero-h1">
-      Your business<br>deserves a<br>command center.
-    </h1>
+    <h1 class="hero-h1">Your business<br>deserves a<br>command center.</h1>
     <p class="hero-tagline">Built for entrepreneurs, by entrepreneurs.</p>
-    <p class="hero-sub">
-      We build custom AI-powered business systems — member directories, CRMs, pipelines, and automations — tailored to exactly how your organization operates.
-    </p>
+    <p class="hero-sub">We build custom AI-powered business systems — member directories, CRMs, pipelines, and automations — tailored to exactly how your organization operates.</p>
     <div class="hero-actions">
-      <a href="https://api.leadconnectorhq.com/widget/bookings/core-ai-discovery" target="_blank" class="btn-primary">Book a Free Call</a>
+      <a href="https://api.leadconnectorhq.com/widget/bookings/core-ai-discovery" class="btn-primary">Book a Free Call →</a>
       <a href="#what-we-build" class="btn-secondary">See What We Build</a>
     </div>
-    <div style="margin-top:20px">
-      <a href="tel:5715172658" style="display:inline-flex;align-items:center;gap:12px;padding:13px 22px;border-radius:10px;background:#EEF2FF;border:1.5px solid #c7d2fe;color:var(--navy);font-size:14px;font-weight:600;text-decoration:none;font-family:inherit;transition:background .2s,border-color .2s;">
-        <div class="mic-icon" style="width:30px;height:30px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;position:relative;">🎙️</div>
-        <div>
-          Talk to Our AI Receptionist
-          <span style="display:block;font-size:11px;font-weight:400;color:var(--gray);margin-top:2px;">Call now — available 24/7</span>
-        </div>
-      </a>
-    </div>
+    <a href="tel:5715172658" class="ai-receptionist-btn">🎙️ Talk to Our AI Receptionist — available 24/7</a>
     <div class="hero-stats">
-      <div>
-        <div class="hero-stat-num">Days</div>
-        <div class="hero-stat-label">Not months — from conversation<br>to live system</div>
-      </div>
-      <div>
-        <div class="hero-stat-num">1 system</div>
-        <div class="hero-stat-label">Replaces spreadsheets,<br>clipboards & group chats</div>
-      </div>
-      <div>
-        <div class="hero-stat-num">24 / 7</div>
-        <div class="hero-stat-label">Your system works<br>even when you don't</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- QUICK WINS / FEATURED SERVICES -->
-<section id="services" class="quick-wins-section">
-  <div class="quick-wins-inner">
-    <div class="quick-wins-eyebrow">Start Here</div>
-    <h2 class="quick-wins-heading">Two ways to win fast</h2>
-    <p class="quick-wins-sub">High-impact, low-risk entry points — built for businesses that are ready to grow but don't want a long commitment to get started.</p>
-    <div class="quick-wins-grid">
-
-      <!-- Google Reviews -->
-      <div class="qw-card hot">
-        <div class="qw-badge badge-hot">🔥 Most Popular</div>
-        <div class="qw-icon">⭐</div>
-        <div class="qw-title">Turn Happy Customers Into More Google Reviews</div>
-        <div class="qw-desc">Core Response AI helps local businesses ask for reviews consistently, make it easy for customers to respond, and build stronger online trust over time.</div>
-        <div class="qw-price">Starting at $99<span style="font-size:15px;font-weight:500">/month</span></div>
-        <div class="qw-price-sub">10-day free trial · Pricing based on customer volume</div>
-        <ul class="qw-features">
-          <li>Automated review request system</li>
-          <li>Google Business Profile monitoring</li>
-          <li>New review alerts and response support</li>
-          <li>30-minute onboarding call included</li>
-          <li>Cancel anytime after trial</li>
-        </ul>
-        <a href="google-reviews.html" class="qw-cta cta-gold">Start Free 10-Day Trial →</a>
-      </div>
-
-      <!-- Youth Website -->
-      <div class="qw-card">
-        <div class="qw-badge badge-new">🚀 New Program</div>
-        <div class="qw-icon">🎓</div>
-        <div class="qw-title">Youth Founder Website Program</div>
-        <div class="qw-desc">Young entrepreneurs have great ideas — but without a professional online presence, they're invisible. We build a clean, mobile-friendly website that helps them look legit, share their business, and get taken seriously.</div>
-        <div class="qw-price">$1,200<span style="font-size:15px;font-weight:500"> starting</span></div>
-        <div class="qw-price-sub">Flexible payment options available · $49–$99/mo maintenance</div>
-        <ul class="qw-features">
-          <li>One-page mobile-friendly website</li>
-          <li>Business overview + founder bio</li>
-          <li>Contact form and QR code</li>
-          <li>Launch coaching call included</li>
-          <li>Optional parent/guardian involvement</li>
-        </ul>
-        <a href="youth-website.html" class="qw-cta cta-navy">Learn More →</a>
-      </div>
-
+      <div><div class="hero-stat-num">Days</div><div class="hero-stat-label">Not months — from conversation<br>to live system</div></div>
+      <div><div class="hero-stat-num">1 system</div><div class="hero-stat-label">Replaces spreadsheets,<br>clipboards & group chats</div></div>
+      <div><div class="hero-stat-num">24/7</div><div class="hero-stat-label">Your system works<br>even when you don't</div></div>
     </div>
   </div>
 </section>
@@ -556,45 +275,271 @@
 <!-- STATEMENT -->
 <div class="statement-section">
   <div class="statement-inner">
-    <p class="statement-text">Most businesses run on <em>memory, sticky notes, and group chats.</em></p>
-    <p class="statement-sub">We help turn scattered information into simple systems that keep leads, follow-ups, reviews, and tasks from falling through the cracks.</p>
-
-    <div class="before-after">
-      <div class="ba-col">
-        <div class="ba-label before">Before CORE AI</div>
-        <ul class="ba-list">
-          <li>Leads scattered across texts and emails</li>
-          <li>Follow-up depends on memory</li>
-          <li>Reviews are not requested consistently</li>
-          <li>Tasks and appointments get missed</li>
-          <li>Owner carries everything in their head</li>
-        </ul>
-      </div>
-      <div class="ba-divider">→</div>
-      <div class="ba-col">
-        <div class="ba-label after">After CORE AI</div>
-        <ul class="ba-list after-list">
-          <li>Leads organized in one place</li>
-          <li>Follow-up reminders are built in</li>
-          <li>Review requests become part of the process</li>
-          <li>Customers get a smoother experience</li>
-          <li>Owner has clarity and control</li>
-        </ul>
-      </div>
-    </div>
-
-    <p class="statement-closer">Simple systems. Better follow-up. Less chaos.</p>
+    <p class="statement-text">Most businesses run on <em>memory, sticky notes,<br>and group chats.</em><br>We fix that.</p>
+    <p class="statement-sub">We build the systems that give you clarity, control, and confidence — so nothing falls through the cracks.</p>
   </div>
 </div>
 
-<!-- CUSTOM APPS -->
-<section id="what-we-build">
+<!-- BEFORE / AFTER -->
+<div class="before-after-section">
+  <div class="ba-inner">
+    <div class="ba-headline">Simple systems. Better follow-up. Less chaos.</div>
+    <p class="ba-sub">Here's what changes when you work with CORE AI.</p>
+    <div class="ba-grid">
+      <div class="ba-col before">
+        <div class="ba-col-title">Before CORE AI</div>
+        <ul class="ba-items">
+          <li class="ba-before-dot">Leads scattered across texts and emails</li>
+          <li class="ba-before-dot">Follow-up depends on memory</li>
+          <li class="ba-before-dot">Reviews are not requested consistently</li>
+          <li class="ba-before-dot">Tasks and appointments get missed</li>
+          <li class="ba-before-dot">Owner carries everything in their head</li>
+        </ul>
+      </div>
+      <div class="ba-arrow">→</div>
+      <div class="ba-col after">
+        <div class="ba-col-title">After CORE AI</div>
+        <ul class="ba-items">
+          <li class="ba-after-dot">Leads organized in one place</li>
+          <li class="ba-after-dot">Follow-up reminders are built in</li>
+          <li class="ba-after-dot">Review requests become part of the process</li>
+          <li class="ba-after-dot">Customers get a smoother experience</li>
+          <li class="ba-after-dot">Owner has clarity and control</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PRICING -->
+<section id="pricing" class="pricing-section">
+  <div class="section-inner">
+
+    <!-- EMERGING BUSINESS PACKAGES -->
+    <div class="section-eyebrow">Emerging Business Package</div>
+    <h2 class="section-h2">Your first real website.<br>Done right. No surprises.</h2>
+    <p class="section-sub">We know what others charge — and we think it's too much for a business just getting started. Everything included upfront. No hidden fees.</p>
+    <div class="trust-pills">
+      <div class="trust-pill">✅ No hidden fees</div>
+      <div class="trust-pill">✅ Everything included upfront</div>
+      <div class="trust-pill">✅ Built for emerging entrepreneurs</div>
+      <div class="trust-pill">✅ Fraction of agency prices</div>
+      <div class="trust-pill">✅ Live in days, not months</div>
+    </div>
+    <div class="pricing-grid-4">
+      <div class="price-card">
+        <div class="price-tier">Launch</div>
+        <div class="price-name">Get Online Fast</div>
+        <div class="price-desc">For businesses that need to be found online and look legitimate — fast.</div>
+        <div class="price-amount-row"><div class="price-amount">$99</div><div class="price-mo">/mo</div></div>
+        <div class="price-setup">+ <strong>$1,200</strong> one-time setup</div>
+        <ul class="price-features">
+          <li>Single-page professional website</li>
+          <li>Mobile-friendly design</li>
+          <li>Logo & brand colors applied</li>
+          <li>Hero section with tagline & CTA</li>
+          <li>Clickable phone & email</li>
+          <li>Google Maps embed</li>
+          <li>Domain connected</li>
+          <li>1 content update/month</li>
+          <li>Delivered in 5 business days</li>
+        </ul>
+        <a href="mailto:abdul@coreresponsegroup.com?subject=Launch Package" class="price-cta price-cta-outline">Get Started →</a>
+      </div>
+      <div class="price-card popular">
+        <div class="popular-pill">Most Popular</div>
+        <div class="price-tier">Grow</div>
+        <div class="price-name">Look the Part</div>
+        <div class="price-desc">For businesses ready to tell their story with visuals and multiple pages.</div>
+        <div class="price-amount-row"><div class="price-amount">$199</div><div class="price-mo">/mo</div></div>
+        <div class="price-setup">+ <strong>$1,800</strong> one-time setup</div>
+        <ul class="price-features">
+          <li>Everything in Launch</li>
+          <li>Up to 4 pages</li>
+          <li>Professional stock photography</li>
+          <li>Team / owner photo section</li>
+          <li>Services grid with descriptions</li>
+          <li>Contact form</li>
+          <li>Up to 5 updates/month</li>
+          <li>Priority email support</li>
+          <li>Delivered in 7–10 business days</li>
+        </ul>
+        <a href="mailto:abdul@coreresponsegroup.com?subject=Grow Package" class="price-cta price-cta-filled">Get Started →</a>
+      </div>
+      <div class="price-card">
+        <div class="price-tier">Elevate</div>
+        <div class="price-name">Make a Statement</div>
+        <div class="price-desc">For businesses that want to stand out and convert visitors into clients.</div>
+        <div class="price-amount-row"><div class="price-amount">$299</div><div class="price-mo">/mo</div></div>
+        <div class="price-setup">+ <strong>$2,500</strong> one-time setup</div>
+        <ul class="price-features">
+          <li>Everything in Grow</li>
+          <li>Cinematic hero video background</li>
+          <li>Testimonials & FAQ sections</li>
+          <li>Lead capture → CRM</li>
+          <li>Google Analytics installed</li>
+          <li>Basic SEO setup</li>
+          <li>Unlimited content updates</li>
+          <li>Quarterly design refresh</li>
+          <li>Delivered in 10–14 business days</li>
+        </ul>
+        <a href="mailto:abdul@coreresponsegroup.com?subject=Elevate Package" class="price-cta price-cta-outline">Get Started →</a>
+      </div>
+      <div class="price-card command">
+        <div class="command-pill">Full Suite</div>
+        <div class="price-tier">Command</div>
+        <div class="price-name">Business Automation</div>
+        <div class="price-desc">Your website becomes your hardest-working employee — capturing leads, booking appointments, sending invoices automatically.</div>
+        <div class="price-amount-row"><div class="price-amount">$699</div><div class="price-mo">/mo</div></div>
+        <div class="price-setup">+ <strong>$5,000</strong> one-time setup</div>
+        <ul class="price-features">
+          <li>Everything in Elevate</li>
+          <li>AI chatbot — answers FAQs 24/7</li>
+          <li>AI voice agent for after-hours calls</li>
+          <li>Automated invoicing & payments</li>
+          <li>Two-way SMS & email inbox</li>
+          <li>Appointment booking with calendar</li>
+          <li>Automated follow-up sequences</li>
+          <li>Google review automation</li>
+          <li>Full CRM pipeline setup</li>
+          <li>Monthly reporting dashboard</li>
+        </ul>
+        <a href="mailto:abdul@coreresponsegroup.com?subject=Command Package" class="price-cta price-cta-gold">Get Started →</a>
+      </div>
+    </div>
+    <p class="pricing-note">Not sure which package is right? <a href="https://api.leadconnectorhq.com/widget/bookings/core-ai-discovery">Book a free 15-minute call</a> and we'll tell you exactly what you need. All packages include hosting on a secure, fast, globally distributed network.</p>
+
+    <hr class="section-divider">
+
+    <!-- GOOGLE REVIEW PACKAGES -->
+    <div class="section-eyebrow" style="margin-top:8px">Google Review Growth System</div>
+    <h2 class="section-h2">Turn happy customers<br>into visible proof.</h2>
+    <p class="section-sub">You already earned the trust. We help make sure people can see it. Most businesses don't have a review problem — they have an asking problem.</p>
+    <div class="pricing-grid-3">
+      <div class="price-card">
+        <div class="price-tier">Starter</div>
+        <div class="price-name">Google Review Starter</div>
+        <div class="price-desc">Perfect for small businesses ready to start building their online reputation consistently.</div>
+        <div class="price-amount-row"><div class="price-amount">$99</div><div class="price-mo">/mo</div></div>
+        <div class="price-no-setup">✅ No setup fee · 10-day free trial</div>
+        <ul class="price-features">
+          <li>Automated review request system</li>
+          <li>Google Business Profile monitoring</li>
+          <li>New review alerts</li>
+          <li>Review response support</li>
+          <li>30-minute onboarding call</li>
+          <li>Cancel anytime</li>
+        </ul>
+        <a href="https://www.coreresponsegroup.com/google-reviews.html" class="price-cta price-cta-outline">Start Free Trial →</a>
+      </div>
+      <div class="price-card popular">
+        <div class="popular-pill">Most Popular</div>
+        <div class="price-tier">Growth</div>
+        <div class="price-name">Google Review Growth</div>
+        <div class="price-desc">For businesses serious about dominating local search and building long-term trust.</div>
+        <div class="price-amount-row"><div class="price-amount">$199</div><div class="price-mo">/mo</div></div>
+        <div class="price-setup">+ <strong>$699</strong> one-time setup</div>
+        <ul class="price-features">
+          <li>Everything in Starter</li>
+          <li>Review landing page</li>
+          <li>Monthly review monitoring</li>
+          <li>Review response support</li>
+          <li>Website review section</li>
+          <li>4 review-based social posts/month</li>
+          <li>Quarterly refresh of review assets</li>
+          <li>Monthly performance report</li>
+        </ul>
+        <a href="mailto:abdul@coreresponsegroup.com?subject=Google Review Growth" class="price-cta price-cta-filled">Get Started →</a>
+      </div>
+      <div class="price-card">
+        <div class="price-tier">Pro</div>
+        <div class="price-name">Google Review Pro</div>
+        <div class="price-desc">For established businesses that want ongoing reputation management and marketing support.</div>
+        <div class="price-amount-row"><div class="price-amount">$279</div><div class="price-mo">/mo</div></div>
+        <div class="price-setup">+ <strong>$999</strong> one-time setup</div>
+        <ul class="price-features">
+          <li>Everything in Growth</li>
+          <li>Full review request automation</li>
+          <li>Text & email review workflows</li>
+          <li>Private feedback form</li>
+          <li>Staff review request script</li>
+          <li>Social proof content calendar</li>
+          <li>Monthly optimization review</li>
+          <li>Dedicated support line</li>
+        </ul>
+        <a href="mailto:abdul@coreresponsegroup.com?subject=Google Review Pro" class="price-cta price-cta-outline">Get Started →</a>
+      </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- OTHER SERVICES -->
+    <div class="section-eyebrow" style="margin-top:8px">Additional Services</div>
+    <h2 class="section-h2">More ways we can<br>help your business grow.</h2>
+    <p class="section-sub">From AI voice agents to youth entrepreneur programs — built for how your business actually operates.</p>
+    <div class="pricing-grid-3">
+      <div class="price-card">
+        <div class="price-tier">Member Management</div>
+        <div class="price-name">Member Management System</div>
+        <div class="price-desc">For chambers, BNI groups, associations, and nonprofits — a real-time digital system that replaces clipboards and spreadsheets entirely.</div>
+        <div class="price-amount-row"><div class="price-amount">$150</div><div class="price-mo">/mo</div></div>
+        <div class="price-setup">+ <strong>$699</strong> one-time setup</div>
+        <ul class="price-features">
+          <li>Searchable member directory</li>
+          <li>Renewal alerts and tracking</li>
+          <li>QR code self check-in</li>
+          <li>Visitor tracking</li>
+          <li>Industry seat management</li>
+          <li>Admin, member & check-in access</li>
+          <li>Export CSV & copy emails</li>
+        </ul>
+        <a href="mailto:abdul@coreresponsegroup.com?subject=Member Management System" class="price-cta price-cta-outline">Get Started →</a>
+      </div>
+      <div class="price-card">
+        <div class="price-tier">AI Voice Agent</div>
+        <div class="price-name">AI Receptionist Setup</div>
+        <div class="price-desc">Never miss a lead again. Your AI receptionist answers calls after hours, handles FAQs, captures caller info, and sends you a summary for follow-up.</div>
+        <div class="price-amount-row"><div class="price-amount">$199</div><div class="price-mo">/mo</div></div>
+        <div class="price-setup">+ <strong>$399</strong> one-time setup · 200 mins included</div>
+        <ul class="price-features">
+          <li>24/7 AI call answering</li>
+          <li>Captures name, number & service need</li>
+          <li>Urgency detection</li>
+          <li>Call summary sent to your inbox</li>
+          <li>Custom script for your business</li>
+          <li>Missed call text-back</li>
+        </ul>
+        <a href="tel:5715172658" class="price-cta price-cta-outline">🎙️ Try It Now →</a>
+      </div>
+      <div class="price-card">
+        <div class="price-tier">Youth Program</div>
+        <div class="price-name">Youth Founder Website</div>
+        <div class="price-desc">Young entrepreneurs ages 13–24 deserve a professional online presence. We build a clean, mobile-friendly website so they look legit and get taken seriously.</div>
+        <div class="price-amount-row"><div class="price-amount">$49</div><div class="price-mo">/mo</div></div>
+        <div class="price-setup">+ <strong>$999</strong> one-time setup · Ages 13–24</div>
+        <ul class="price-features">
+          <li>One-page mobile-friendly website</li>
+          <li>Business overview + founder bio</li>
+          <li>Contact form and QR code</li>
+          <li>Launch coaching call included</li>
+          <li>Optional parent/guardian involvement</li>
+          <li>Flexible payment options</li>
+        </ul>
+        <a href="https://www.coreresponsegroup.com/youth-website.html" class="price-cta price-cta-outline">Learn More →</a>
+      </div>
+    </div>
+    <p class="pricing-note">All prices are transparent — no surprise fees, no locked contracts. <a href="https://api.leadconnectorhq.com/widget/bookings/core-ai-discovery">Book a free call</a> to find the right fit for your business.</p>
+
+  </div>
+</section>
+
+<!-- CUSTOM SYSTEMS -->
+<section id="what-we-build" class="apps-section">
   <div class="section-inner">
     <div class="section-eyebrow">Custom-Built Systems</div>
     <h2 class="section-h2">Built for exactly<br>how you operate</h2>
     <p class="section-sub">Not off-the-shelf software you have to adapt to. A system designed around your workflow — live in days, accessible from any device.</p>
     <div class="apps-grid">
-
       <div class="app-card featured">
         <div class="app-icon">🏛️</div>
         <div class="app-title">Member & Lead Share Directory</div>
@@ -608,7 +553,6 @@
           <li>Admin, member, and check-in access levels</li>
         </ul>
       </div>
-
       <div class="app-card">
         <div class="app-icon">📋</div>
         <div class="app-title">Client & Pipeline CRM</div>
@@ -621,7 +565,6 @@
           <li>Team access with role-based permissions</li>
         </ul>
       </div>
-
       <div class="app-card">
         <div class="app-icon">🎗️</div>
         <div class="app-title">Nonprofit & Donor Management</div>
@@ -634,7 +577,6 @@
           <li>Event attendance and check-in</li>
         </ul>
       </div>
-
       <div class="app-card">
         <div class="app-icon">🏘️</div>
         <div class="app-title">HOA & Community Management</div>
@@ -647,7 +589,6 @@
           <li>Document library and record keeping</li>
         </ul>
       </div>
-
       <div class="app-card">
         <div class="app-icon">📅</div>
         <div class="app-title">Event & Attendance System</div>
@@ -660,7 +601,6 @@
           <li>Historical attendance records by member</li>
         </ul>
       </div>
-
       <div class="app-card">
         <div class="app-icon">🏢</div>
         <div class="app-title">Any Business. Any Workflow.</div>
@@ -673,7 +613,6 @@
           <li>Scales as your organization grows</li>
         </ul>
       </div>
-
     </div>
   </div>
 </section>
@@ -685,55 +624,12 @@
     <h2 class="section-h2">The engine behind<br>your system</h2>
     <p class="section-sub">Every system we build can be extended with powerful automation — so your business runs efficiently while you focus on growth.</p>
     <div class="tools-grid">
-
-      <div class="tool-card">
-        <div class="tool-icon">📱</div>
-        <div>
-          <div class="tool-title">SMS & Email Blast Messaging</div>
-          <div class="tool-desc">Reach your entire membership or client list in one tap. Meeting reminders, announcements, and updates — straight to their phone.</div>
-        </div>
-      </div>
-
-      <div class="tool-card">
-        <div class="tool-icon">🔄</div>
-        <div>
-          <div class="tool-title">Automated Renewal Sequences</div>
-          <div class="tool-desc">90, 60, 30, and 3-day renewal reminders that go out automatically — no manual sending, no missed renewals.</div>
-        </div>
-      </div>
-
-      <div class="tool-card">
-        <div class="tool-icon">💳</div>
-        <div>
-          <div class="tool-title">Online Invoicing & Payments</div>
-          <div class="tool-desc">Members receive a renewal email with a one-click payment link — pre-filled, card payment, instant confirmation. No PDF attachments.</div>
-        </div>
-      </div>
-
-      <div class="tool-card">
-        <div class="tool-icon">📞</div>
-        <div>
-          <div class="tool-title">AI Voice Agent</div>
-          <div class="tool-desc">Never miss a lead again. Our AI answers calls after hours, handles FAQs, and captures contact information while you sleep.</div>
-        </div>
-      </div>
-
-      <div class="tool-card">
-        <div class="tool-icon">💬</div>
-        <div>
-          <div class="tool-title">Two-Way Client Communication</div>
-          <div class="tool-desc">Manage all client texts and emails from one inbox — every conversation in one place, with full history and context.</div>
-        </div>
-      </div>
-
-      <div class="tool-card">
-        <div class="tool-icon">📊</div>
-        <div>
-          <div class="tool-title">Reporting & Analytics</div>
-          <div class="tool-desc">Know which members are most engaged, which leads are going cold, and where your revenue is coming from — at a glance.</div>
-        </div>
-      </div>
-
+      <div class="tool-card"><div class="tool-icon">📱</div><div><div class="tool-title">SMS & Email Blast Messaging</div><div class="tool-desc">Reach your entire membership or client list in one tap. Meeting reminders, announcements, and updates — straight to their phone.</div></div></div>
+      <div class="tool-card"><div class="tool-icon">🔄</div><div><div class="tool-title">Automated Renewal Sequences</div><div class="tool-desc">90, 60, 30, and 3-day renewal reminders that go out automatically — no manual sending, no missed renewals.</div></div></div>
+      <div class="tool-card"><div class="tool-icon">💳</div><div><div class="tool-title">Online Invoicing & Payments</div><div class="tool-desc">Members receive a renewal email with a one-click payment link — pre-filled, card payment, instant confirmation. No PDF attachments.</div></div></div>
+      <div class="tool-card"><div class="tool-icon">📞</div><div><div class="tool-title">AI Voice Agent</div><div class="tool-desc">Never miss a lead again. Our AI answers calls after hours, handles FAQs, and captures contact information while you sleep.</div></div></div>
+      <div class="tool-card"><div class="tool-icon">💬</div><div><div class="tool-title">Two-Way Client Communication</div><div class="tool-desc">Manage all client texts and emails from one inbox — every conversation in one place, with full history and context.</div></div></div>
+      <div class="tool-card"><div class="tool-icon">📊</div><div><div class="tool-title">Reporting & Analytics</div><div class="tool-desc">Know which members are most engaged, which leads are going cold, and where your revenue is coming from — at a glance.</div></div></div>
     </div>
   </div>
 </section>
@@ -745,26 +641,10 @@
     <h2 class="section-h2">From conversation<br>to live system — fast</h2>
     <p class="section-sub">We don't do long implementation timelines. Most systems are live within days of your first call.</p>
     <div class="steps-grid">
-      <div class="step-card">
-        <div class="step-num">1</div>
-        <div class="step-title">Free 30-min call</div>
-        <div class="step-desc">We learn how your organization works, what you need to track, and what problems we're solving together.</div>
-      </div>
-      <div class="step-card">
-        <div class="step-num">2</div>
-        <div class="step-title">We build it</div>
-        <div class="step-desc">Your custom system is built and ready for review within days — designed specifically for your workflow, not a template.</div>
-      </div>
-      <div class="step-card">
-        <div class="step-num">3</div>
-        <div class="step-title">You review & refine</div>
-        <div class="step-desc">We refine until it's exactly right. You decide when it's ready — usually one to two rounds of feedback.</div>
-      </div>
-      <div class="step-card">
-        <div class="step-num">4</div>
-        <div class="step-title">Go live</div>
-        <div class="step-desc">Your system goes live at a secure, shareable link — accessible from any device, by your whole team, from day one.</div>
-      </div>
+      <div class="step-card"><div class="step-num">1</div><div class="step-title">Free 30-min call</div><div class="step-desc">We learn how your organization works, what you need to track, and what problems we're solving together.</div></div>
+      <div class="step-card"><div class="step-num">2</div><div class="step-title">We build it</div><div class="step-desc">Your custom system is built and ready for review within days — designed specifically for your workflow, not a template.</div></div>
+      <div class="step-card"><div class="step-num">3</div><div class="step-title">You review & refine</div><div class="step-desc">We refine until it's exactly right. You decide when it's ready — usually one to two rounds of feedback.</div></div>
+      <div class="step-card"><div class="step-num">4</div><div class="step-title">Go live</div><div class="step-desc">Your system goes live at a secure, shareable link — accessible from any device, by your whole team, from day one.</div></div>
     </div>
   </div>
 </section>
@@ -788,6 +668,10 @@
       <div class="who-tag">🩺 Healthcare Practices</div>
       <div class="who-tag">⚖️ Professional Associations</div>
       <div class="who-tag">🎓 Educational Organizations</div>
+      <div class="who-tag">🏠 Property Management</div>
+      <div class="who-tag">🔧 Home Service Contractors</div>
+      <div class="who-tag">💅 Med Spas & Salons</div>
+      <div class="who-tag">🏦 Insurance Agents</div>
     </div>
   </div>
 </section>
@@ -799,31 +683,22 @@
     <h2 class="cta-h2">Ready to replace your<br>spreadsheets and clipboards?</h2>
     <p class="cta-sub">Book a free 30-minute call. We'll show you exactly what we'd build for your organization — no commitment required.</p>
     <div class="cta-actions">
-      <a href="https://api.leadconnectorhq.com/widget/bookings/core-ai-discovery" target="_blank" class="btn-gold">📅 Book a Free Call</a>
+      <a href="https://api.leadconnectorhq.com/widget/bookings/core-ai-discovery" class="btn-gold">📅 Book a Free Call</a>
+      <a href="tel:5715172658" class="btn-outline-white">🎙️ Talk to AI Receptionist</a>
     </div>
     <p class="cta-contact">Or email us at <a href="mailto:abdul@coreresponsegroup.com">abdul@coreresponsegroup.com</a></p>
-    <div class="ai-receptionist-wrap">
-      <div class="ai-label">✦ Want to see AI in action?</div>
-      <a href="tel:5715172658" class="btn-ai">
-        <div class="mic-icon">🎙️</div>
-        <div class="btn-ai-text">
-          Talk to Our AI Receptionist
-          <span>Call now — available 24/7</span>
-        </div>
-      </a>
-    </div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <img src="https://i.imgur.com/G40kixu.png" alt="CORE AI" class="footer-logo" />
+  <img src="https://i.imgur.com/LpBodPi.png" alt="CORE AI" class="footer-logo" />
   <div class="footer-text">
     <strong>CORE AI</strong> | Core Response AI | Powerful Business Solutions | A Tayyab Group, Inc. Company<br>
     coreresponsegroup.com · 571-415-3551 · abdul@coreresponsegroup.com<br>
-    <span style="font-size:12px;color:#444;margin-top:4px;display:block">© 2026 Core Response AI · All rights reserved &nbsp;|&nbsp; <a href="/privacy-policy.html" style="color:#6B7FD4;text-decoration:none;">Privacy Policy</a> &nbsp;|&nbsp; <a href="/terms-of-service.html" style="color:#6B7FD4;text-decoration:none;">Terms of Service</a></span>
+    <span style="font-size:12px;margin-top:4px;display:block">© 2026 Core Response AI · All rights reserved · <a href="https://www.coreresponsegroup.com/privacy-policy.html">Privacy Policy</a> · <a href="https://www.coreresponsegroup.com/terms-of-service.html">Terms of Service</a></span>
   </div>
 </footer>
-<script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6a3be9a997c4e6b1789e8c85" data-source="WEB_USER"></script>
+
 </body>
 </html>
