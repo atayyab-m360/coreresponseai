@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Case Studies — CORE AI</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #1A2B6B; --periwinkle: #6B7FD4; --gold: #F59E0B;
+      --white: #ffffff; --light: #F8F9FC; --border: #E8EAF2;
+      --dark: #111827; --gray: #6B7280; --green: #10B981;
+    }
+    html { scroll-behavior: smooth; overflow-x: hidden; overflow-y: auto; }
+    body { font-family: 'DM Sans', system-ui, sans-serif; color: var(--dark); background: var(--white); overflow-x: hidden; font-weight: 400; }
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(255,255,255,0.97); backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 56px; height: 64px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { display: flex; align-items: center; text-decoration: none; }
+    .nav-logo img { height: 44px; }
+    .nav-back { font-size: 14px; font-weight: 500; color: var(--gray); text-decoration: none; transition: color .15s; }
+    .nav-back:hover { color: var(--navy); }
+    .nav-cta { padding: 9px 22px; border-radius: 8px; background: var(--navy); color: var(--white); font-size: 14px; font-weight: 600; text-decoration: none; transition: opacity .15s; }
+    .nav-cta:hover { opacity: 0.88; }
+
+    .page-hero { padding: 140px 56px 72px; max-width: 1100px; margin: 0 auto; border-bottom: 1px solid var(--border); }
+    .hero-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--periwinkle); margin-bottom: 12px; }
+    .hero-h1 { font-size: clamp(32px, 4.5vw, 54px); font-weight: 600; color: var(--navy); letter-spacing: -1.2px; line-height: 1.1; margin-bottom: 16px; }
+    .hero-sub { font-size: 17px; color: var(--gray); max-width: 560px; line-height: 1.7; }
+    .placeholder-notice {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #FEF3C7; border: 1px solid #FDE68A;
+      border-radius: 8px; padding: 10px 16px;
+      font-size: 13px; color: #92400E; font-weight: 500;
+      margin-top: 24px;
+    }
+
+    .cs-section { padding: 80px 56px; }
+    .cs-inner { max-width: 1100px; margin: 0 auto; }
+    .cs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(480px, 1fr)); gap: 28px; margin-top: 48px; }
+
+    .cs-card {
+      border: 1.5px solid var(--border); border-radius: 16px;
+      overflow: hidden; transition: box-shadow .2s, border-color .2s;
+      background: var(--white);
+    }
+    .cs-card:hover { box-shadow: 0 8px 40px rgba(26,43,107,0.10); border-color: #c7d2fe; }
+    .cs-card-header {
+      padding: 28px 32px; border-bottom: 1px solid var(--border);
+      display: flex; align-items: flex-start; justify-content: space-between; gap: 16px;
+    }
+    .cs-industry-badge {
+      font-size: 10px; font-weight: 700; letter-spacing: 1px;
+      text-transform: uppercase; padding: 4px 10px;
+      border-radius: 20px; background: #EEF2FF;
+      color: var(--navy); border: 1px solid #c7d2fe;
+      white-space: nowrap; height: fit-content;
+    }
+    .cs-placeholder-badge {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.8px;
+      text-transform: uppercase; padding: 4px 10px;
+      border-radius: 20px; background: #FEF3C7;
+      color: #92400E; border: 1px solid #FDE68A;
+      white-space: nowrap; height: fit-content;
+    }
+    .cs-client { font-size: 20px; font-weight: 700; color: var(--navy); margin-bottom: 6px; letter-spacing: -0.3px; }
+    .cs-tagline { font-size: 14px; color: var(--gray); line-height: 1.5; }
+    .cs-body { padding: 28px 32px; }
+    .cs-row { margin-bottom: 20px; }
+    .cs-row:last-child { margin-bottom: 0; }
+    .cs-row-label { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--periwinkle); margin-bottom: 6px; }
+    .cs-row-text { font-size: 14px; color: var(--dark); line-height: 1.6; }
+    .cs-results { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 8px; }
+    .cs-result-item {
+      background: var(--light); border: 1px solid var(--border);
+      border-radius: 8px; padding: 10px 14px;
+      font-size: 13px; color: var(--gray); font-style: italic;
+    }
+    .cs-tech { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+    .cs-tech-tag {
+      font-size: 12px; font-weight: 500; padding: 4px 10px;
+      border-radius: 6px; background: #EEF2FF; color: var(--navy);
+      border: 1px solid #c7d2fe;
+    }
+    .cs-footer-row {
+      padding: 20px 32px; border-top: 1px solid var(--border);
+      background: var(--light);
+    }
+    .cs-placeholder-note { font-size: 12px; color: var(--gray); font-style: italic; }
+
+    .cta-banner { background: var(--navy); padding: 80px 56px; text-align: center; }
+    .cta-inner { max-width: 640px; margin: 0 auto; }
+    .cta-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #6B7FD4; margin-bottom: 16px; }
+    .cta-h2 { font-size: clamp(26px, 3.5vw, 40px); font-weight: 600; color: var(--white); letter-spacing: -0.8px; margin-bottom: 16px; line-height: 1.2; }
+    .cta-sub { font-size: 16px; color: #a5b0e8; margin-bottom: 36px; line-height: 1.7; }
+    .btn-white { display: inline-flex; align-items: center; gap: 8px; padding: 14px 32px; border-radius: 8px; background: var(--white); color: var(--navy); font-size: 15px; font-weight: 700; text-decoration: none; font-family: inherit; transition: opacity .15s; }
+    .btn-white:hover { opacity: 0.9; }
+
+    footer { background: #111111; padding: 36px 56px; text-align: center; }
+    .footer-logo { height: 48px; margin-bottom: 14px; }
+    .footer-text { font-size: 13px; color: #aaa; line-height: 2; }
+    .footer-text strong { color: #fff; }
+
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      .page-hero { padding: 100px 20px 56px; }
+      .cs-section, .cta-banner { padding: 60px 20px; }
+      .cs-grid { grid-template-columns: 1fr; }
+      footer { padding: 28px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo"><img src="https://i.imgur.com/G40kixu.png" alt="CORE AI" /></a>
+  <a href="index.html" class="nav-back">&larr; Back to Home</a>
+  <a href="https://api.leadconnectorhq.com/widget/bookings/core-ai-discovery" target="_blank" class="nav-cta">Book a Call</a>
+</nav>
+
+<div class="page-hero">
+  <div class="hero-eyebrow">Case Studies</div>
+  <h1 class="hero-h1">Real problems.<br>Real systems. Real results.</h1>
+  <p class="hero-sub">Every organization we work with has a different challenge. These case studies show how CORE AI approaches them — and what becomes possible when the right systems are in place.</p>
+  <div class="placeholder-notice">&#9888;&#65039; These are placeholder formats. Real client case studies will replace them as projects are completed.</div>
+</div>
+
+<section class="cs-section">
+  <div class="cs-inner">
+    <div class="cs-grid">
+
+      <!-- Case Study 1 -->
+      <div class="cs-card">
+        <div class="cs-card-header">
+          <div>
+            <div class="cs-client">Local Chamber of Commerce</div>
+            <div class="cs-tagline">Northern Virginia &mdash; Member Management &amp; Lead Share System</div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-end;">
+            <div class="cs-industry-badge">Association</div>
+            <div class="cs-placeholder-badge">Placeholder</div>
+          </div>
+        </div>
+        <div class="cs-body">
+          <div class="cs-row">
+            <div class="cs-row-label">Challenge</div>
+            <div class="cs-row-text">Member directory managed through spreadsheets. Attendance tracked on paper. No system for lead sharing between members or tracking visitor limits. Staff spending hours on manual data entry each week.</div>
+          </div>
+          <div class="cs-row">
+            <div class="cs-row-label">Solution</div>
+            <div class="cs-row-text">CORE AI built a custom Member Management Command Center — a secure web app with a searchable member directory, QR code self check-in, real-time attendance tracking, visitor management, and a lead share board accessible from any device.</div>
+          </div>
+          <div class="cs-row">
+            <div class="cs-row-label">Results</div>
+            <div class="cs-results">
+              <div class="cs-result-item">Results to be documented after project completion</div>
+            </div>
+          </div>
+          <div class="cs-row">
+            <div class="cs-row-label">Technologies Used</div>
+            <div class="cs-tech">
+              <div class="cs-tech-tag">Custom Web App</div>
+              <div class="cs-tech-tag">Supabase</div>
+              <div class="cs-tech-tag">QR Check-In</div>
+              <div class="cs-tech-tag">GoHighLevel</div>
+            </div>
+          </div>
+        </div>
+        <div class="cs-footer-row">
+          <div class="cs-placeholder-note">This case study format will be updated with real results, quotes, and outcomes upon project completion.</div>
+        </div>
+      </div>
+
+      <!-- Case Study 2 -->
+      <div class="cs-card">
+        <div class="cs-card-header">
+          <div>
+            <div class="cs-client">Local Service Business</div>
+            <div class="cs-tagline">Home Services &mdash; AI Receptionist &amp; Missed Call Recovery</div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-end;">
+            <div class="cs-industry-badge">Home Services</div>
+            <div class="cs-placeholder-badge">Placeholder</div>
+          </div>
+        </div>
+        <div class="cs-body">
+          <div class="cs-row">
+            <div class="cs-row-label">Challenge</div>
+            <div class="cs-row-text">Owner working in the field all day — missing calls constantly. No system for following up on missed leads. Estimates going out manually via email with no tracking. New leads going cold within 24 hours.</div>
+          </div>
+          <div class="cs-row">
+            <div class="cs-row-label">Solution</div>
+            <div class="cs-row-text">CORE AI deployed an AI Voice Receptionist to answer every call 24/7 — capturing caller name, number, service need, and urgency. Missed call text-back triggers automatically. Leads route into a GHL pipeline with automated follow-up sequences.</div>
+          </div>
+          <div class="cs-row">
+            <div class="cs-row-label">Results</div>
+            <div class="cs-results">
+              <div class="cs-result-item">Results to be documented after project completion</div>
+            </div>
+          </div>
+          <div class="cs-row">
+            <div class="cs-row-label">Technologies Used</div>
+            <div class="cs-tech">
+              <div class="cs-tech-tag">Retell AI</div>
+              <div class="cs-tech-tag">GoHighLevel</div>
+              <div class="cs-tech-tag">SMS Automation</div>
+              <div class="cs-tech-tag">Lead Pipeline</div>
+            </div>
+          </div>
+        </div>
+        <div class="cs-footer-row">
+          <div class="cs-placeholder-note">This case study format will be updated with real results, quotes, and outcomes upon project completion.</div>
+        </div>
+      </div>
+
+      <!-- Case Study 3 -->
+      <div class="cs-card">
+        <div class="cs-card-header">
+          <div>
+            <div class="cs-client">Regional Nonprofit Organization</div>
+            <div class="cs-tagline">Nonprofit &mdash; Donor Follow-Up &amp; Volunteer Workflow</div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-end;">
+            <div class="cs-industry-badge">Nonprofit</div>
+            <div class="cs-placeholder-badge">Placeholder</div>
+          </div>
+        </div>
+        <div class="cs-body">
+          <div class="cs-row">
+            <div class="cs-row-label">Challenge</div>
+            <div class="cs-row-text">Donor relationships managed through email and memory. Volunteer coordination done via group chat. No system for tracking giving history, lapsed donors, or volunteer availability. Staff overwhelmed with manual outreach.</div>
+          </div>
+          <div class="cs-row">
+            <div class="cs-row-label">Solution</div>
+            <div class="cs-row-text">CORE AI built a Nonprofit Command Center with a donor CRM, giving history tracking, automated lapsed-donor follow-up sequences, volunteer scheduling, and an event attendance system — all in one secure, team-accessible dashboard.</div>
+          </div>
+          <div class="cs-row">
+            <div class="cs-row-label">Results</div>
+            <div class="cs-results">
+              <div class="cs-result-item">Results to be documented after project completion</div>
+            </div>
+          </div>
+          <div class="cs-row">
+            <div class="cs-row-label">Technologies Used</div>
+            <div class="cs-tech">
+              <div class="cs-tech-tag">Custom Web App</div>
+              <div class="cs-tech-tag">GoHighLevel</div>
+              <div class="cs-tech-tag">Supabase</div>
+              <div class="cs-tech-tag">Email Automation</div>
+            </div>
+          </div>
+        </div>
+        <div class="cs-footer-row">
+          <div class="cs-placeholder-note">This case study format will be updated with real results, quotes, and outcomes upon project completion.</div>
+        </div>
+      </div>
+
+      <!-- Case Study 4 -->
+      <div class="cs-card">
+        <div class="cs-card-header">
+          <div>
+            <div class="cs-client">Real Estate Professional</div>
+            <div class="cs-tagline">Real Estate &mdash; AI Visibility &amp; Lead Conversion Assessment</div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-end;">
+            <div class="cs-industry-badge">Real Estate</div>
+            <div class="cs-placeholder-badge">Placeholder</div>
+          </div>
+        </div>
+        <div class="cs-body">
+          <div class="cs-row">
+            <div class="cs-row-label">Challenge</div>
+            <div class="cs-row-text">Realtor with strong local reputation but minimal online presence. Not appearing in AI search results for local real estate queries. No system for collecting reviews from past clients. Leads from website going unresponded for days.</div>
+          </div>
+          <div class="cs-row">
+            <div class="cs-row-label">Solution</div>
+            <div class="cs-row-text">CORE AI performed a full Business Health Assessment, optimized the Google Business Profile for AI discoverability, deployed a Google Review Growth System to activate past client relationships, and set up an automated lead follow-up pipeline.</div>
+          </div>
+          <div class="cs-row">
+            <div class="cs-row-label">Results</div>
+            <div class="cs-results">
+              <div class="cs-result-item">Results to be documented after project completion</div>
+            </div>
+          </div>
+          <div class="cs-row">
+            <div class="cs-row-label">Technologies Used</div>
+            <div class="cs-tech">
+              <div class="cs-tech-tag">Google Business Profile</div>
+              <div class="cs-tech-tag">Review Automation</div>
+              <div class="cs-tech-tag">GoHighLevel</div>
+              <div class="cs-tech-tag">AI Assessment</div>
+            </div>
+          </div>
+        </div>
+        <div class="cs-footer-row">
+          <div class="cs-placeholder-note">This case study format will be updated with real results, quotes, and outcomes upon project completion.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="cta-banner">
+  <div class="cta-inner">
+    <div class="cta-eyebrow">Your Story Next</div>
+    <h2 class="cta-h2">Every case study starts with a conversation.</h2>
+    <p class="cta-sub">Tell us about your business. We'll tell you exactly what we'd build — and what results you could expect.</p>
+    <a href="https://api.leadconnectorhq.com/widget/bookings/core-ai-discovery" target="_blank" class="btn-white">&#128197; Book a Free Discovery Call</a>
+  </div>
+</div>
+
+<footer>
+  <img src="https://i.imgur.com/G40kixu.png" alt="CORE AI" class="footer-logo" />
+  <div class="footer-text">
+    <strong>CORE AI</strong> | Core Response AI | Powerful Business Solutions | A Tayyab Group, Inc. Company<br>
+    coreresponsegroup.com &middot; 571-415-3551 &middot; info@coreresponsegroup.com<br>
+    <span style="font-size:12px;color:#555;margin-top:4px;display:block">&copy; 2026 Core Response AI &middot; All rights reserved</span>
+  </div>
+</footer>
+
+</body>
+</html>
