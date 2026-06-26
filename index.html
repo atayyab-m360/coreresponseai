@@ -187,6 +187,8 @@
       .nav-links.open { display: flex; }
       .hamburger { display: block; }
       section { padding: 64px 20px; height: auto; min-height: auto; }
+      #assessment-intro { padding: 64px 20px !important; }
+      #assessment-intro > div { grid-template-columns: 1fr !important; gap: 40px !important; }
       .hero { min-height: 100svh; height: auto; }
       .hero-content { padding: 60px 20px; }
       .hero-stats { gap: 28px; padding-top: 28px; }
@@ -232,14 +234,13 @@
   </video>
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <div class="hero-eyebrow">AI-Powered Business Systems &middot; <span>Built for Entrepreneurs</span></div>
+    <div class="hero-eyebrow">Business Systems Consulting &middot; <span>AI-Powered Implementation</span></div>
     <h1 class="hero-h1">Every great business<br>runs on great<br>systems.</h1>
-    <p class="hero-tagline">Built for entrepreneurs, by entrepreneurs.</p>
-    <p class="hero-sub">Stop duct-taping your business together with group chats and spreadsheets. We build a custom system around how you actually operate &mdash; so you can focus on growth, not admin.</p>
-    <div style="display:flex;flex-direction:column;gap:12px;max-width:360px;">
-      <a href="https://api.leadconnectorhq.com/widget/bookings/core-ai-discovery" target="_blank" class="btn-primary" style="justify-content:center;">&#128197; Book a Free Call</a>
-      <a href="#free-guide" style="display:flex;align-items:center;justify-content:center;gap:8px;padding:13px 26px;border-radius:8px;background:transparent;color:var(--navy);font-size:14px;font-weight:600;text-decoration:none;border:1.5px solid var(--border);font-family:inherit;transition:border-color .15s,background .15s;">&#127381; Download Free Guide</a>
-      <a href="#what-we-build" style="display:flex;align-items:center;justify-content:center;gap:8px;padding:13px 26px;border-radius:8px;background:transparent;color:var(--gray);font-size:13px;font-weight:500;text-decoration:none;font-family:inherit;">See What We Build &darr;</a>
+    <p class="hero-tagline">We diagnose. We prescribe. We implement.</p>
+    <p class="hero-sub">CORE AI helps organizations identify what's holding them back and implement AI-powered systems that solve those problems — starting with a Business Health Assessment.</p>
+    <div style="display:flex;flex-direction:column;gap:12px;max-width:380px;">
+      <a href="assessment.html" class="btn-primary" style="justify-content:center;background:#1A2B6B;">&#129302; Start with a Business Health Assessment</a>
+      <a href="#solutions" style="display:flex;align-items:center;justify-content:center;gap:8px;padding:13px 26px;border-radius:8px;background:transparent;color:var(--navy);font-size:14px;font-weight:600;text-decoration:none;border:1.5px solid var(--border);font-family:inherit;">See Recommended Solutions &darr;</a>
       <a href="tel:5715172658" style="display:inline-flex;align-items:center;gap:12px;padding:13px 22px;border-radius:10px;background:#EEF2FF;border:1.5px solid #c7d2fe;color:var(--navy);font-size:14px;font-weight:600;text-decoration:none;font-family:inherit;">
         <div style="width:30px;height:30px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;">&#127897;&#65039;</div>
         <div>Talk to Our AI Receptionist<span style="display:block;font-size:11px;font-weight:400;color:var(--gray);margin-top:2px;">Call now &mdash; available 24/7</span></div>
@@ -289,50 +290,78 @@
   </div>
 </div>
 
-<section id="services" class="quick-wins-section">
+<!-- ASSESSMENT FRONT DOOR -->
+<section id="assessment-intro" style="background:#0D1221;padding:80px 56px;">
+  <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;">
+    <div>
+      <p style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#6B7FD4;margin-bottom:14px;">The CORE AI Method</p>
+      <h2 style="font-size:clamp(28px,3.5vw,44px);font-weight:600;color:#fff;letter-spacing:-0.8px;line-height:1.2;margin-bottom:16px;">We diagnose first.<br>Then we prescribe.</h2>
+      <p style="font-size:16px;color:#a5b0e8;line-height:1.7;margin-bottom:16px;">A doctor doesn't recommend surgery before understanding the problem. We work the same way. Every client starts with The CORE AI Business Health Assessment&#8482; &mdash; a scored evaluation across five pillars that tells us exactly what to build.</p>
+      <p style="font-size:16px;color:#a5b0e8;line-height:1.7;margin-bottom:32px;">No guessing. No overselling. Just a clear diagnosis and the right prescription for your business.</p>
+      <a href="assessment.html" style="display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:8px;background:#fff;color:#1A2B6B;font-size:15px;font-weight:700;text-decoration:none;font-family:inherit;transition:opacity .15s;">&#129302; Request Your Assessment &rarr;</a>
+      <p style="font-size:12px;color:rgba(255,255,255,0.3);margin-top:12px;">30 minutes &middot; No obligation &middot; Scored report included</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <div style="display:flex;align-items:flex-start;gap:16px;">
+        <div style="width:36px;height:36px;border-radius:50%;background:rgba(107,127,212,0.2);border:1.5px solid rgba(107,127,212,0.4);color:#a5b0e8;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div>
+        <div><p style="font-size:14px;font-weight:600;color:#fff;margin-bottom:4px;">Business Problem</p><p style="font-size:13px;color:#6B7280;line-height:1.5;">You have a challenge — leads falling through the cracks, low reviews, missed calls, no system.</p></div>
+      </div>
+      <div style="width:1px;height:20px;background:rgba(255,255,255,0.08);margin-left:17px;"></div>
+      <div style="display:flex;align-items:flex-start;gap:16px;">
+        <div style="width:36px;height:36px;border-radius:50%;background:#1A2B6B;border:1.5px solid #6B7FD4;color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div>
+        <div><p style="font-size:14px;font-weight:600;color:#fff;margin-bottom:4px;">CORE AI Business Health Assessment&#8482;</p><p style="font-size:13px;color:#6B7280;line-height:1.5;">We evaluate your business across five pillars and give you a scored report.</p></div>
+      </div>
+      <div style="width:1px;height:20px;background:rgba(255,255,255,0.08);margin-left:17px;"></div>
+      <div style="display:flex;align-items:flex-start;gap:16px;">
+        <div style="width:36px;height:36px;border-radius:50%;background:rgba(107,127,212,0.2);border:1.5px solid rgba(107,127,212,0.4);color:#a5b0e8;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div>
+        <div><p style="font-size:14px;font-weight:600;color:#fff;margin-bottom:4px;">Strategy Session</p><p style="font-size:13px;color:#6B7280;line-height:1.5;">We review the results together and prioritize what to fix first.</p></div>
+      </div>
+      <div style="width:1px;height:20px;background:rgba(255,255,255,0.08);margin-left:17px;"></div>
+      <div style="display:flex;align-items:flex-start;gap:16px;">
+        <div style="width:36px;height:36px;border-radius:50%;background:rgba(107,127,212,0.2);border:1.5px solid rgba(107,127,212,0.4);color:#a5b0e8;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">4</div>
+        <div><p style="font-size:14px;font-weight:600;color:#fff;margin-bottom:4px;">Recommended Solutions</p><p style="font-size:13px;color:#6B7280;line-height:1.5;">We prescribe the right implementation — not a menu of everything we offer.</p></div>
+      </div>
+      <div style="width:1px;height:20px;background:rgba(255,255,255,0.08);margin-left:17px;"></div>
+      <div style="display:flex;align-items:flex-start;gap:16px;">
+        <div style="width:36px;height:36px;border-radius:50%;background:rgba(107,127,212,0.2);border:1.5px solid rgba(107,127,212,0.4);color:#a5b0e8;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">5</div>
+        <div><p style="font-size:14px;font-weight:600;color:#fff;margin-bottom:4px;">Implementation &amp; Ongoing Partnership</p><p style="font-size:13px;color:#6B7280;line-height:1.5;">We build, deploy, and support your system as your business grows.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RECOMMENDED SOLUTIONS -->
+<section id="solutions" class="quick-wins-section">
   <div class="quick-wins-inner">
-    <div class="quick-wins-eyebrow">Start Here</div>
-    <h2 class="quick-wins-heading">Two ways to win fast</h2>
-    <p class="quick-wins-sub">High-impact, low-risk entry points -- built for businesses that are ready to grow but don't want a long commitment to get started.</p>
+    <div class="quick-wins-eyebrow">Common Solutions We Recommend</div>
+    <h2 class="quick-wins-heading">The right solution depends on your assessment.</h2>
+    <p class="quick-wins-sub">These are the most common prescriptions that follow a Business Health Assessment. The assessment tells us which one — or which combination — is right for you.</p>
     <div class="quick-wins-grid">
+
+      <!-- Solution 1: Google Reviews - featured/primary -->
       <div class="qw-card hot">
-        <div class="qw-badge badge-hot">&#128293; Most Popular</div>
+        <div class="qw-badge badge-hot">&#128293; Most Accessible &mdash; Start Here</div>
         <div class="qw-icon">&#11088;</div>
-        <div class="qw-title">Turn Happy Customers Into More Google Reviews</div>
-        <div class="qw-desc">Core Response AI helps local businesses ask for reviews consistently, make it easy for customers to respond, and build stronger online trust over time.</div>
+        <div class="qw-title">Reputation &amp; Review Automation</div>
+        <div class="qw-desc">If your assessment reveals a Trust problem — not enough reviews, weak online reputation, low visibility — this is usually the first prescription. It's the fastest way to build credibility and the easiest entry point to working with CORE AI.</div>
         <div class="qw-price">Starting at $99<span style="font-size:15px;font-weight:500">/month</span></div>
-        <div class="qw-price-sub">10-day free trial &middot; Pricing based on customer volume</div>
+        <div class="qw-price-sub">No setup fee to start &middot; 10-day free trial available</div>
         <ul class="qw-features">
           <li>Automated review request system</li>
           <li>Google Business Profile monitoring</li>
-          <li>New review alerts and response support</li>
-          <li>30-minute onboarding call included</li>
-          <li>Cancel anytime after trial</li>
+          <li>Review alerts and response support</li>
+          <li>Branded review materials and QR code</li>
+          <li>Monthly reputation report</li>
         </ul>
-        <a href="google-reviews.html" class="qw-cta cta-gold">Start Free 10-Day Trial &rarr;</a>
-      </div>
-      <div class="qw-card" style="border-color:#6B7FD4;box-shadow:0 0 0 1px #6B7FD4, 0 0 24px rgba(107,127,212,0.25), 0 0 48px rgba(107,127,212,0.1);">
-        <div class="qw-badge badge-new" style="background:#EEF2FF;color:#1A2B6B;border:1px solid #6B7FD4;">&#10024; Introducing &nbsp;&middot;&nbsp; Ages 13–24</div>
-        <div class="qw-icon">&#127891;</div>
-        <div class="qw-title">Youth Founder Website Program</div>
-        <div class="qw-desc">Young entrepreneurs have great ideas -- but without a professional online presence, they're invisible. We build a clean, mobile-friendly website that helps them look legit, share their business, and get taken seriously.</div>
-        <div class="qw-price">$999<span style="font-size:15px;font-weight:500"> total</span></div>
-        <div class="qw-price-sub">3 payments of $333 &middot; $49/mo maintenance after launch</div>
-        <ul class="qw-features">
-          <li>One-page mobile-friendly website</li>
-          <li>Business overview + founder bio</li>
-          <li>Contact form and QR code</li>
-          <li>Launch coaching call included</li>
-          <li>Optional parent/guardian involvement</li>
-        </ul>
-        <a href="youth-website.html" class="qw-cta cta-navy">Learn More &rarr;</a>
+        <a href="google-reviews.html" class="qw-cta cta-gold">Learn More &rarr;</a>
       </div>
 
+      <!-- Solution 2: AI Receptionist -->
       <div class="qw-card">
         <div class="qw-badge badge-new" style="background:#ECFDF5;color:#065F46;border:1px solid #6ee7b7;">&#127897;&#65039; AI-Powered</div>
         <div class="qw-icon">&#128222;</div>
         <div class="qw-title">AI Voice Receptionist</div>
-        <div class="qw-desc">Never miss a lead again. Our AI answers every call 24/7, captures caller info, qualifies the lead, and sends you an instant summary &mdash; so no opportunity falls through the cracks.</div>
+        <div class="qw-desc">If your assessment reveals a Conversion or Automation problem — missed calls, slow follow-up, leads going cold — the AI Receptionist answers every call 24/7, captures caller information, and routes it to you instantly.</div>
         <div class="qw-price">Starting at $199<span style="font-size:15px;font-weight:500">/mo</span></div>
         <div class="qw-price-sub">$399 one-time setup &middot; Includes training and support</div>
         <ul class="qw-features">
@@ -342,29 +371,55 @@
           <li>Custom call script for your business</li>
           <li>After-hours and overflow coverage</li>
         </ul>
-        <a href="https://api.leadconnectorhq.com/widget/bookings/core-ai-discovery" target="_blank" class="qw-cta cta-navy">Get Started &rarr;</a>
+        <a href="https://api.leadconnectorhq.com/widget/bookings/core-ai-discovery" target="_blank" class="qw-cta cta-navy">Learn More &rarr;</a>
+      </div>
+
+      <!-- Solution 3: CRM & Automation -->
+      <div class="qw-card">
+        <div class="qw-badge badge-new" style="background:#EEF2FF;color:#1A2B6B;border:1px solid #c7d2fe;">&#9889; Automation</div>
+        <div class="qw-icon">&#128203;</div>
+        <div class="qw-title">CRM &amp; Business Automation</div>
+        <div class="qw-desc">If your assessment reveals an Intelligence or Automation gap — leads tracked in spreadsheets, follow-ups done manually, no pipeline visibility — we implement a full CRM and automation suite built around your workflow.</div>
+        <div class="qw-price">Starting at $199<span style="font-size:15px;font-weight:500">/mo</span></div>
+        <div class="qw-price-sub">Setup varies by scope &middot; Includes onboarding and training</div>
+        <ul class="qw-features">
+          <li>Lead pipeline and contact management</li>
+          <li>Automated follow-up sequences</li>
+          <li>Appointment scheduling and reminders</li>
+          <li>Two-way client communication</li>
+          <li>Reporting and performance tracking</li>
+        </ul>
+        <a href="https://api.leadconnectorhq.com/widget/bookings/core-ai-discovery" target="_blank" class="qw-cta cta-navy">Learn More &rarr;</a>
+      </div>
+
+      <!-- Solution 4: Custom Business Systems -->
+      <div class="qw-card">
+        <div class="qw-badge badge-new" style="background:#F0FDF4;color:#14532D;border:1px solid #bbf7d0;">&#127963;&#65039; Custom Build</div>
+        <div class="qw-icon">&#128736;&#65039;</div>
+        <div class="qw-title">Custom Business Systems</div>
+        <div class="qw-desc">If your assessment reveals that off-the-shelf tools won't solve the problem — member directories, community platforms, nonprofit portals, HOA systems, or chamber management — we build a custom system designed around exactly how your organization operates.</div>
+        <div class="qw-price">Custom<span style="font-size:15px;font-weight:500"> pricing</span></div>
+        <div class="qw-price-sub">Scoped after assessment &middot; Chambers, nonprofits, associations, HOAs</div>
+        <ul class="qw-features">
+          <li>Member &amp; community management platforms</li>
+          <li>Nonprofit and donor systems</li>
+          <li>Chamber and association portals</li>
+          <li>HOA and property management tools</li>
+          <li>Event, attendance, and check-in systems</li>
+        </ul>
+        <a href="https://api.leadconnectorhq.com/widget/bookings/core-ai-discovery" target="_blank" class="qw-cta cta-navy">Discuss Your Project &rarr;</a>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- ASSESSMENT CTA ABOVE PRICING -->
-<div style="background:#0D1221;padding:48px 56px;text-align:center;">
-  <div style="max-width:700px;margin:0 auto;">
-    <p style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#6B7FD4;margin-bottom:12px;">Not Sure What You Need?</p>
-    <h2 style="font-size:clamp(22px,3vw,34px);font-weight:600;color:#fff;letter-spacing:-0.6px;margin-bottom:12px;line-height:1.3;">Start with a CORE AI Business Health Assessment.</h2>
-    <p style="font-size:15px;color:#a5b0e8;margin-bottom:28px;line-height:1.7;">We evaluate your business across five pillars — Discoverability, Trust, Conversion, Automation, and Intelligence — and give you a scored report with a clear roadmap. Then we recommend the right solution for where you actually are.</p>
-    <a href="assessment.html" style="display:inline-flex;align-items:center;gap:8px;padding:13px 28px;border-radius:8px;background:#fff;color:#1A2B6B;font-size:14px;font-weight:700;text-decoration:none;font-family:inherit;transition:opacity .15s;">&#129302; Learn About the Assessment &rarr;</a>
-  </div>
-</div>
-
 <!-- PRICING: GOOGLE REVIEWS -->
 <section id="pricing" class="pricing-section">
   <div class="pricing-inner">
-    <div class="pricing-eyebrow">Quick Wins &mdash; Google Review Packages</div>
-    <h2 class="pricing-heading">Turn happy customers<br>into your best marketing.</h2>
-    <p class="pricing-sub">Most businesses don't have a review problem &mdash; they have an asking problem. We fix that.</p>
+    <div class="pricing-eyebrow">Reputation &amp; Growth &mdash; Google Review Packages</div>
+    <h2 class="pricing-heading">The most common first prescription.</h2>
+    <p class="pricing-sub">When the assessment reveals a Trust gap, this is where we start. At $99/month, it's the lowest-risk way to begin building your reputation and working with CORE AI.</p>
     <div class="pricing-grid active" style="display:grid;">
       <div class="price-card">
         <div class="price-tier">Starter</div>
@@ -426,9 +481,9 @@
 <!-- PRICING: EMERGING BUSINESS -->
 <section class="pricing-section" style="background:#F8F9FC;">
   <div class="pricing-inner">
-    <div class="pricing-eyebrow">Business Growth Packages</div>
-    <h2 class="pricing-heading">From launch to fully<br>automated &mdash; we grow with you.</h2>
-    <p class="pricing-sub">Whether you're just getting started or ready to scale, there's a package built for where you are today.</p>
+    <div class="pricing-eyebrow">Business Automation &amp; Growth Packages</div>
+    <h2 class="pricing-heading">For businesses ready to<br>systematize and scale.</h2>
+    <p class="pricing-sub">When the assessment reveals Automation or Intelligence gaps, these packages provide the full infrastructure — from website to CRM to automated follow-up.</p>
     <div class="pricing-grid active" style="display:grid;">
       <div class="price-card">
         <div class="price-tier">Tier 1</div>
@@ -505,9 +560,9 @@
 <!-- PRICING: SPECIALIZED SOLUTIONS -->
 <section class="pricing-section">
   <div class="pricing-inner">
-    <div class="pricing-eyebrow">Custom Business Systems &amp; Specialized Solutions</div>
-    <h2 class="pricing-heading">Purpose-built for<br>your specific need.</h2>
-    <p class="pricing-sub">Standalone systems for businesses that need one powerful solution &mdash; not a full package.</p>
+    <div class="pricing-eyebrow">Custom Business Systems &amp; Specialty Solutions</div>
+    <h2 class="pricing-heading">Purpose-built for your<br>specific organization.</h2>
+    <p class="pricing-sub">When the assessment reveals that off-the-shelf tools won't work, we build something custom. Scoped after your strategy session.</p>
     <div class="pricing-grid active" style="display:grid;">
       <div class="price-card featured-price">
         <div class="price-tier">AI</div>
