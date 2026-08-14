@@ -130,7 +130,8 @@
     .after-list li::before { content: 'V'; color: var(--green); }
     .ba-divider { font-size: 24px; color: rgba(255,255,255,0.2); padding-top: 40px; text-align: center; }
     .statement-closer { font-size: 18px; font-weight: 600; color: var(--white); letter-spacing: -0.3px; padding-top: 8px; }
-    .apps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 20px; }
+    .apps-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+    .app-card { flex: 1 1 310px; max-width: 340px; }
     .app-card { background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 28px; transition: border-color .2s, box-shadow .2s; position: relative; }
     .app-card:hover { border-color: #c7d2fe; box-shadow: 0 4px 24px rgba(26,43,107,0.07); }
     .app-card.featured { border-color: #c7d2fe; background: #fafbff; }
@@ -148,7 +149,8 @@
     .tool-icon { width: 40px; height: 40px; flex-shrink: 0; background: #EEF2FF; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; }
     .tool-title { font-size: 14px; font-weight: 600; color: var(--navy); margin-bottom: 5px; letter-spacing: -0.1px; }
     .tool-desc { font-size: 13px; color: var(--gray); line-height: 1.6; font-weight: 400; }
-    .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+    .steps-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+    .step-card { flex: 1 1 220px; max-width: 260px; }
     .step-card { background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 28px 24px; }
     .step-num { width: 36px; height: 36px; border-radius: 50%; background: #EEF2FF; color: var(--navy); font-size: 15px; font-weight: 600; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
     .step-title { font-size: 15px; font-weight: 600; color: var(--navy); margin-bottom: 8px; letter-spacing: -0.1px; }
@@ -201,9 +203,11 @@
       .before-after { grid-template-columns: 1fr; }
       .ba-divider { display: none; }
       .quick-wins-grid { grid-template-columns: 1fr; }
-      .apps-grid { grid-template-columns: 1fr; }
+      .apps-grid, .steps-grid { flex-direction: column; align-items: stretch; }
+      .app-card, .step-card { max-width: 100%; }
       .tools-grid { grid-template-columns: 1fr; }
-      .steps-grid { grid-template-columns: 1fr; }
+      .framework-section, .our-work-section, .who-simple-section, .founder-section { padding: 64px 20px !important; }
+      .framework-grid, .work-grid, .who-simple-grid { grid-template-columns: 1fr !important; }
     }
   </style>
 </head>
@@ -214,11 +218,12 @@
     <img src="https://i.imgur.com/G40kixu.png" alt="CORE AI" style="height:44px;" />
   </a>
   <div class="nav-links" id="navLinks">
-    <a href="#solutions">How We Help</a>
-    <a href="#who-we-help">Who We Help</a>
-    <a href="#our-work">Our Work</a>
+    <a href="#services">Services</a>
+    <a href="assessment.html">Assessment</a>
+    <a href="case-studies.html">Success Stories</a>
     <a href="journal.html">Journal</a>
-    <a href="assessment.html" class="nav-cta">Start an Assessment</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#contact" class="nav-cta">Book a Call</a>
   </div>
   <button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')">&#9776;</button>
 </nav>
@@ -234,7 +239,7 @@
 
 <section class="hero">
   <video class="hero-video" autoplay muted loop playsinline>
-    <source src="https://videos.pexels.com/video-files/5743186/5743186-uhd_2732_1440_25fps.mp4" type="video/mp4" />
+    <source src="hero-video.mp4" type="video/mp4" />
   </video>
   <div class="hero-overlay"></div>
   <div class="hero-content">
@@ -426,7 +431,7 @@
 </section>
 
 <!-- SECTION 6: OUR WORK -->
-<section id="our-work" class="our-work-section">
+<section class="our-work-section">
   <div class="our-work-inner">
     <div class="section-eyebrow">Our Work</div>
     <h2 class="section-h2">Real problems. Practical solutions.</h2>
@@ -476,7 +481,7 @@
 </section>
 
 <!-- SECTION 7: WHO WE HELP -->
-<section id="who-we-help" class="who-simple-section">
+<section class="who-simple-section">
   <div class="who-simple-inner">
     <div class="section-eyebrow">Who We Help</div>
     <h2 class="section-h2">Built for businesses. Built for organizations.</h2>
