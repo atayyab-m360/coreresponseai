@@ -249,532 +249,273 @@
   </div>
 </section>
 
-<!-- FOUNDER QUOTE -->
-<div style="background:#ffffff;padding:52px 56px;border-top:1px solid #E8EAF2;border-bottom:1px solid #E8EAF2;text-align:center;">
-  <div style="max-width:680px;margin:0 auto;">
-    <p style="font-size:clamp(20px,2.5vw,28px);font-style:italic;color:#1A2B6B;font-weight:300;line-height:1.6;letter-spacing:-0.3px;margin-bottom:20px;font-family:Georgia,serif;">&ldquo;Every challenge is an opportunity for innovation.&rdquo;</p>
-    <div style="width:40px;height:1px;background:#E8EAF2;margin:0 auto 16px;"></div>
-    <p style="font-size:13px;font-weight:600;color:#6B7280;letter-spacing:1.5px;text-transform:uppercase;">Abdul Tayyab &nbsp;&middot;&nbsp; Founder &amp; CEO, Core Response AI</p>
-  </div>
-</div>
+<<!-- =========================================================
+     REPLACES lines 252–776 of index.html
+     (everything from the old "FOUNDER QUOTE" comment through
+     the end of the old <section id="contact">... block —
+     stop right before <footer>. Leave <footer> and the
+     script tag after it completely untouched.)
 
-<div class="statement-section">
-  <div class="statement-inner">
-    <p style="font-size:clamp(13px,1.5vw,15px);font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#6B7FD4;margin-bottom:16px;">Sound familiar?</p>
-    <p class="statement-text">Most business owners are <em>too busy working in their business to work on it.</em></p>
-    <p class="statement-sub">Leads get missed. Follow-ups don't happen. Customers don't hear back fast enough. Reviews don't get requested. And the owner is the one holding it all together — which means the moment they stop, everything slows down.</p>
-    <div class="before-after">
-      <div class="ba-col">
-        <div class="ba-label before">The Frustration</div>
-        <ul class="ba-list">
-          <li>Too much time spent on things that should run themselves</li>
-          <li>Leads and opportunities falling through the cracks</li>
-          <li>Customers not getting the experience they deserve</li>
-          <li>No clear picture of what's actually working</li>
-          <li>Technology that creates more work instead of less</li>
+     Sections 2–9 of the approved homepage architecture.
+     Reuses existing classes wherever possible; new CSS is
+     scoped under new class names so nothing else breaks.
+========================================================= -->
+
+<style>
+  /* --- new styles for Sections 2, 3, 6, 7, 8, 9 --- */
+  .framework-section { padding: 96px 56px; background: var(--light); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .framework-inner { max-width: 1100px; margin: 0 auto; }
+  .framework-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 48px; }
+  .framework-card { background: var(--white); border: 1.5px solid var(--border); border-radius: 16px; padding: 32px 28px; }
+  .framework-stage { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--periwinkle); margin-bottom: 10px; }
+  .framework-question { font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 16px; line-height: 1.35; }
+  .framework-card ul { list-style: none; padding: 0; margin: 0; }
+  .framework-card li { font-size: 14px; color: var(--gray); line-height: 1.6; padding: 6px 0; }
+  .framework-closer { font-size: 16px; color: var(--gray); text-align: center; max-width: 620px; margin: 48px auto 0; line-height: 1.7; }
+
+  .our-work-section { padding: 96px 56px; }
+  .our-work-inner { max-width: 1100px; margin: 0 auto; }
+  .work-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
+  .work-card { border: 1.5px solid var(--border); border-radius: 16px; padding: 28px; display: flex; flex-direction: column; }
+  .work-status { display: inline-flex; align-self: flex-start; font-size: 11px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; margin-bottom: 16px; }
+  .work-status.live { background: #ECFDF5; color: #047857; border: 1px solid #A7F3D0; }
+  .work-status.pilot { background: #EEF2FF; color: var(--navy); border: 1px solid #c7d2fe; }
+  .work-status.dev { background: #FEF3C7; color: #92400E; border: 1px solid #FDE68A; }
+  .work-title { font-size: 17px; font-weight: 700; color: var(--navy); margin-bottom: 14px; line-height: 1.3; }
+  .work-label { font-size: 11px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; color: var(--periwinkle); margin-top: 14px; margin-bottom: 4px; }
+  .work-text { font-size: 13.5px; color: var(--gray); line-height: 1.6; }
+
+  .who-simple-section { padding: 80px 56px; background: var(--light); border-top: 1px solid var(--border); }
+  .who-simple-inner { max-width: 900px; margin: 0 auto; text-align: center; }
+  .who-simple-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin: 40px 0; text-align: left; }
+  .who-simple-title { font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+  .who-simple-desc { font-size: 14.5px; color: var(--gray); line-height: 1.6; }
+  .who-simple-closer { font-size: 15px; color: var(--periwinkle); font-weight: 600; }
+
+  .founder-section { padding: 96px 56px; background: #0D1221; }
+  .founder-inner { max-width: 720px; margin: 0 auto; text-align: center; }
+  .founder-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #6B7FD4; margin-bottom: 20px; }
+  .founder-headline { font-size: clamp(24px, 3vw, 34px); font-weight: 600; color: #fff; margin-bottom: 28px; line-height: 1.3; }
+  .founder-body { font-size: 16px; color: #a5b0e8; line-height: 1.8; margin-bottom: 24px; }
+  .founder-closer { font-size: 17px; color: #fff; font-weight: 500; line-height: 1.7; font-style: italic; }
+
+  @media (max-width: 768px) {
+    .framework-grid, .work-grid, .who-simple-grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+<!-- SECTION 2: THE CORE BUSINESS FRAMEWORK -->
+<section class="framework-section">
+  <div class="framework-inner">
+    <div class="section-eyebrow">The CORE Business Framework</div>
+    <h2 class="section-h2">Every business runs on the same six things.</h2>
+    <p class="section-sub">No matter your industry, size, or how long you've been open — these are the six things that determine whether a business grows or struggles. We built our process around them.</p>
+    <div class="framework-grid">
+      <div class="framework-card">
+        <div class="framework-stage">Getting Chosen</div>
+        <div class="framework-question">Are people finding you — and choosing you?</div>
+        <ul>
+          <li>Do new customers find out you exist, consistently?</li>
+          <li>Of the people who reach out, how many actually become customers?</li>
         </ul>
       </div>
-      <div class="ba-divider">&rarr;</div>
-      <div class="ba-col">
-        <div class="ba-label after">What's Possible</div>
-        <ul class="ba-list after-list">
-          <li>Your business runs smoothly even when you're not watching</li>
-          <li>Every lead is captured, followed up, and tracked</li>
-          <li>Customers get a consistent, professional experience</li>
-          <li>You know exactly where your business stands</li>
-          <li>Technology works for you — not the other way around</li>
+      <div class="framework-card">
+        <div class="framework-stage">Keeping the Promise</div>
+        <div class="framework-question">Once someone hires you, do you deliver on it?</div>
+        <ul>
+          <li>Is the work done well and consistently, no matter who's doing it?</li>
+          <li>Do you get paid, on time, without a fight?</li>
+        </ul>
+      </div>
+      <div class="framework-card">
+        <div class="framework-stage">Growing the Relationship</div>
+        <div class="framework-question">Do they come back — and bring others?</div>
+        <ul>
+          <li>Do customers return, or refer you to others?</li>
+          <li>Do you actually know what's working and what isn't?</li>
         </ul>
       </div>
     </div>
-    <p class="statement-closer">This is what better systems make possible.</p>
+    <p class="framework-closer">Most businesses know where they feel the pain. The harder part is knowing what's actually causing it. That's where we start.</p>
   </div>
-</div>
+</section>
 
-<!-- HOW WE HELP -->
+<!-- SECTION 3: THE BUSINESS HEALTH ASSESSMENT -->
 <section id="assessment-intro" style="background:#0D1221;padding:80px 56px;">
-  <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;">
-    <div>
-      <p style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#6B7FD4;margin-bottom:14px;">How We Help</p>
-      <h2 style="font-size:clamp(28px,3.5vw,44px);font-weight:600;color:#fff;letter-spacing:-0.8px;line-height:1.2;margin-bottom:16px;">We start by<br>understanding your business.</h2>
-      <p style="font-size:16px;color:#a5b0e8;line-height:1.7;margin-bottom:32px;">We start by understanding your business — where time is being wasted, where customers are being let down, and where opportunities are slipping away. Then we fix those specific problems. No guessing. No overselling.</p>
-      <a href="assessment.html" style="display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:8px;background:#fff;color:#1A2B6B;font-size:15px;font-weight:700;text-decoration:none;font-family:inherit;transition:opacity .15s;">&#129302; Start with a Free Assessment &rarr;</a>
-      <p style="font-size:13px;color:rgba(255,255,255,0.55);margin-top:12px;font-weight:500;">30 minutes &middot; No obligation &middot; Real answers for your business</p>
+  <div style="max-width:760px;margin:0 auto;text-align:center;">
+    <p style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#6B7FD4;margin-bottom:14px;">The Business Health Assessment</p>
+    <h2 style="font-size:clamp(28px,3.5vw,44px);font-weight:600;color:#fff;letter-spacing:-0.8px;line-height:1.2;margin-bottom:20px;">Now let's apply those six things<br>to your business.</h2>
+    <p style="font-size:16px;color:#a5b0e8;line-height:1.7;margin-bottom:16px;">The Business Health Assessment walks through Demand, Conversion, Delivery, Value Capture, Retention, and Insight for your specific business — not a generic industry checklist. You'll come away with a clearer picture of what's working, what's getting in the way, and where the biggest opportunities may be.</p>
+    <p style="font-size:16px;color:#a5b0e8;line-height:1.7;margin-bottom:32px;">We also look at something most assessments miss: whether your business could keep running without you holding every piece together.</p>
+    <div style="display:flex;flex-direction:column;gap:8px;max-width:420px;margin:0 auto 32px;text-align:left;">
+      <p style="font-size:14px;color:#fff;">&#10003;&nbsp; A real conversation, not a form to fill out alone</p>
+      <p style="font-size:14px;color:#fff;">&#10003;&nbsp; A clear picture of where the business stands across all six areas</p>
+      <p style="font-size:14px;color:#fff;">&#10003;&nbsp; A starting point — not a sales pitch for a specific product</p>
     </div>
-    <div style="display:flex;flex-direction:column;gap:16px;">
-      <div style="display:flex;align-items:flex-start;gap:16px;">
-        <div style="width:36px;height:36px;border-radius:50%;background:rgba(107,127,212,0.2);border:1.5px solid rgba(107,127,212,0.4);color:#a5b0e8;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div>
-        <div><p style="font-size:14px;font-weight:600;color:#fff;margin-bottom:4px;">Tell us what's not working</p><p style="font-size:13px;color:#6B7280;line-height:1.5;">Every business is different. We start by listening — not by pitching.</p></div>
-      </div>
-      <div style="width:1px;height:20px;background:rgba(255,255,255,0.08);margin-left:17px;"></div>
-      <div style="display:flex;align-items:flex-start;gap:16px;">
-        <div style="width:36px;height:36px;border-radius:50%;background:#1A2B6B;border:1.5px solid #6B7FD4;color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div>
-        <div><p style="font-size:14px;font-weight:600;color:#fff;margin-bottom:4px;">We assess where you stand</p><p style="font-size:13px;color:#6B7280;line-height:1.5;">The CORE AI Business Health Assessment&#8482; gives you a clear picture of what to fix and in what order.</p></div>
-      </div>
-      <div style="width:1px;height:20px;background:rgba(255,255,255,0.08);margin-left:17px;"></div>
-      <div style="display:flex;align-items:flex-start;gap:16px;">
-        <div style="width:36px;height:36px;border-radius:50%;background:rgba(107,127,212,0.2);border:1.5px solid rgba(107,127,212,0.4);color:#a5b0e8;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div>
-        <div><p style="font-size:14px;font-weight:600;color:#fff;margin-bottom:4px;">We recommend what will actually help</p><p style="font-size:13px;color:#6B7280;line-height:1.5;">No unnecessary complexity. Just the right solution for your situation.</p></div>
-      </div>
-      <div style="width:1px;height:20px;background:rgba(255,255,255,0.08);margin-left:17px;"></div>
-      <div style="display:flex;align-items:flex-start;gap:16px;">
-        <div style="width:36px;height:36px;border-radius:50%;background:rgba(107,127,212,0.2);border:1.5px solid rgba(107,127,212,0.4);color:#a5b0e8;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">4</div>
-        <div><p style="font-size:14px;font-weight:600;color:#fff;margin-bottom:4px;">We build what you actually need and support it</p><p style="font-size:13px;color:#6B7280;line-height:1.5;">We handle the setup so you don't have to figure it out yourself.</p></div>
-      </div>
-      <div style="width:1px;height:20px;background:rgba(255,255,255,0.08);margin-left:17px;"></div>
-      <div style="display:flex;align-items:flex-start;gap:16px;">
-        <div style="width:36px;height:36px;border-radius:50%;background:rgba(107,127,212,0.2);border:1.5px solid rgba(107,127,212,0.4);color:#a5b0e8;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">5</div>
-        <div><p style="font-size:14px;font-weight:600;color:#fff;margin-bottom:4px;">Your business runs better</p><p style="font-size:13px;color:#6B7280;line-height:1.5;">More time. Less chaos. A better experience for your customers.</p></div>
-      </div>
-    </div>
+    <a href="assessment.html" style="display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:8px;background:#fff;color:#1A2B6B;font-size:15px;font-weight:700;text-decoration:none;font-family:inherit;">Start Your Business Health Assessment</a>
   </div>
 </section>
 
-<!-- WHAT WE DO - BENEFIT FIRST -->
-<section id="solutions" class="quick-wins-section">
-  <div class="quick-wins-inner">
-    <div class="quick-wins-eyebrow">What We Do</div>
-    <h2 class="quick-wins-heading">Practical solutions to real business problems.</h2>
-    <p class="quick-wins-sub">Every business is different. After understanding your situation, we recommend the right starting point. Here are the most common problems we solve.</p>
-    <div class="quick-wins-grid">
-
-      <div class="qw-card hot">
-        <div class="qw-badge badge-hot">&#128293; Most Popular Starting Point</div>
-        <div class="qw-icon">&#11088;</div>
-        <div class="qw-title">Get More Google Reviews</div>
-        <div class="qw-desc">Most businesses don't have a review problem — they have an asking problem. We put a simple system in place that asks happy customers for a review at exactly the right moment, automatically.</div>
-        <ul class="qw-features">
-          <li>Automated review requests after every visit or purchase</li>
-          <li>One tap sends customers directly to your Google page</li>
-          <li>Instant notification every time a new review comes in</li>
-        </ul>
-        <a href="google-reviews.html" class="qw-cta cta-gold">Learn More &rarr;</a>
-      </div>
-
-      <div class="qw-card">
-        <div class="qw-badge badge-new" style="background:#FEF3C7;color:#92400E;border:1px solid #FDE68A;">&#129302; New Capability</div>
-        <div class="qw-icon">&#127775;</div>
-        <div class="qw-title">AI-Powered Tools Built for Your Industry</div>
-        <div class="qw-desc">Some businesses need more than automation — they need intelligence. We build custom AI tools trained on your specific products, services, or data so your team can make faster, smarter decisions every day.</div>
-        <ul class="qw-features">
-          <li>Insurance agents — instant carrier matching by client profile</li>
-          <li>Mortgage brokers — lender matching by borrower profile</li>
-          <li>Any industry where matching the right option to the right client matters</li>
-        </ul>
-        <a href="https://api.leadconnectorhq.com/widget/bookings/core-ai-discovery" target="_blank" class="qw-cta cta-navy">Tell Us About Your Business &rarr;</a>
-      </div>
-
-      <div class="qw-card">
-        <div class="qw-badge badge-new" style="background:#EEF2FF;color:#1A2B6B;border:1px solid #c7d2fe;">&#9889; Stop Losing Leads</div>
-        <div class="qw-icon">&#128203;</div>
-        <div class="qw-title">Automate Your Follow-Up and Daily Tasks</div>
-        <div class="qw-desc">Most businesses lose customers not because they did anything wrong — but because nobody followed up. We build a system that follows up automatically, reminds you about appointments, and keeps every client organized.</div>
-        <ul class="qw-features">
-          <li>Automatic follow-up texts and emails on your behalf</li>
-          <li>Appointment reminders sent without you lifting a finger</li>
-          <li>Every client and lead in one place, on any device</li>
-        </ul>
-        <a href="https://api.leadconnectorhq.com/widget/bookings/core-ai-discovery" target="_blank" class="qw-cta cta-navy">Learn More &rarr;</a>
-      </div>
-
-      <div class="qw-card">
-        <div class="qw-badge badge-new" style="background:#F0FDF4;color:#14532D;border:1px solid #bbf7d0;">&#127963;&#65039; Built for Your Organization</div>
-        <div class="qw-icon">&#128736;&#65039;</div>
-        <div class="qw-title">Build a Better System for Your Organization</div>
-        <div class="qw-desc">If your team is running on spreadsheets and group chats, there's a better way. We build custom systems for chambers, nonprofits, HOAs, and associations — designed around exactly how your organization works.</div>
-        <ul class="qw-features">
-          <li>Member directories, check-in, and attendance tracking</li>
-          <li>Donor and volunteer management for nonprofits</li>
-          <li>Live in days — not months</li>
-        </ul>
-        <a href="https://api.leadconnectorhq.com/widget/bookings/core-ai-discovery" target="_blank" class="qw-cta cta-navy">Tell Us About Your Organization &rarr;</a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- PRICING: GOOGLE REVIEWS -->
-<section id="pricing" class="pricing-section">
-  <div class="pricing-inner">
-    <div class="pricing-eyebrow">Reputation &amp; Growth &mdash; Google Review Packages</div>
-    <h2 class="pricing-heading">The most common first prescription.</h2>
-    <p class="pricing-sub">When the assessment reveals a Trust gap, this is where we start. At $99/month, it's the lowest-risk way to begin building your reputation and working with CORE AI.</p>
-    <div class="pricing-grid active" style="display:grid;">
-      <div class="price-card">
-        <div class="price-tier">Starter</div>
-        <div class="price-name">Google Review Starter</div>
-        <div class="price-desc">Get the system in place and start collecting reviews immediately.</div>
-        <div class="price-setup">&nbsp;</div>
-        <div class="price-monthly">$99<span>/mo</span></div>
-        <div class="price-note">No setup fee &middot; Cancel anytime</div>
-        <hr class="price-divider">
-        <ul class="price-features">
-          <li>Automated review request texts</li>
-          <li>Direct Google review link</li>
-          <li>QR code for walk-in businesses</li>
-          <li>Monthly review tracking report</li>
-          <li>Review response templates</li>
-        </ul>
-        <a href="https://api.leadconnectorhq.com/widget/bookings/core-ai-discovery" target="_blank" class="price-cta cta-outline">Start Free Trial</a>
-      </div>
-      <div class="price-card featured-price">
-        <div class="price-tier">Growth</div>
-        <div class="price-name">Google Review Growth</div>
-        <div class="price-desc">Build a steady stream of reviews with branded materials and monthly monitoring.</div>
-        <div class="price-setup">$699 setup</div>
-        <div class="price-monthly">$199<span>/mo</span></div>
-        <div class="price-note">Includes full branded kit</div>
-        <hr class="price-divider">
-        <ul class="price-features">
-          <li>Everything in Starter</li>
-          <li>Branded review signage and inserts</li>
-          <li>Review landing page</li>
-          <li>Staff review request script</li>
-          <li>4 review-based social posts/mo</li>
-          <li>Monthly monitoring and reporting</li>
-        </ul>
-        <a href="https://api.leadconnectorhq.com/widget/bookings/core-ai-discovery" target="_blank" class="price-cta">Get Started</a>
-      </div>
-      <div class="price-card">
-        <div class="price-tier">Pro</div>
-        <div class="price-name">Google Reputation Pro</div>
-        <div class="price-desc">Full reputation management &mdash; reviews, responses, and marketing all handled for you.</div>
-        <div class="price-setup">$999 setup</div>
-        <div class="price-monthly">$279<span>/mo</span></div>
-        <div class="price-note">Full-service reputation management</div>
-        <hr class="price-divider">
-        <ul class="price-features">
-          <li>Everything in Growth</li>
-          <li>Review response support</li>
-          <li>Website review display section</li>
-          <li>Private feedback form</li>
-          <li>Quarterly design refresh</li>
-          <li>Monthly optimization call</li>
-        </ul>
-        <a href="https://api.leadconnectorhq.com/widget/bookings/core-ai-discovery" target="_blank" class="price-cta cta-outline">Get Started</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PRICING: EMERGING BUSINESS -->
-<section class="pricing-section" style="background:#F8F9FC;">
-  <div class="pricing-inner">
-    <div class="pricing-eyebrow">Business Automation &amp; Growth Packages</div>
-    <h2 class="pricing-heading">For businesses ready to<br>systematize and scale.</h2>
-    <p class="pricing-sub">When the assessment reveals Automation or Intelligence gaps, these packages provide the full infrastructure — from website to CRM to automated follow-up.</p>
-    <div class="pricing-grid active" style="display:grid;">
-      <div class="price-card">
-        <div class="price-tier">Tier 1</div>
-        <div class="price-name">Launch Website</div>
-        <div class="price-desc">Get online fast with a professional presence that works.</div>
-        <div class="price-setup">$1,200 setup</div>
-        <div class="price-monthly">$99<span>/mo</span></div>
-        <div class="price-note">Billed monthly after setup</div>
-        <hr class="price-divider">
-        <ul class="price-features">
-          <li>Professional website or landing page</li>
-          <li>Mobile-ready on all devices</li>
-          <li>Contact form and lead capture</li>
-          <li>Google Business Profile setup</li>
-          <li>Monthly support included</li>
-        </ul>
-        <a href="https://api.leadconnectorhq.com/widget/bookings/core-ai-discovery" target="_blank" class="price-cta cta-outline">Get Started</a>
-      </div>
-      <div class="price-card">
-        <div class="price-tier">Tier 2</div>
-        <div class="price-name">Grow Website</div>
-        <div class="price-desc">Build systems that keep leads and clients from falling through the cracks.</div>
-        <div class="price-setup">$1,800 setup</div>
-        <div class="price-monthly">$199<span>/mo</span></div>
-        <div class="price-note">Billed monthly after setup</div>
-        <hr class="price-divider">
-        <ul class="price-features">
-          <li>Everything in Launch</li>
-          <li>CRM and lead pipeline</li>
-          <li>Automated follow-up sequences</li>
-          <li>Online appointment booking</li>
-          <li>Two-way client messaging</li>
-        </ul>
-        <a href="https://api.leadconnectorhq.com/widget/bookings/core-ai-discovery" target="_blank" class="price-cta cta-outline">Get Started</a>
-      </div>
-      <div class="price-card featured-price">
-        <div class="price-tier">Tier 3</div>
-        <div class="price-name">Elevate Website</div>
-        <div class="price-desc">Full presence plus automation that works while you sleep.</div>
-        <div class="price-setup">$2,500 setup</div>
-        <div class="price-monthly">$299<span>/mo</span></div>
-        <div class="price-note">Billed monthly after setup</div>
-        <hr class="price-divider">
-        <ul class="price-features">
-          <li>Everything in Grow</li>
-          <li>Google Review Growth System</li>
-          <li>Missed call text-back</li>
-          <li>Social media content calendar</li>
-          <li>Monthly strategy check-in</li>
-        </ul>
-        <a href="https://api.leadconnectorhq.com/widget/bookings/core-ai-discovery" target="_blank" class="price-cta">Get Started</a>
-      </div>
-      <div class="price-card">
-        <div class="price-tier">Tier 4</div>
-        <div class="price-name">Command Website</div>
-        <div class="price-desc">Your complete AI-powered business command center, fully built and managed.</div>
-        <div class="price-setup">$5,000 setup</div>
-        <div class="price-monthly">$699<span>/mo</span></div>
-        <div class="price-note">Billed monthly after setup</div>
-        <hr class="price-divider">
-        <ul class="price-features">
-          <li>Everything in Elevate</li>
-          <li>Full automation suite</li>
-          <li>AI Voice Receptionist</li>
-          <li>Custom reporting dashboard</li>
-          <li>Dedicated support line</li>
-        </ul>
-        <a href="https://api.leadconnectorhq.com/widget/bookings/core-ai-discovery" target="_blank" class="price-cta cta-outline">Get Started</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PRICING: SPECIALIZED SOLUTIONS -->
-<section class="pricing-section">
-  <div class="pricing-inner">
-    <div class="pricing-eyebrow">Custom Business Systems &amp; Specialty Solutions</div>
-    <h2 class="pricing-heading">Purpose-built for your<br>specific organization.</h2>
-    <p class="pricing-sub">When the assessment reveals that off-the-shelf tools won't work, we build something custom. Scoped after your strategy session.</p>
-    <div class="pricing-grid active" style="display:grid;">
-      <div class="price-card featured-price">
-        <div class="price-tier">AI</div>
-        <div class="price-name">AI Voice Receptionist</div>
-        <div class="price-desc">Never miss a lead. Our AI answers calls 24/7 and sends you an instant summary with every caller's info.</div>
-        <div class="price-setup">$399 setup</div>
-        <div class="price-monthly">$199<span>/mo</span></div>
-        <div class="price-note">Includes setup, training, and support</div>
-        <hr class="price-divider">
-        <ul class="price-features">
-          <li>24/7 call answering</li>
-          <li>Lead capture and qualification</li>
-          <li>Instant summary to your phone</li>
-          <li>Custom call script for your business</li>
-          <li>After-hours and overflow coverage</li>
-        </ul>
-        <a href="https://api.leadconnectorhq.com/widget/bookings/core-ai-discovery" target="_blank" class="price-cta">Get Started</a>
-      </div>
-      <div class="price-card">
-        <div class="price-tier">Community</div>
-        <div class="price-name">Member Management App</div>
-        <div class="price-desc">Digital member directory, attendance, and lead share system for chambers and networking groups.</div>
-        <div class="price-setup">$699 setup</div>
-        <div class="price-monthly">$150<span>/mo</span></div>
-        <div class="price-note">$2,499 year one &middot; $1,800/yr after</div>
-        <hr class="price-divider">
-        <ul class="price-features">
-          <li>Searchable member directory</li>
-          <li>QR code self check-in</li>
-          <li>Renewal alerts and tracking</li>
-          <li>Admin, member, and visitor access</li>
-          <li>Export and reporting tools</li>
-        </ul>
-        <a href="https://api.leadconnectorhq.com/widget/bookings/core-ai-discovery" target="_blank" class="price-cta cta-outline">Learn More</a>
-      </div>
-      <div class="price-card">
-        <div class="price-tier">Youth</div>
-        <div class="price-name">Youth Founder Website</div>
-        <div class="price-desc">A professional website for young entrepreneurs ages 13&ndash;24, built to help them get taken seriously.</div>
-        <div class="price-setup">$999 total &mdash; 3 payments of $333</div>
-        <div class="price-monthly">$49<span>/mo</span></div>
-        <div class="price-note">Ages 13&ndash;24 &middot; $49/mo maintenance after launch</div>
-        <hr class="price-divider">
-        <ul class="price-features">
-          <li>Mobile-friendly one-page site</li>
-          <li>Founder bio and business overview</li>
-          <li>Contact form and QR code</li>
-          <li>Launch coaching call</li>
-          <li>Optional parent/guardian support</li>
-        </ul>
-        <a href="https://api.leadconnectorhq.com/widget/bookings/core-ai-discovery" target="_blank" class="price-cta cta-outline">Learn More</a>
-      </div>
-      <div class="price-card">
-        <div class="price-tier">AI Tools</div>
-        <div class="price-name">AI-Powered Industry Tool</div>
-        <div class="price-desc">A custom AI matching engine trained on your specific products, carriers, or services — built for your industry and your workflow.</div>
-        <div class="price-setup">Starting at $699 setup</div>
-        <div class="price-monthly">$199<span>/mo</span></div>
-        <div class="price-note">Scoped after discovery call &middot; Includes training and support</div>
-        <hr class="price-divider">
-        <ul class="price-features">
-          <li>AI trained on your specific data</li>
-          <li>Custom intake form for your workflow</li>
-          <li>Ranked results with explanations</li>
-          <li>Password-protected &mdash; your team only</li>
-          <li>Insurance, mortgage, financial services &amp; more</li>
-        </ul>
-        <a href="https://api.leadconnectorhq.com/widget/bookings/core-ai-discovery" target="_blank" class="price-cta cta-outline">Book a Discovery Call</a>
-      </div>
-    </div>
-    <div class="pricing-note">
-      <strong>Not sure which package is right for you?</strong> Book a free 30-minute discovery call and we'll tell you exactly what your business needs &mdash; no pressure, no commitment. Every package includes onboarding, support, and a system built for how you actually operate.
-    </div>
-  </div>
-</section>
-
-
-<section id="what-we-build">
-  <div class="section-inner">
-    <div class="section-eyebrow">Custom-Built Systems</div>
-    <h2 class="section-h2">If your organization runs on<br>spreadsheets, there's a better way.</h2>
-    <p class="section-sub">Some organizations have specific needs that standard software can't handle. We build custom systems designed around how your organization actually operates — live in days, accessible from any device.</p>
-    <div class="apps-grid">
-      <div class="app-card featured">
-        <div class="app-icon">&#127963;&#65039;</div>
-        <div class="app-title">Stop Managing Members With Spreadsheets</div>
-        <div class="app-desc">For chambers, networking groups, and associations. Members check in with a QR code. You see who's there in real time. No more paper sign-in sheets, no more lost records.</div>
-        <ul class="app-features">
-          <li>Searchable member directory with renewal alerts</li>
-          <li>QR code self check-in -- no app download needed</li>
-          <li>Visitor tracking with 2-visit limit enforcement</li>
-          <li>Industry seat availability in real time</li>
-          <li>Digital attendance records for every meeting</li>
-          <li>Admin, member, and check-in access levels</li>
-        </ul>
-      </div>
-      <div class="app-card">
-        <div class="app-icon">&#128203;</div>
-        <div class="app-title">Know Exactly Where Every Lead Stands</div>
-        <div class="app-desc">For businesses tracking clients and deals. No more digging through emails to find where a conversation left off. Every lead, client, and deal — organized and visible at a glance.</div>
-        <ul class="app-features">
-          <li>Custom pipeline stages for your workflow</li>
-          <li>Client contact directory with full history</li>
-          <li>Follow-up alerts and task reminders</li>
-          <li>Revenue and conversion tracking</li>
-          <li>Team access with role-based permissions</li>
-        </ul>
-      </div>
-      <div class="app-card">
-        <div class="app-icon">&#127768;&#65039;</div>
-        <div class="app-title">Spend More Time on Your Mission, Less on Admin</div>
-        <div class="app-desc">For nonprofits. Managing donors, volunteers, and programs through email and memory is exhausting. We give your team one place to manage everything — so they can focus on the work that matters.</div>
-        <ul class="app-features">
-          <li>Donor CRM with giving history and tiers</li>
-          <li>Volunteer tracking and scheduling</li>
-          <li>Grant and program pipeline</li>
-          <li>Outreach tracking and follow-up sequences</li>
-          <li>Event attendance and check-in</li>
-        </ul>
-      </div>
-      <div class="app-card">
-        <div class="app-icon">&#127960;&#65039;</div>
-        <div class="app-title">Give Your Community Better Tools</div>
-        <div class="app-desc">Resident directories, dues tracking, maintenance pipelines, and board communications -- all in one secure system.</div>
-        <ul class="app-features">
-          <li>Resident directory and contact hub</li>
-          <li>Dues and payment status tracking</li>
-          <li>Maintenance request pipeline</li>
-          <li>Board announcements and communications</li>
-          <li>Document library and record keeping</li>
-        </ul>
-      </div>
-      <div class="app-card">
-        <div class="app-icon">&#128197;</div>
-        <div class="app-title">Run Better Events With Less Effort</div>
-        <div class="app-desc">QR code check-in, real-time attendance tracking, and automatic follow-ups — so your events run smoothly and you always know who showed up.</div>
-        <ul class="app-features">
-          <li>Event listing and RSVP management</li>
-          <li>QR code check-in at any location</li>
-          <li>Real-time attendance dashboard</li>
-          <li>Post-event follow-up automation</li>
-          <li>Historical attendance records by member</li>
-        </ul>
-      </div>
-      <div class="app-card">
-        <div class="app-icon">&#127970;</div>
-        <div class="app-title">Something Else? We Can Build It.</div>
-        <div class="app-desc">If your team is tracking something in a spreadsheet or managing something through a group chat, there's almost certainly a better way. Tell us what you need — we'll build it.</div>
-        <ul class="app-features">
-          <li>Custom fields and stages for your process</li>
-          <li>Mobile-ready -- works on any device</li>
-          <li>Searchable, sortable, filterable data</li>
-          <li>Export and reporting built in</li>
-          <li>Scales as your organization grows</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="automation" class="tools-section">
-  <div class="section-inner">
-    <div class="section-eyebrow">How It All Works Behind the Scenes</div>
-    <h2 class="section-h2">You focus on your business.<br>We handle the rest.</h2>
-    <p class="section-sub">Once the right systems are in place, everything runs more smoothly. Here's a look at what happens in the background — automatically — so you don't have to think about it.</p>
-    <div class="tools-grid">
-      <div class="tool-card"><div class="tool-icon">&#128241;</div><div><div class="tool-title">Reach Everyone at Once</div><div class="tool-desc">Send a message to your entire client list, membership, or community in seconds. Meeting reminders, announcements, updates — delivered to their phone without you sending them one by one.</div></div></div>
-      <div class="tool-card"><div class="tool-icon">&#128260;</div><div><div class="tool-title">Never Chase a Renewal Again</div><div class="tool-desc">Renewal reminders go out automatically — 90, 60, 30, and 3 days before — so members and clients never lapse because nobody reminded them.</div></div></div>
-      <div class="tool-card"><div class="tool-icon">&#128179;</div><div><div class="tool-title">Get Paid Faster</div><div class="tool-desc">Clients receive a clean payment link by email or text. One click and they're done. No invoices to print, no checks to wait for, no awkward follow-up calls.</div></div></div>
-      <div class="tool-card"><div class="tool-icon">&#128222;</div><div><div class="tool-title">Answer Every Call</div><div class="tool-desc">Every call gets answered — even when you're busy or it's 11pm. Your AI handles FAQs, captures caller information, and sends you a summary so you can follow up when it's convenient.</div></div></div>
-      <div class="tool-card"><div class="tool-icon">&#128172;</div><div><div class="tool-title">Every Conversation in One Place</div><div class="tool-desc">Stop switching between texts, emails, and apps to find what a client said. Every conversation — and its full history — lives in one place your whole team can see.</div></div></div>
-      <div class="tool-card"><div class="tool-icon">&#128202;</div><div><div class="tool-title">Know What's Actually Working</div><div class="tool-desc">See which leads are going cold, which members are most engaged, and where your revenue is coming from — without digging through spreadsheets or guessing.</div></div></div>
-    </div>
-  </div>
-</section>
-
+<!-- SECTION 4: HOW IT WORKS -->
 <section id="how-it-works">
   <div class="section-inner">
     <div class="section-eyebrow">How It Works</div>
-    <h2 class="section-h2">Here's what working with us looks like.</h2>
-    <p class="section-sub">We keep it simple. No long contracts, no complicated onboarding. From first conversation to live system — usually a matter of days.</p>
+    <h2 class="section-h2">From first conversation to real results.</h2>
+    <p class="section-sub">No guessing. Just a clear process.</p>
     <div class="steps-grid">
-      <div class="step-card"><div class="step-num">1</div><div class="step-title">We listen first</div><div class="step-desc">Tell us what's not working. We ask questions, understand your situation, and recommend a starting point — no pressure, no pitch.</div></div>
-      <div class="step-card"><div class="step-num">2</div><div class="step-title">We build it</div><div class="step-desc">We design and build your solution around your specific situation — not a template. Ready for your review within days.</div></div>
-      <div class="step-card"><div class="step-num">3</div><div class="step-title">You make sure it's right</div><div class="step-desc">You review it and tell us what to adjust. We keep refining until you're completely satisfied — usually one or two rounds.</div></div>
-      <div class="step-card"><div class="step-num">4</div><div class="step-title">You go live — we stay with you</div><div class="step-desc">Your system goes live and your whole team can access it from any device, anywhere. We stay available for questions and support as you grow.</div></div>
+      <div class="step-card"><div class="step-num">1</div><div class="step-title">Discover</div><div class="step-desc">We listen first. A real conversation about what's actually going on, not a sales pitch.</div></div>
+      <div class="step-card"><div class="step-num">2</div><div class="step-title">Assess</div><div class="step-desc">We find the opportunities. We evaluate your business across the six CORE functions to identify what's working, what's getting in the way, and where improvement could have the greatest impact.</div></div>
+      <div class="step-card"><div class="step-num">3</div><div class="step-title">Design</div><div class="step-desc">We recommend what will actually help — the right starting point for your specific situation, nothing extra.</div></div>
+      <div class="step-card"><div class="step-num">4</div><div class="step-title">Build</div><div class="step-desc">We build and support it — you don't have to figure out implementation yourself.</div></div>
+      <div class="step-card"><div class="step-num">5</div><div class="step-title">Improve</div><div class="step-desc">Your business runs better — and we keep measuring, since Insight doesn't stop mattering after launch.</div></div>
     </div>
   </div>
 </section>
 
-<section id="who-we-serve" class="who-section">
+<!-- SECTION 5: WHAT WE BUILD -->
+<section id="solutions">
   <div class="section-inner">
-    <div class="section-eyebrow">Who We Serve</div>
-    <h2 class="section-h2">We work with businesses and organizations<br>of all kinds.</h2>
-    <p class="section-sub" style="max-width:100%;">If you're running a business or organization and feel like your operations could be smoother, we can help. Here's who we typically work with.</p>
-    <div class="who-grid">
-      <div class="who-tag">&#127963;&#65039; Chambers of Commerce</div>
-      <div class="who-tag">&#129309; Business Networking Groups</div>
-      <div class="who-tag">&#9962;&#65039; Faith &amp; Religious Organizations</div>
-      <div class="who-tag">&#127960;&#65039; HOA Communities</div>
-      <div class="who-tag">&#127947; Gyms &amp; Wellness Studios</div>
-      <div class="who-tag">&#127768;&#65039; Nonprofits</div>
-      <div class="who-tag">&#127970; Small Businesses</div>
-      <div class="who-tag">&#127969; Real Estate Investor Groups</div>
-      <div class="who-tag">&#127881; Event Coordinators</div>
-      <div class="who-tag">&#129657; Healthcare Practices</div>
-      <div class="who-tag">&#9878;&#65039; Professional Associations</div>
-      <div class="who-tag">&#127891; Educational Organizations</div>
-      <div class="who-tag">&#127919; Private Clubs &amp; Groups</div>
+    <div class="section-eyebrow">What We Build</div>
+    <h2 class="section-h2">Depending on what we find, here's where we typically start.</h2>
+    <p class="section-sub">These aren't packages to choose from — they're the most common starting points once we understand your specific situation.</p>
+    <div class="apps-grid">
+      <div class="app-card">
+        <div class="app-icon">&#9889;</div>
+        <div class="app-title">Business Automation</div>
+        <div class="app-desc">When leads aren't being followed up, or customers go quiet after the sale, this is usually where we start.</div>
+        <ul class="app-features">
+          <li>Automated follow-up and reminders</li>
+          <li>Missed-call text-back</li>
+          <li>AI Receptionist — <a href="tel:5715172658" style="color:var(--periwinkle);">hear it live</a></li>
+        </ul>
+      </div>
+      <div class="app-card">
+        <div class="app-icon">&#127760;</div>
+        <div class="app-title">Websites &amp; Digital Authority</div>
+        <div class="app-desc">When people can't find you — or don't trust what they find — this is the fix.</div>
+        <ul class="app-features">
+          <li>A website built to convert</li>
+          <li>Visibility with Google and AI search tools</li>
+          <li>Reputation and review systems</li>
+        </ul>
+      </div>
+      <div class="app-card">
+        <div class="app-icon">&#128736;&#65039;</div>
+        <div class="app-title">Custom Business Systems</div>
+        <div class="app-desc">When your existing tools, processes, or spreadsheets don't fit how the business actually works, we build around the problem.</div>
+        <ul class="app-features">
+          <li>Dashboards and reporting</li>
+          <li>Pipeline and lead tracking</li>
+          <li>Tools built around your workflow</li>
+        </ul>
+      </div>
+      <div class="app-card">
+        <div class="app-icon">&#127963;&#65039;</div>
+        <div class="app-title">Member &amp; Community Platforms</div>
+        <div class="app-desc">For chambers, associations, and community organizations running on spreadsheets and group chats.</div>
+        <ul class="app-features">
+          <li>Member directories and check-in</li>
+          <li>Event and attendance tracking</li>
+          <li>Renewal and engagement tracking</li>
+        </ul>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:40px;">
+      <a href="assessment.html" class="btn-primary">Not sure which fits? Start with the Assessment</a>
     </div>
   </div>
 </section>
 
+<!-- SECTION 6: OUR WORK -->
+<section class="our-work-section">
+  <div class="our-work-inner">
+    <div class="section-eyebrow">Our Work</div>
+    <h2 class="section-h2">Real problems. Practical solutions.</h2>
+    <p class="section-sub">A look at what happens when the six-function diagnosis leads somewhere specific.</p>
+    <div class="work-grid">
+      <div class="work-card">
+        <div class="work-status live">Live</div>
+        <div class="work-title">Regional Chamber of Commerce — Member Engagement System</div>
+        <div class="work-label">The Problem</div>
+        <div class="work-text">A well-attended networking program was held back by a completely manual member experience — paper sign-in, no directory, no way for members to connect between meetings.</div>
+        <div class="work-label">What We Discovered</div>
+        <div class="work-text">The real gap was Retention and Business Independence, not technology — members had no way to stay connected between meetings, and staff had no visibility into attendance without compiling it manually.</div>
+        <div class="work-label">What We Built</div>
+        <div class="work-text">A mobile-first system with QR check-in, a searchable member directory, open-seat visibility, and a real-time attendance dashboard.</div>
+        <div class="work-label">Outcome</div>
+        <div class="work-text">Live and in use. Paper sign-in is gone, and members can connect with each other outside the weekly meeting for the first time.</div>
+      </div>
+      <div class="work-card">
+        <div class="work-status dev">Prototype / In Development</div>
+        <div class="work-title">Residential Services Business — Custom Booking &amp; Estimate Experience</div>
+        <div class="work-label">The Problem</div>
+        <div class="work-text">The business's own name led customers to assume "cheap" rather than the actual value — flexibility to shape the service around their own priorities and budget.</div>
+        <div class="work-label">What We Discovered</div>
+        <div class="work-text">A Demand and Conversion problem — the value proposition needed to be demonstrated, not stated, because the name itself set the wrong expectation.</div>
+        <div class="work-label">What We Built</div>
+        <div class="work-text">An interactive booking flow — scope selection, add-ons, an estimated price range, and a preferred date/time — that lets a customer build their own scope and see the flexibility firsthand.</div>
+        <div class="work-label">Outcome</div>
+        <div class="work-text">In development — no booking volume or conversion results are being claimed at this stage.</div>
+      </div>
+      <div class="work-card">
+        <div class="work-status pilot">Pilot</div>
+        <div class="work-title">Independent Insurance Agency — Carrier Matching System</div>
+        <div class="work-label">The Problem</div>
+        <div class="work-text">An independent agent represents dozens of carriers, each with different appetite requirements — and matching a client to the right one depended entirely on one person's memory and experience.</div>
+        <div class="work-label">What We Discovered</div>
+        <div class="work-text">A Business Independence problem more than a knowledge problem — the ability to match clients accurately existed only in one person's head.</div>
+        <div class="work-label">What We Built</div>
+        <div class="work-text">A matching engine trained on the agency's real carrier data that instantly ranks the best-fit carriers for any client profile, with reasoning included.</div>
+        <div class="work-label">Outcome</div>
+        <div class="work-text">Pilot stage. The system is built and being tested against real client scenarios; results will be documented as it moves into regular use.</div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:40px;">
+      <a href="case-studies.html" class="btn-secondary">See More of Our Work</a>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 7: WHO WE HELP -->
+<section class="who-simple-section">
+  <div class="who-simple-inner">
+    <div class="section-eyebrow">Who We Help</div>
+    <h2 class="section-h2">Built for businesses. Built for organizations.</h2>
+    <div class="who-simple-grid">
+      <div>
+        <div class="who-simple-title">Businesses &amp; Entrepreneurs</div>
+        <div class="who-simple-desc">Small and growing businesses, established owners, professional services, and home and service-based businesses.</div>
+      </div>
+      <div>
+        <div class="who-simple-title">Organizations &amp; Membership Communities</div>
+        <div class="who-simple-desc">Chambers of commerce, associations, networking groups, nonprofits, and community organizations.</div>
+      </div>
+    </div>
+    <p class="who-simple-closer">Different structures. Same six things determining whether they grow.</p>
+  </div>
+</section>
+
+<!-- SECTION 8: WHY CORE AI / FOUNDER -->
+<section class="founder-section">
+  <div class="founder-inner">
+    <div class="founder-eyebrow">Why CORE AI</div>
+    <h2 class="founder-headline">Why start with a conversation instead of a proposal?</h2>
+    <p class="founder-body">Before starting CORE AI, I spent roughly 17 years in organ and tissue donation — including years performing surgical recovery procedures myself before moving into regional operational leadership. It's one thing to manage a process from behind a desk; it's another to have actually done the work you're now responsible for coordinating. That environment left no room for guessing — timing, communication, documentation, and process all had to work together, and changing one piece without understanding what it affected upstream and downstream could create an entirely new problem.</p>
+    <p class="founder-closer">That's the lesson I carried into CORE AI: understand the whole system before you touch any one piece of it — which is why we start with discovery, not a predetermined solution.</p>
+  </div>
+</section>
+
+<!-- SECTION 9: FINAL CTA -->
 <section id="contact" class="cta-section">
   <div style="max-width:640px;margin:0 auto">
     <div class="section-eyebrow" style="color:#6B7FD4;text-align:center;margin-bottom:16px">Get Started</div>
-    <h2 class="cta-h2">Not sure where to start?<br>That's exactly what we're here for.</h2>
-    <p class="cta-sub">Every business is different. Book a free conversation and tell us what's not working. We'll help you figure out what to fix first — no obligation, no pressure.</p>
+    <h2 class="cta-h2">Curious what we'd find in your business?</h2>
+    <p class="cta-sub">You've seen how we think and what we've built. The next step is simple — one conversation, applied to the six things that determine whether your business grows.</p>
     <div class="cta-actions">
-      <a href="https://api.leadconnectorhq.com/widget/bookings/core-ai-discovery" target="_blank" class="btn-gold">&#128197; Book a Free Conversation</a>
-    </div>
-    <p class="cta-contact">Or email us at <a href="mailto:info@coreresponsegroup.com">info@coreresponsegroup.com</a></p>
-    <div class="ai-receptionist-wrap">
-      <div class="ai-label">&#10022; Curious about AI? Try it right now.</div>
-      <a href="tel:5715172658" class="btn-ai">
-        <div class="mic-icon">&#127897;&#65039;</div>
-        <div class="btn-ai-text">Talk to Our AI Receptionist<span>Call now &mdash; hear it for yourself</span></div>
-      </a>
+      <a href="assessment.html" class="btn-gold">Start Your Business Health Assessment</a>
     </div>
   </div>
-</section>
-
-<footer>
+</section><footer>
   <img src="https://i.imgur.com/G40kixu.png" alt="CORE AI" class="footer-logo" />
   <div class="footer-text">
     <strong>CORE AI</strong> | Core Response AI | Powerful Business Solutions | A Tayyab Group, Inc. Company<br>
