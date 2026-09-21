@@ -85,37 +85,6 @@
     .qw-cta.cta-navy { background: var(--navy); color: #fff; }
     .qw-cta.cta-navy:hover { opacity: 0.88; }
 
-    /* PRICING */
-    .pricing-section { background: var(--white); padding: 96px 56px; border-top: 1px solid var(--border); }
-    .pricing-inner { max-width: 1100px; margin: 0 auto; }
-    .pricing-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--periwinkle); margin-bottom: 10px; }
-    .pricing-heading { font-size: clamp(24px, 3vw, 38px); font-weight: 600; color: var(--navy); letter-spacing: -0.8px; margin-bottom: 8px; }
-    .pricing-sub { font-size: 15px; color: var(--gray); margin-bottom: 44px; line-height: 1.6; font-weight: 400; max-width: 560px; }
-    
-    .pricing-grid { display: none; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px; }
-    .pricing-grid.active { display: grid; }
-    .price-card { background: var(--white); border: 1.5px solid var(--border); border-radius: 16px; padding: 30px 26px; display: flex; flex-direction: column; position: relative; transition: box-shadow .2s, border-color .2s; }
-    .price-card:hover { box-shadow: 0 8px 32px rgba(26,43,107,0.09); border-color: #c7d2fe; }
-    .price-card.featured-price { border-color: var(--navy); background: #FAFBFF; }
-    .price-card.featured-price::before { content: 'Most Popular'; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--navy); color: var(--white); font-size: 10px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; padding: 4px 14px; border-radius: 20px; white-space: nowrap; }
-    .price-tier { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--periwinkle); margin-bottom: 8px; }
-    .price-name { font-size: 20px; font-weight: 700; color: var(--navy); letter-spacing: -0.5px; margin-bottom: 6px; }
-    .price-desc { font-size: 13px; color: var(--gray); line-height: 1.6; margin-bottom: 18px; min-height: 38px; }
-    .price-setup { font-size: 13px; color: var(--gray); font-weight: 500; margin-bottom: 2px; }
-    .price-monthly { font-size: 30px; font-weight: 700; color: var(--navy); letter-spacing: -1px; line-height: 1; }
-    .price-monthly span { font-size: 14px; font-weight: 500; color: var(--gray); }
-    .price-note { font-size: 11px; color: var(--gray); margin-bottom: 20px; margin-top: 6px; }
-    .price-divider { border: none; border-top: 1px solid var(--border); margin: 18px 0; }
-    .price-features { list-style: none; margin-bottom: 24px; flex: 1; }
-    .price-features li { font-size: 13px; color: #374151; padding: 5px 0; display: flex; align-items: flex-start; gap: 8px; line-height: 1.5; }
-    .price-features li::before { content: 'V'; color: var(--green); font-weight: 700; flex-shrink: 0; }
-    .price-cta { display: block; text-align: center; padding: 11px 20px; border-radius: 8px; font-size: 13px; font-weight: 600; text-decoration: none; transition: opacity .15s; font-family: inherit; background: var(--navy); color: var(--white); margin-top: auto; }
-    .price-cta:hover { opacity: 0.88; }
-    .price-cta.cta-outline { background: transparent; color: var(--navy); border: 1.5px solid var(--border); }
-    .price-cta.cta-outline:hover { border-color: var(--navy); background: #f5f7ff; opacity: 1; }
-    .pricing-note { margin-top: 40px; padding: 20px 28px; background: #F8F9FC; border: 1px solid var(--border); border-radius: 12px; font-size: 13px; color: var(--gray); line-height: 1.7; }
-    .pricing-note strong { color: var(--navy); }
-
     .statement-section { background: var(--navy); padding: 80px 56px; }
     .statement-inner { max-width: 860px; margin: 0 auto; text-align: center; }
     .statement-text { font-size: clamp(20px, 3vw, 34px); font-weight: 600; color: var(--white); line-height: 1.3; letter-spacing: -0.8px; margin-bottom: 14px; }
@@ -200,7 +169,6 @@
       .cta-actions { flex-direction: column; align-items: center; }
       footer { padding: 28px 20px; }
       .quick-wins-section { padding: 56px 20px; height: auto; }
-      .pricing-section { padding: 64px 20px; height: auto; }
       .pricing-grid { grid-template-columns: 1fr; }
       .before-after { grid-template-columns: 1fr; }
       .ba-divider { display: none; }
@@ -224,7 +192,6 @@
     <a href="assessment.html">Assessment</a>
     <a href="case-studies.html">Success Stories</a>
     <a href="journal.html">Journal</a>
-    <a href="#pricing">Pricing</a>
     <a href="#vybx-section" style="display:inline-flex;align-items:center;padding:8px 16px;border-radius:8px;background:#14161C;">
       <img src="vybx-logo.png" alt="VYBX" style="height:18px;display:block;" />
     </a>
@@ -387,72 +354,52 @@
   </div>
 </section>
 
-<!-- SECTION 4: HOW IT WORKS -->
-<section id="how-it-works">
-  <div class="section-inner">
-    <div class="section-eyebrow">How It Works</div>
-    <h2 class="section-h2">From first conversation to real results.</h2>
-    <p class="section-sub">No guessing. Just a clear process.</p>
-    <div class="steps-grid">
-      <div class="step-card"><div class="step-num">1</div><div class="step-title">Discover</div><div class="step-desc">We listen first. A real conversation about what's actually going on, not a sales pitch.</div></div>
-      <div class="step-card"><div class="step-num">2</div><div class="step-title">Assess</div><div class="step-desc">We find the opportunities. We evaluate your business across the six CORE functions to identify what's working, what's getting in the way, and where improvement could have the greatest impact.</div></div>
-      <div class="step-card"><div class="step-num">3</div><div class="step-title">Design</div><div class="step-desc">We recommend what will actually help — the right starting point for your specific situation, nothing extra.</div></div>
-      <div class="step-card"><div class="step-num">4</div><div class="step-title">Build</div><div class="step-desc">We build and support it — you don't have to figure out implementation yourself.</div></div>
-      <div class="step-card"><div class="step-num">5</div><div class="step-title">Improve</div><div class="step-desc">Your business runs better — and we keep measuring, since Insight doesn't stop mattering after launch.</div></div>
-    </div>
-  </div>
-</section>
-
 <!-- SECTION 5: WHAT WE BUILD -->
 <section id="solutions">
   <div class="section-inner">
     <div class="section-eyebrow">What We Build</div>
-    <h2 class="section-h2">Depending on what we find, here's where we typically start.</h2>
-    <p class="section-sub">These aren't packages to choose from — they're the most common starting points once we understand your specific situation.</p>
+    <h2 class="section-h2">Bring us the problem. We'll figure out the right solution.</h2>
+    <p class="section-sub">These are examples of the kind of work we do — not a menu to pick from. The right solution depends on what's actually going on in your business.</p>
     <div class="apps-grid">
       <div class="app-card">
         <div class="app-icon">&#9889;</div>
-        <div class="app-title">Business Automation</div>
-        <div class="app-desc">When leads aren't being followed up, or customers go quiet after the sale, this is usually where we start.</div>
+        <div class="app-title">Systems &amp; Automation</div>
+        <div class="app-desc">Making sure less falls through the cracks and less of your team's time is spent on manual work.</div>
         <ul class="app-features">
-          <li>Automated follow-up and reminders</li>
-          <li>Missed-call text-back</li>
-          <li>AI Receptionist — <a href="tel:5715172658" style="color:var(--periwinkle);">hear it live</a></li>
-        </ul>
-      </div>
-      <div class="app-card">
-        <div class="app-icon">&#127760;</div>
-        <div class="app-title">Websites &amp; Digital Authority</div>
-        <div class="app-desc">When people can't find you — or don't trust what they find — this is the fix.</div>
-        <ul class="app-features">
-          <li>A website built to convert</li>
-          <li>Visibility with Google and AI search tools</li>
-          <li>Reputation and review systems</li>
+          <li>CRM setup and optimization</li>
+          <li>Automated follow-up and lead response</li>
+          <li>Workflow automation</li>
+          <li>Connecting systems and tools</li>
+          <li>Operational dashboards and visibility</li>
         </ul>
       </div>
       <div class="app-card">
         <div class="app-icon">&#128736;&#65039;</div>
-        <div class="app-title">Custom Business Systems</div>
-        <div class="app-desc">When your existing tools, processes, or spreadsheets don't fit how the business actually works, we build around the problem.</div>
+        <div class="app-title">Custom Apps &amp; Platforms</div>
+        <div class="app-desc">When existing tools don't fit the way your organization actually works, we can create something that does.</div>
         <ul class="app-features">
-          <li>Dashboards and reporting</li>
-          <li>Pipeline and lead tracking</li>
-          <li>Tools built around your workflow</li>
+          <li>Custom web applications and internal tools</li>
+          <li>Client, member, or employee portals</li>
+          <li>Member, alumni, and community engagement systems</li>
+          <li>Booking, workflow, or operational tools</li>
+          <li>Websites when a website is genuinely part of solving the larger problem</li>
         </ul>
       </div>
       <div class="app-card">
-        <div class="app-icon">&#127963;&#65039;</div>
-        <div class="app-title">Member &amp; Community Platforms</div>
-        <div class="app-desc">For chambers, associations, and community organizations running on spreadsheets and group chats.</div>
+        <div class="app-icon">&#128161;</div>
+        <div class="app-title">AI Consulting &amp; Implementation</div>
+        <div class="app-desc">Finding where AI can genuinely improve the business &mdash; and then putting it to practical use.</div>
         <ul class="app-features">
-          <li>Member directories and check-in</li>
-          <li>Event and attendance tracking</li>
-          <li>Renewal and engagement tracking</li>
+          <li>AI-assisted customer communication</li>
+          <li>AI-powered matching and recommendations</li>
+          <li>Automating repetitive knowledge work</li>
+          <li>Internal AI tools and assistants</li>
+          <li>Evaluating and implementing appropriate AI tools</li>
         </ul>
       </div>
     </div>
     <div style="text-align:center;margin-top:40px;">
-      <a href="assessment.html" class="btn-primary">Not sure which fits? Start with the Assessment</a>
+      <a href="assessment.html" class="btn-primary">Not sure where to start? Start with the Assessment</a>
     </div>
   </div>
 </section>
