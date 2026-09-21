@@ -305,12 +305,20 @@
   /* --- new styles for Sections 2, 3, 6, 7, 8, 9 --- */
   .framework-section { padding: 96px 56px; background: var(--light); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
   .framework-inner { max-width: 1100px; margin: 0 auto; }
-  .framework-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 48px; }
+  .framework-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 48px; counter-reset: framework-num; }
   .framework-card { background: var(--white); border: 1.5px solid var(--border); border-radius: 16px; padding: 32px 28px; }
   .framework-stage { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--periwinkle); margin-bottom: 10px; }
   .framework-question { font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 16px; line-height: 1.35; }
   .framework-card ul { list-style: none; padding: 0; margin: 0; }
-  .framework-card li { font-size: 14px; color: var(--gray); line-height: 1.6; padding: 6px 0; }
+  .framework-card li { font-size: 14px; color: var(--gray); line-height: 1.6; padding: 6px 0 6px 28px; position: relative; counter-increment: framework-num; }
+  .framework-card li::before {
+    content: counter(framework-num);
+    position: absolute; left: 0; top: 8px;
+    width: 18px; height: 18px; border-radius: 50%;
+    background: var(--periwinkle); color: #fff;
+    font-size: 10.5px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center; line-height: 1;
+  }
   .framework-closer { font-size: 16px; color: var(--gray); text-align: center; max-width: 620px; margin: 48px auto 0; line-height: 1.7; }
 
   .our-work-section { padding: 96px 56px; }
