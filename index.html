@@ -259,6 +259,36 @@
   </div>
 </section>
 
+<style>
+  .problems-section { padding: 96px 56px; background: var(--white); }
+  .problems-inner { max-width: 1100px; margin: 0 auto; }
+  .problems-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
+  .problem-card { background: var(--white); border: 1.5px solid var(--border); border-radius: 16px; padding: 28px 26px; display: flex; align-items: center; min-height: 96px; }
+  .problem-text { font-size: 17px; font-weight: 600; color: var(--navy); line-height: 1.45; }
+  .problems-closer { font-size: 16px; color: var(--gray); text-align: center; max-width: 620px; margin: 48px auto 0; line-height: 1.7; }
+  @media (max-width: 768px) {
+    .problems-grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+<!-- SECTION: WHAT'S SLOWING YOU DOWN? -->
+<section class="problems-section">
+  <div class="problems-inner">
+    <div class="section-eyebrow">Sound Familiar?</div>
+    <h2 class="section-h2">What's slowing you down?</h2>
+    <p class="section-sub">If any of this sounds familiar, you're not alone.</p>
+    <div class="problems-grid">
+      <div class="problem-card"><p class="problem-text">Customer info is scattered across too many tools.</p></div>
+      <div class="problem-card"><p class="problem-text">No one's sure who's following up &mdash; or what's falling through the cracks.</p></div>
+      <div class="problem-card"><p class="problem-text">Your team still does by hand what should run itself.</p></div>
+      <div class="problem-card"><p class="problem-text">You have the data, but not the clarity.</p></div>
+      <div class="problem-card"><p class="problem-text">People join, attend, or buy &mdash; but engagement drops off afterward.</p></div>
+      <div class="problem-card"><p class="problem-text">Your software doesn't work the way you actually work.</p></div>
+    </div>
+    <p class="problems-closer">That's where CORE AI starts. We don't start with a product. We start by understanding the problem &mdash; then decide what should actually be built, automated, connected, or improved.</p>
+  </div>
+</section>
+
 <<!-- =========================================================
      REPLACES lines 252–776 of index.html
      (everything from the old "FOUNDER QUOTE" comment through
